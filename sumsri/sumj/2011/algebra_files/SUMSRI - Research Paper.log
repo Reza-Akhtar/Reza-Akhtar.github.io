@@ -1,0 +1,1302 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2011.8.16)  16 AUG 2011 20:05
+entering extended mode
+**C:/Users/Andy/Favorites/Desktop/Final*Research*Paper/SUMSRI*-*Research*Paper.
+tex
+
+("C:/Users/Andy/Favorites/Desktop/Final Research Paper/SUMSRI - Research Paper.
+tex"
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, loaded.
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ams\classes\amsart.cls"
+Document Class: amsart 2009/07/02 v2.20.1
+\linespacing=\dimen102
+\normalparindent=\dimen103
+\normaltopskip=\skip41
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip42
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ams\math\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ams\math\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen104
+))
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ams\math\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen105
+)
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\ams\math\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count79
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count80
+\leftroot@=\count81
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count82
+\DOTSCASE@=\count83
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count84
+\c@MaxMatrixCols=\count85
+\dotsspace@=\muskip10
+\c@parentequation=\count86
+\dspbrk@lvl=\count87
+\tag@help=\toks15
+\row@=\count88
+\column@=\count89
+\maxfields@=\count90
+\andhelp@=\toks16
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks17
+\multlinegap=\skip43
+\multlinetaggap=\skip44
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 388.
+
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+)
+\copyins=\insert233
+\abstractbox=\box28
+\listisep=\skip45
+\c@part=\count91
+\c@section=\count92
+\c@subsection=\count93
+\c@subsubsection=\count94
+\c@paragraph=\count95
+\c@subparagraph=\count96
+\c@figure=\count97
+\c@table=\count98
+\abovecaptionskip=\skip46
+\belowcaptionskip=\skip47
+\captionindent=\dimen113
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip48
+\thm@postskip=\skip49
+\thm@headsep=\skip50
+\dth@everypar=\toks24
+)
+\c@theorem=\count99
+\c@sublemma=\count100
+\c@claim=\count101
+
+(C:\Users\Andy\AppData\Roaming\MiKTeX\2.8\tex\latex\preprint\fullpage.sty
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip51
+)
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks25
+)
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2010/02/14 v0.04n Graphics/color for pdfTeX
+\Gread@gobject=\count102
+))
+\Gin@req@height=\dimen114
+\Gin@req@width=\dimen115
+)
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2009/06/22 v3.00
+)
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\tools\enumerate.sty"
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks26
+)
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks27
+\verbatim@line=\toks28
+\verbatim@in@stream=\read1
+)
+("C:\Users\Andy\Favorites\Desktop\Final Research Paper\SUMSRI - Research Paper.
+aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Try loading font information for U+msa on input line 33.
+ ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 33.
+
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+("C:\Program Files (x86)\MiKTeX 2.8\tex\context\base\supp-pdf.tex"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count103
+\scratchdimen=\dimen116
+\scratchbox=\box29
+\nofMPsegments=\count104
+\nofMParguments=\count105
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen117
+\MPnumerator=\count107
+\everyMPtoPDFconversion=\toks30
+) [1{C:/Users/Andy/AppData/Local/MiKTeX/2.8/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10.95> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 144.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--195
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--202
+
+ []
+
+
+Overfull \hbox (35.35342pt too wide) in paragraph at lines 202--203
+[]\OT1/cmr/m/n/10.95 Since $\OML/cmm/m/it/10.95 y$ \OT1/cmr/m/n/10.95 is crit-i
+-cal, it will be on the bound-aries of $\OML/cmm/m/it/10.95 d[]$ \OT1/cmr/m/n/1
+0.95 sec-tors. Let these sec-tors be $\OML/cmm/m/it/10.95 S[]; S[]; S[]; [] S[]
+$\OT1/cmr/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+
+ []
+
+<z2minus2spider.png, id=32, 117.43875pt x 390.70969pt>
+File: z2minus2spider.png Graphic file (type png)
+
+<use z2minus2spider.png>
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+
+ []
+
+<z2minus2criticalportrait.png, id=33, 271.0125pt x 271.0125pt>
+File: z2minus2criticalportrait.png Graphic file (type png)
+
+<use z2minus2criticalportrait.png> [5 <C:/Users/Andy/Favorites/Desktop/Final Re
+search Paper/z2minus2spider.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 238--240
+
+ []
+
+<z_2.png, id=37, 219.06844pt x 114.4275pt>
+File: z_2.png Graphic file (type png)
+ <use z_2.png>
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
+
+ []
+
+<plus_3z_spider.png, id=39, 409.53pt x 508.14844pt>
+File: plus_3z_spider.png Graphic file (type png)
+ <use plus_3z_spider.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <C:/Users/Andy/Favorites/Desktop/Final Research Paper/z2minus2criticalportr
+ait.png (PNG copy)> <C:/Users/Andy/Favorites/Desktop/Final Research Paper/z_2.p
+ng>]
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
+
+ []
+
+<plus3zcritical.png, id=44, 235.63031pt x 325.215pt>
+File: plus3zcritical.png Graphic file (type png)
+ <use plus3zcritical.png>
+<z_33z.png, id=45, 210.03468pt x 141.52875pt>
+File: z_33z.png Graphic file (type png)
+ <use z_33z.png> [7 <C:/Users/Andy/Favorites/Desktop/Final Research Paper/plus_
+3z_spider.png> <C:/Users/Andy/Favorites/Desktop/Final Research Paper/plus3zcrit
+ical.png> <C:/Users/Andy/Favorites/Desktop/Final Research Paper/z_33z.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+
+ []
+
+<minus_3_spider2.png, id=53, 418.56375pt x 338.76563pt>
+File: minus_3_spider2.png Graphic file (type png)
+
+<use minus_3_spider2.png>
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
+
+ []
+
+<minus3critical2.png, id=54, 330.033pt x 261.1356pt>
+File: minus3critical2.png Graphic file (type png)
+ <use minus3critical2.png>
+<z_3_3z.png, id=55, 232.61906pt x 148.30406pt>
+File: z_3_3z.png Graphic file (type png)
+ <use z_3_3z.png> [8 <C:/Users/Andy/Favorites/Desktop/Final Research Paper/minu
+s_3_spider2.png> <C:/Users/Andy/Favorites/Desktop/Final Research Paper/minus3cr
+itical2.png> <C:/Users/Andy/Favorites/Desktop/Final Research Paper/z_3_3z.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--301
+
+ []
+
+<1_5_spider_2.png, id=62, 715.67375pt x 682.55pt>
+File: 1_5_spider_2.png Graphic file (type png)
+ <use 1_5_spider_2.png>
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
+
+ []
+
+<1_5critical1.png, id=63, 291.33844pt x 316.93407pt>
+File: 1_5critical1.png Graphic file (type png)
+ <use 1_5critical1.png>
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+
+ []
+
+<z_32z.png, id=64, 236.38312pt x 127.22531pt>
+File: z_32z.png Graphic file (type png)
+ <use z_32z.png>
+Underfull \vbox (badness 2913) has occurred while \output is active []
+
+ [9 <C:/Users/Andy/Favorites/Desktop/Final Research Paper/1_5_spider_2.png (PNG
+ copy)> <C:/Users/Andy/Favorites/Desktop/Final Research Paper/1_5critical1.png 
+(PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--336
+
+ []
+
+
+Overfull \hbox (7.21095pt too wide) in paragraph at lines 337--341
+\OML/cmm/m/it/10.95 \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 a; b; \OT1/cmr/m/
+n/10.95 1)\OML/cmm/m/it/10.95 \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 a; b; \
+OT1/cmr/m/n/10.95 1)\OML/cmm/m/it/10.95 \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.
+95 a; b; \OT1/cmr/m/n/10.95 1) = (\OML/cmm/m/it/10.95 ba; ab; a\OT1/cmr/m/n/10.
+95 )$. Thus, $(\OML/cmm/m/it/10.95 ba; ab; a\OT1/cmr/m/n/10.95 )[] = 1 = (1\OML
+/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 
+1)$. How-ever, $(\OML/cmm/m/it/10.95 ba; ab; a\OT1/cmr/m/n/10.95 )[] =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--341
+
+ []
+
+[10 <C:/Users/Andy/Favorites/Desktop/Final Research Paper/z_32z.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--381
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--419
+
+ []
+
+<groupAauto.png, id=78, 420.06938pt x 221.32687pt>
+File: groupAauto.png Graphic file (type png)
+ <use groupAauto.png>
+Underfull \hbox (badness 10000) in paragraph at lines 425--431
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--431
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--431
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--431
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--431
+
+ []
+
+[12 <C:/Users/Andy/Favorites/Desktop/Final Research Paper/groupAauto.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 445--448
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 445--448
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 445--448
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 445--448
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 448--451
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 448--451
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 448--451
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--454
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--454
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 455--458
+
+ []
+
+
+Overfull \hbox (10.96567pt too wide) in paragraph at lines 455--458
+\OML/cmm/m/it/10.95 x[]x[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 \OT1/cmr
+/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; x[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95
+ \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; x[]\OT1/cmr/m/n/10.95 ) = (\OML/
+cmm/m/it/10.95 x[]; x[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 \OT1/cmr/m/n/1
+0.95 (\OML/cmm/m/it/10.95 x[]; x[]\OT1/cmr/m/n/10.95 ) = (\OML/cmm/m/it/10.95 x
+[]; x[]\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.95 x[]; x[]\OT1/cmr/m/n/10.95 )$. 
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 455--458
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 455--458
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 455--458
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--459
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--459
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 463--464
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 463--464
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 465--467
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 465--467
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 465--467
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--478
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--478
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--486
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--486
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--486
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--486
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--486
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--489
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--489
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 490--492
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--492
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--492
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--494
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--494
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--513
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 513--515
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 513--515
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 515--517
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 515--517
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 517--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 517--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 520--524
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 520--524
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 520--524
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+Underfull \hbox (badness 10000) in paragraph at lines 525--527
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 533--534
+
+ []
+
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 534.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 536--537
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--538
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--539
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 541--541
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 541--541
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 541--542
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 541--542
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--555
+
+ []
+
+[19] <groupBauto.png, id=106, 325.215pt x 148.30406pt>
+File: groupBauto.png Graphic file (type png)
+ <use groupBauto.png>
+Underfull \hbox (badness 10000) in paragraph at lines 558--571
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 558--571
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 558--571
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 558--571
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 558--571
+
+ []
+
+[20 <C:/Users/Andy/Favorites/Desktop/Final Research Paper/groupBauto.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 595--622
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 595--622
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 595--622
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 595--622
+
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 623--624
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 623--624
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 626--627
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 626--627
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--646
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 646--648
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 646--648
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 648--650
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 648--650
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 650--652
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 650--652
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 652--654
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 652--654
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--656
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 658--661
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 658--661
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 658--661
+
+ []
+
+
+Underfull \vbox (badness 2237) has occurred while \output is active []
+
+ [23]
+Underfull \hbox (badness 10000) in paragraph at lines 661--662
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 663--664
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--665
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 665--666
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 669--669
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 669--669
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 669--670
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 669--670
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--676
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 704--705
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 712--714
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--716
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 717--718
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 720--722
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--724
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 726--728
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 732--733
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 737--738
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 744--749
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 763--766
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 766--767
+
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 774--775
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 781--782
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 784--785
+
+ []
+
+[27] [28]
+Underfull \hbox (badness 10000) in paragraph at lines 892--893
+
+ []
+
+<aaronautomaton.png, id=136, 214.55156pt x 131.74219pt>
+File: aaronautomaton.png Graphic file (type png)
+
+<use aaronautomaton.png> [29] [30 <C:/Users/Andy/Favorites/Desktop/Final Resear
+ch Paper/aaronautomaton.png>] [31]
+Underfull \hbox (badness 10000) in paragraph at lines 972--973
+
+ []
+
+[32]
+Underfull \vbox (badness 2547) has occurred while \output is active []
+
+ [33]
+Overfull \hbox (45.88pt too wide) in paragraph at lines 1044--1044
+[] 
+ []
+
+[34]
+Overfull \hbox (54.80537pt too wide) in paragraph at lines 1096--1096
+[]\OT1/cmr/m/sc/9 (Kindelin) De-part-ment of Math-e-mat-ics, Uni-ver-sity of Da
+y-ton, Day-ton, OH 45302 kindelinl1@notes.udayton.edu 
+ []
+
+
+Overfull \hbox (47.23055pt too wide) in paragraph at lines 1096--1096
+[]\OT1/cmr/m/sc/9 (Walker) De-part-ment of Phys-i-cal Sci-ences, York Col-lege 
+of Penn-syl-va-nia, York, PA 17403 awalker6@ycp.edu 
+ []
+
+[35]
+("C:\Users\Andy\Favorites\Desktop\Final Research Paper\SUMSRI - Research Paper.
+aux") ) 
+Here is how much of TeX's memory you used:
+ 2481 strings out of 495285
+ 30177 string characters out of 3179830
+ 93072 words of memory out of 3000000
+ 5496 multiletter control sequences out of 15000+200000
+ 15672 words of font info for 57 fonts, out of 3000000 for 9000
+ 175 hyphenation exceptions out of 8191
+ 34i,10n,32p,2271b,241s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx10
+.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx8.pf
+b><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx9.pfb><
+C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C
+:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
+Program Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program 
+Files (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (
+x86)/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)
+/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiK
+TeX 2.8/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files (x86)/MiKTe
+X 2.8/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Program Files (x86)/MiKTeX
+ 2.8/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2
+.8/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.8/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.8/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts
+/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/ty
+pe1/public/amsfonts/symbols/msam10.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts
+/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "SUMSRI - Research Paper.pdf" (35 pages, 580497 bytes).
+PDF statistics:
+ 227 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+
