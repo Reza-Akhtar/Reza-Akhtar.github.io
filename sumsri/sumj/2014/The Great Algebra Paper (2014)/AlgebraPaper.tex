@@ -1,0 +1,596 @@
+\documentclass[11pt]{amsart}
+\headheight=7pt \textheight=610pt \textwidth=432pt
+\oddsidemargin=20pt \evensidemargin=20pt \topmargin=0cm
+%\hoffset=0in 
+%\voffset=0in
+%\oddsidemargin=0in
+%\evensidemargin=0in
+%\topmargin=-1cm 
+%\textwidth=6.5in
+%\textheight=8.9in
+
+
+\usepackage{amsthm, amssymb, amsmath, amsxtra, latexsym}
+\usepackage[all]{xy}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\newcommand{\ad}{addr}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\dom}{\operatorname{dom}}
+\newcommand {\Z}{\mathbb{Z}}
+\newcommand {\cC}{\mathcal{C}}
+\newcommand {\cF}{\mathcal{F}}
+\newcommand {\bng}{B_n\Gamma}
+\newcommand {\cng}{\mathcal{C}^n\Gamma}
+\newcommand {\ucng}{U\mathcal{C}^n\Gamma}
+\newcommand {\dng}{\mathcal{D}^n\Gamma}
+\newcommand {\udng}{U\mathcal{D}^n\Gamma}
+\newcommand {\st}{\hspace{-.4ex}*}
+\newcommand {\kpw}{\widetilde{K} \left( \mathcal{P}, w \right)}
+\newcommand {\dn}[1]{\mathcal{D}^n #1 }
+\newcommand {\udn}[1]{U\mathcal{D}^n #1 }
+\newcommand {\ud}[2]{U\mathcal{D}^{#2} #1}
+\newcommand {\cn}[1]{\mathcal{C}^n{#1}}
+\newcommand{\sm}{\ensuremath{{\rm Sim}}} %Notation for similarity structure
+\newcommand{\Aut}{\ensuremath{{\rm Aut}}} %Notation for automorphism group
+
+%Definitions that I'll probably want in most papers:
+\newcommand{\br}{\ensuremath{\mathbb{R}}} %The real numbers
+\newcommand{\bz}{\ensuremath{\mathbb{Z}}} %The integers
+\newcommand{\bn}{\ensuremath{\mathbb{N}}} %The natural numbers
+\newcommand{\bc}{\ensuremath{\mathbb{C}}} %The complex numbers
+\newcommand{\bq}{\ensuremath{\mathbb{Q}}} %The natural numbers
+\newcommand{\id}{\ensuremath{\mathrm{id}}} %The identity morphism
+\newcommand{\incl}{\ensuremath{\mathrm{incl}}} %The inclusion morphism
+\newcommand{\bm}{\ensuremath{\mathbb{M}}} %The m for matrix algebra
+\newcommand{\diam}{\ensuremath{\mathrm{diam}}} %The diameter
+\newcommand{\e}{\ensuremath{\mathrm{e}}} %The number e
+\newcommand{\image}{\ensuremath{\mathrm{im}}} %The image of a map
+
+
+%Defintions that are specific to another paper (or series of papers):
+%\newcommand{\lig}{\text{$\Cal G_{LI}(X)$}} %Notation for the local isometry groupoid of X
+\newcommand{\ligx}{\ensuremath{\mathcal{G}_{LI}(X)}} %Better name for notation for the local isometry groupoid of X
+\newcommand{\lsgx}{\ensuremath{\mathcal{G}_{LS}(X)}} %Notation for the local similarity groupoid of X
+\newcommand{\symtv}{\ensuremath{Sym_\infty(T,v)}} %Notation for the symmetry group at infinity of (T,v)
+\newcommand{\plix}{\ensuremath{\mathcal{P}_{LI}(X)}} %Notation for the pseudogroup of local isometries on X
+\newcommand{\eligx}{\ensuremath{{\mathcal{G}}^{\epsilon}_{LI}(X)}} %Notation for the epsilon local isometry groupoid of X
+\newcommand{\eiligx}{\ensuremath{{\mathcal{G}}^{\epsilon_i}_{LI}(X)}} %Notation for the epsilon_i local isometry groupoid of X
+\newcommand{\eioligx}{\ensuremath{{\mathcal{G}}^{\epsilon_{i+1}}_{LI}(X)}} %Notation for the epsilon_i+1 local isometry groupoid of X
+\newcommand{\pgd}{\ensuremath{{\mathcal{PG}}({D},v_0)}} %Notation for the path groudoid of D based at v_0
+\newcommand{\pgb}{\ensuremath{{\mathcal{PG}}({B(T,v)})}} %Notation for the path groudoid of the Bratteli diagram B(T,v)
+\newcommand{\pb}{\ensuremath{{\mathcal{P}}({B(T,v)})}} %Notation for the path space of the Bratteli diagram B(T,v)
+\newcommand{\gammax}{\ensuremath{\mathcal{G}_{\Gamma}(X)}} %Notation for the Gamma groupoid of X
+\newcommand{\gammay}{\ensuremath{\mathcal{G}_{\Gamma}(Y)}} %Notation for the Gamma groupoid of Y
+\newcommand{\g}{\ensuremath{\mathcal{G}}} %Notation for a groupoid 
+\newcommand{\Cay}{\ensuremath{{\rm Cay}}} %Notation for Cayley graph
+\newcommand{\co}{\ensuremath{\colon}} % colon for functions
+\newcommand{\symdiff}{\ensuremath{,\triangle\,}} %Notatin for the triangle in a symmetric difference.
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{sublemma}[theorem]{Sublemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{question}[theorem]{Question}
+\newtheorem*{main}{Main Theorem}
+
+
+\theoremstyle{remark}
+
+\theoremstyle{definition}
+
+\newtheorem{convention}[theorem]{Convention}
+
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{Thm}{Corollary}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem*{Prf}{Proof}
+
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3}}
+\theoremstyle{named}
+\newtheorem*{namedtheorem}{Theorem}
+
+\begin{document}
+
+\begin{title}
+[Co$\mathcal{CF}$ Groups and Demonstrative Embeddings]
+{Groups with Context-Free Co-Word Problem and Embeddings into Thompson's Group V} 
+\author[Berns-Zieve, Fry, Gillings, Mathews]{Rose Berns-Zieve, Dana Fry, Johnny Gillings, Heather Mathews}
+
+\end{title}
+\begin{abstract}
+We describe a generalized Thompson group $V_{(G, \theta)}$ for each finite group G with homomorphism $\theta$: $G \rightarrow G$. Our group is constructed using the \emph{cloning map} concept introduced by Witzel and Zaremsky. We prove that $V_{(G, \theta)}$ is co$\mathcal{CF}$ for any homomorphism $\theta$ and finite group G by constructing a pushdown automaton and showing that the co-word problem of $V_{(G, \theta)}$ is the cyclic shift of the language our automaton accepts. 
+
+Lehnert conjectures that a group has context-free co-word problem exactly if it is a finitely generated subgroup of V. The groups $V_{(G,\theta)}$ where $\theta$ is not the identity homomorphism do not appear to have obvious embeddings into V. 
+
+We build off the work of Bleak and Salazar-Diaz regarding demonstrative groups. We extend the class of known finitely generated demonstrative subgroups of V to include virtually cyclic groups. Additionaly we construct embeddings for amalgamated free products where the amalgamated group is a demonstrative subgroup of $V$. 
+\end{abstract}
+\maketitle
+\section{Introduction}
+Let $G$ be a group and let $\Sigma \subseteq G$ be a finite set that generates $G$. Then, the \emph{word problem of G with respect to the free monoid $\Sigma^*$} is the set of all words in $\Sigma^*$ that are equivalent to the the identity in G. The \emph{co-word problem of G with respect to $\Sigma^*$} is the complement of the word problem. Both the word problem and the co-word problem of $G$ are languages. The Chomsky Hierarchy is a containment hierarchy of the classes of formal languages. It states that the set of regular languages is a subset of context-free languages; the set of context-free languages is a subset of context sensitive languages; and the set of context sensitive languages is a subset of recursive languages. We will focus in particular on context-free languages. A language is context-free if it is accepted by a pushdown automaton. If the co-word problem of G is a context-free language, then we say G is co$\mathcal{CF}$. This property does not depend on the choice of generators for the monoid generating set. The class of co$\mathcal{CF}$ groups was first studied by Holt, Rees, R\"{o}ver, and Thomas \cite{Holt}. They showed that the class is closed under taking finite direct products, taking restricted standard wreath products with virtually free top groups, and passing to finitely generated subgroups and finite index overgroups. 
+
+One group of particular interest is Thompson's group $V$, which is an infinite but finitely presented simple group. Lehnert and Schweitzer demonstrate that Thompson's group $V$ is co$\mathcal{CF}$. This group is of interest to us because of the conjecture, formulated by Lehnert and revised by Bleak, Matucci, and Neunh\"{o}ffer, that any group with context-free co-word problem embeds in V, i.e., 
+\begin{conjecture}\label{bigone}
+Thompson's group $V$ is a universal co$\mathcal{CF}$ group.
+\end{conjecture}
+
+In this paper we prove two classes of results, one related to embeddings into V, and the other questioning if conjecture \ref{bigone} is true. 
+
+Bleak and Salazar-Diaz define the class of demonstrative subgroups and use this class to produce embeddings of free products and wreath products into $V$. They also show that the class of groups that embed into $V$ is closed under taking finite index overgroups. Their method of proof appeals to results of Kaloujnine and Krasner. Here, we use induced actions to give a direct proof of the latter result. Our method of proof shows, moreover, that if the original embedding is demonstrative, then so is the embedding of the finite index overgroup. We also give a direct proof that the amalgamated free product $G_1 \ast_H G_2$ embeds into $V$ whenever $G_1$ and $G_2$ are virtually cyclic and $H$ has finite index in both factors. 
+
+It appears that the virtually cyclic groups are the only finitely generated groups known to have demonstrative embeddings into $V$. If $V$ is a universal co$\mathcal{CF}$ group, then it should be possible, by the results of Holt, Rees, R\"{o}ver, and Thomas, to find an embedding of $G \wr F_2$ into $V$, where $G$ is co$\mathcal{CF}$ and $F_{2}$ is the free group on two generators. The easiest way to find such an embedding would be to show that $F_2$ has a demonstrative embedding into $V$. We are thus led to ask:
+
+\begin{question} Does there exist a demonstrative embedding of $F_{2}$ into $V$?
+\end{question}
+
+We do not see a simple solution for this question. In other attempts to verify conjecture \ref{bigone}, we consider the work of Witzel and Zaremsky. We look at a specific group $V_{(G, \theta)}$ that arises from their family of groups equipped with a cloning system. The group $V_{(G, \theta)}$ appears to be quite similar to $V$. We define a surjective homomorphism $\Phi$ from $V_{(G, \theta)} \rightarrow V$, which implies that $V_{(G, \theta)}$ acts on the Cantor set. However, by our construction, $V_{(G, \theta)}$ seems to have no obvious faithful actions on the Cantor set when $\theta$ is not the identity homomorphism.
+
+In our main result, we prove that $V_{(G, \theta)}$ is co$\mathcal{CF}$ for all pairs of $\theta$ and finitely generated G. We begin by detailing a construction of a pushdown automaton and we show that the co-word problem is equivalent to the cyclic shift of the language accepted by the automaton, therefore proving that the co-word problem is context-free. 
+
+This result may imply that, for some $\theta$, $V_{(G, \theta)}$ could be a context-free group that does not embed into V. This would be a startling counter-example to conjecture \ref{bigone}. 
+
+We briefly outline the paper. Section 2 provides the necessary background for the reader to understand the concepts discussed in the two following sections. In section 3, we give our proofs and examples of all ideas related to demonstrative subgroups. Finally, in section 4 we prove the main result of our paper. 
+
+\section{Background}
+\subsection{Pushdown Automata}
+\begin{definition}
+Let $\Sigma$ be a finite set, called an \emph{alphabet}. We call elements of the alphabet \emph{symbols}. The \emph{free monoid} on $\Sigma$, denoted $\Sigma^*$, is the set of all finite strings of symbols from $\Sigma$. This is inclusive of the empty string, which we denote as $\epsilon$. The operation is concatenation. An element of the free monoid is a \emph{word}. A subset of the free monoid is a \emph{language}.
+\end{definition}
+\begin{example}
+Let $\Sigma = \{0,1\}$. The free monoid $\Sigma^*$ contains all finite concatenations of $0$ and $1$ in any order. An example word is $01101$. 
+\end{example}
+\begin{definition}
+Let G be a group. A \emph{finite monoid generating set} is a finite alphabet $\Sigma$ with a surjective monoid homomorphism $\Phi: \Sigma^* \rightarrow G.$ 
+The \emph{word problem} of a group G (with respect to $\Sigma$), denoted $WP_\Sigma(G)$, is the kernel of $\Phi$. The complement of the word problem is the \emph{co-word problem}, denoted $CoWP_\Sigma(G)$.
+\end{definition}
+\begin{definition}
+Let $\Sigma, \Gamma$ be alphabets and let $\#$ be an element of $\Gamma$. A \emph{pushdown automaton} with stack alphabet $\Gamma$ and input alphabet $\Sigma$ is defined as a directed graph with a finite set of vertices $V$, a set of \emph{transitions} (directed edges) $\delta$, an initial state $v_0 \in V$, and a set of \emph{terminal states} $T \subseteq V$. 
+
+\begin{figure}[b]
+\center{
+\includegraphics[width=250pt]{simpstack}
+\caption{The stack of a PDA. As an element is read from the top, the next element appears as the new top if nothing is written to the stack.}
+\label{fig:stack}}
+\end{figure}
+A transition is labeled by an ordered triplet $(w_1,w_2,w_3) \in (\Sigma \cup \{\epsilon \}) \times \Gamma^* \times \Gamma^*$. When \emph{following} a transition, the pushdown automaton (PDA) reads and deletes $w_1$ from its input tape, reads and deletes $w_2$ from its memory stack (shortened to stack for the duration of this paper), and writes $w_3$ on its stack. If $w_1, w_2, \text{ or } w_3 \text{ equals } \epsilon,$ the automaton does not execute the action associated with that coordinate. 
+We only consider \emph{generalized} PDA, which can add multiple words on its stack at a time.
+A PDA accepts languages either by terminal state, or by empty stack. This must be specified upon creation of the automaton. See Definitions \ref{def:success} and \ref{def:accept}.
+\end{definition}
+\begin{definition}(\cite{Farley},Definition 2.6)
+Let P be a pushdown automaton. 
+We describe a class of directed paths in P, called the \emph{valid paths}, by induction on length. 
+The path of length 0 starting at the initial vertex $v_0 \in P$ is valid; 
+its stack value is $\# \in \Gamma^*$. 
+Let $t_1 \dots t_n (n \geq 0)$ be a valid path in P, where $t_1$ is the transition crossed first. 
+Let $t_{n+1}$ be a transition whose initial vertex is the terminal vertex of $t_n$; 
+we suppose that the label of $t_{n+1}$ is $(s,w_1,w_2)$. The path $t_1 \dots t_n t_{n+1}$ is also valid, provided that the stack value of $t_1 \dots t_n$ has $w_1$ as a prefix; 
+that is, if the stack value of $t_1 \dots t_n$ has the form $w_1 w^{\prime} \in \Gamma^*$ for some $w^{\prime} \in \Gamma^*$. 
+The stack value of $t_1 \dots t_n t_{n+1}$ is then $w_2 w^{\prime}$. We let \emph{val(p)} denote the stack value of a valid path $p$.
+
+The \emph{label} of a valid path $t_1 \dots t_n$ is $s_n \dots s_1$, where $s_i$ is the first coordinate of the label for $t_i$ (an element of $\Sigma$, or the empty string). The label of a valid path p will be denoted $\ell(p)$.
+\end{definition}
+\begin{definition}\label{def:success}
+Let $p$ be a valid path of a pushdown automaton P. We say that $p$ is a \emph{successful path} when
+\begin{enumerate}
+\item $val(p) = \epsilon$ if P accepts by empty stack, or
+\item The terminal vertex of $p$ is in T if P accepts by terminal state. 
+\end{enumerate}
+\end{definition}
+\begin{definition}\label{def:accept}
+Let P be a PDA. The language \emph{accepted by} P, denoted $\mathcal{L}_P$, is
+\item $\mathcal{L}_P = \{w \in \Sigma ^* \mid w = \ell(p) \text{ for some successful path p}\}$.
+\end{definition}
+\begin{definition}
+A subset of the free monoid $\Sigma ^*$ is called a \emph{(non-deterministic) context-free language} if it is $\mathcal{L}_P$ for some pushdown automaton P.
+\end{definition}
+\noindent Let P be a PDA. We operate P in the following way:
+\begin{enumerate}
+\item A word $\hat{w}$ is placed on the input tape and read symbol by symbol. By our convention, P reads the input tape from right to left.
+\item Next, P follows transitions until $\hat{w} = \ell(p)$ for some successful path $p$. 
+\item If some successful path $p$ exists, P accepts $\hat{w}$.
+\end{enumerate}
+
+\subsection{Thompson's Group V}
+\begin{definition}
+A \textit{metric space} S is a set where a function $d$: $S \times S \to \br$ acts as a global distance measure, called a \emph{metric}, with the following conditions for any three points, $x_{1},x_{2},x_{3} \in S$: 
+\begin{enumerate}
+\item $d(x_{1},x_{2}) \geq 0$
+\item $d(x_{1},x_{2}) = 0 \iff x_{1} = x_{2}$
+\item $d(x_{1},x_{2}) = d(x_{2},x_{1})$
+\item (Triangle Inequality) $d(x_{1},x_{3})\leq d(x_{1},x_{2}) + d(x_{2},x_{3})$
+\end{enumerate}
+\end{definition}
+\begin{definition}
+Let $X = \{0,1\}$ and consider $X^*$. As in \cite{Bleak1}, we define an infinite rooted tree, $\mathcal{T}_2$, as follows:
+
+Let X* be the set of nodes for $\mathcal{T}_2$. For $u, v \in X^*$, there exists an edge from $u$ to $v$ if $ux = v$ for some $x \in X$. Suppose $uw = v$ for some $w \in X^*$. Then we say $u$ is the \emph{prefix} of $v$ and we define the set $u* = \{v \mid uw = v$ for some $w \in \mathcal{T}_2\}$.
+\end{definition}
+\begin{figure}[h]
+\center{
+\includegraphics[width=250pt]{tree.jpg}
+\caption{The top portion of the infinite binary tree $\mathcal{T}_2$ with some of its nodes labeled.}
+\label{fig:tree}}
+\end{figure}
+\begin{definition}
+An \emph{infinite path} in $\mathcal{T}_2$ is an infinite string of $0s$ and $1s$. \emph{Ends($\mathcal{T}_2$)} is the collection of all such infinite paths.
+
+Ends($\mathcal{T}_2$) is a metric space with \emph{metric d}: $Ends(\mathcal{T}_2) \times Ends(\mathcal{T}_2) \rightarrow \mathbb{R}$
+defined by $d(\zeta_1,\zeta_2) = e^{-l}$, where $\zeta_1, \zeta_2 \in Ends(\mathcal{T}_2)$ and $l$ is the length of the prefix shared between $\zeta_1$ and $\zeta_2$.
+
+Let $S= \{\zeta \mid d(\zeta,w) \leq r \text{ with } \zeta, w \in Ends(\mathcal{T}_2)\}.$ Then $S = B_{r}(w)$ is the \emph{metric ball around $w$ with radius $r$}.
+\end{definition}
+
+Thompson's Group $V$ acts as self-homeomorphisms of the Cantor set, and each element of $V$ can be represented by a binary tree pair. Furthermore, the leaves of the trees can be represented in binary code where a branch to the left is denoted by ``0" and a branch to the right by ``1."
+
+Using the notation established in \cite{CannJ}, $V$ is generated by a set of maps $A, B, C $ and $\pi_0$ from one binary tree to another. We define the generators of V by the prefix changes they represent, which are equivalent to the tree diagrams in figure \ref{fig:map}.
+
+\begin{gather*}
+\begin{aligned}[c]
+0* &\mapsto 00* \\
+10* &\mapsto 01* \\
+11* &\mapsto 1* \\
+\\
+&A
+\end{aligned}
+\begin{aligned}
+\indent    \\
+\indent    \\
+\indent    \\
+\indent    \\  
+\end{aligned}
+\begin{aligned}[c]
+0* &\mapsto 0* \\
+10* &\mapsto 100* \\
+110* &\mapsto 101* \\
+111* &\mapsto 11* \\
+&B
+\end{aligned}
+\begin{aligned}
+\indent    \\
+\indent    \\
+\indent    \\
+\indent    \\  
+\end{aligned}
+\begin{aligned}[c]
+0* &\mapsto 1* \\
+10* &\mapsto 0* \\
+11* &\mapsto 10* \\
+\\
+&C
+\end{aligned}
+\begin{aligned}
+\indent    \\
+\indent    \\
+\indent    \\
+\indent    \\  
+\end{aligned}
+\begin{aligned}[c]
+0* &\mapsto 10* \\
+10* &\mapsto 0* \\
+11* &\mapsto 11* \\
+\\
+&\pi_0
+\end{aligned}
+\end{gather*}
+\begin{figure}[ht]
+\center{
+\includegraphics[width=350pt]{generators2.jpg}
+\caption{Elements $A$, $B$, $C$, and $\pi_0$ of $V$ represented as tree pairs.}
+\label{fig:map}}
+\end{figure}
+\subsection{Generalized Thompson Groups $V_{(G, \theta)}$}
+\begin{definition}
+\cite{Witza} The \emph{forest monoid}, $\mathcal{F}$ is a sequence of rooted trees $(T_i)_{i\in \mathbb{N}}$ where all but finitely many are trivial. For two elements $E_1, E_2 \in \mathcal{F}$, their product,  $E_1E_2$, is obtained by attaching the ith leaf of $E_1$ with the ith root of $E_2$.
+
+\end{definition}
+
+Given a finite group, $G$, define
+\[H = S_{\infty} \ltimes_\phi (\oplus^{\infty}_{i=1} G)\]
+where $\phi: S_{\infty} \to Aut(\oplus^{\infty}_{i=1} G)$ by $\phi(\sigma)(g_1, ... , g_k, ...)=(g_{\sigma^{-1}(1)}, ... g_{\sigma^{-1}(k)}, ...)$ for $\sigma \in S_{\infty}$. 
+
+Multiplication of group elements $(\sigma_1, (g_1, .... , g_k, ...)), (\sigma_2,(g'_1, ... , g'_k, ...)) \in H$ works as follows:
+
+\[(\sigma_1, (g_1, .... , g_k, ...)(\sigma_2,(g'_1, ... , g'_k, ...))=(\sigma_1 \sigma_2, \phi(\sigma_2)(g_1, ... , g_k, ...)(g'_1, ... , g'_k))\]
+\[= (\sigma_1 \sigma_2, (g_{\sigma_2^{-1}(1)}g'_1, ... , g_{\sigma_2^{-1}(k)}g'_k, ...))\]
+
+Our group $V_{(G,\theta)}$ arises from the cloning system construction in \cite{Witza}. A cloning system consists of a group $H$, a homomorphism $\rho:H \to S_\omega$, and a cloning map $\kappa_k$. A cloning system with these three elements that satisfies conditions $CS1, CS2, CS3$ of Proposition 2.7 \cite{Witza} defines a BZS product, $\mathcal{F} \bowtie H$. We do not go into detail on the BZS product; for a full discussion see \cite{Witza}.
+
+Elements of $V_{(G,\theta)}$ are ordered pairs of elements from a subgroup of the BZS product defined by the following cloning system:
+\[H = S_{\infty} \ltimes_\phi (\oplus^{\infty}_{i=1} G) \text{,}\]
+\[\rho(\sigma, (g_1, ... , g_k))=\sigma \text{,}\]
+ and $\kappa_k$ which acts on the right by:
+\[(\sigma, (g_1, ... , g_k, ... ))\kappa_k = (\sigma \zeta,(g_1, ... , g_k, \theta(g_k), ...))\]
+where $\zeta$ is the cloning map for the symmetric group defined in Example 2.9 .\cite{Witza} and $\theta$ is an arbitrary homomorphism from $G\to G$.
+
+We can think of elements of $V_{(G,\theta)}$ as equivalence classes of tree pairs much like Thompson's group $V$. The difference is that tree pairs in $V_{(G,\theta)}$ have group elements from $G$ attached to their leaves. A tree pair $(a,b)$ can be modified within its equivalence class by adding canceling carets or canceling group elements. 
+
+Canceling carets are added to corresponding leaves of the domain and range trees just as they would be in Thompson's group V unless there is a group element $g$ on that leaf, in which case we put a $g$ on the left branch of the new caret and $\theta(g)$ on the right branch. Canceling group elements are added to corresponding leaves of the domain and range trees and are combined with any group element already on the leaves. We can multiply two elements $(a,b), (c,d) \in V_{(G,\theta)}$, by choosing equivalent tree pairs $(a',b')$ and $(c',d')$ where $b'=c'$. Then $(a,b)(c,d)=(a',b')(c',d')=(a',d')$. 
+\begin{figure}[h]
+\center{
+\includegraphics[width=430pt]{cancelingCarets.jpg}
+\caption{Three equivalent tree pairs, the second is obtained by adding a canceling caret and the third by canceling group elements.}
+\label{fig:cancelcare}}
+\end{figure}
+
+\begin{figure}[h]
+\center{
+\includegraphics[width=320pt]{multiplication.jpg}
+\caption{Multiplication of two group elements (a,b) and (c,d).}
+\label{fig:grultiple}}
+\end{figure}
+
+Note that any element $(a,b) \in V_{(G,\theta)}$ can be expressed with no group elements in the domain tree by adding canceling group elements.
+
+Let $\{g_1, ... , g_n\}$ be a generating set for $G$, then $\{A,B,C,\pi_0\} \cup \{g_{ja}, g_{jb}, g_{jc}, g_{jd}, g_{je} \mid 1 \le j \le n\}$ is a generating set for $V_{G,\theta}$, where $ g_{ja}, g_{jb}, g_{jc}, g_{jd}, g_{je}$ are defined as in Figure \ref{fig:??}.
+
+\begin{figure}[h]
+\center{
+\includegraphics[width=350pt]{generators.jpg}
+\caption{generators.}
+\label{fig:??}}
+\end{figure}
+
+\begin{remark}
+When $\theta = id_G$, the identity homomorphism,  $V_{(G,\theta)}$ embeds in $V$. Consider $V_{(G,\theta)}$ where $\theta$ is the identity homomorphism and $G=\{g_1, ... , g_n\}$ and $(a,b) \in V_{(G,\theta)}$. We choose a partition $W=\{w_1*, ... , w_n*\}$ where $w_i$ will be the prefix associated with group element $g_i$. Consider the jth leaf of the tree pair, $b_j* \to a_jg_j*$. If $g_ig_j = g_k$, then $w_ib_j*$ is mapped to $w_kb_j*$. However, when $\theta \not= id_g$, the same method of embedding fails. 
+
+%Or ... 
+
+%When $\theta = id_G$, the identity homomorphism,  $V_{(G,\theta)}$ has a straightforward embedding in $V$. The idea of the embedding is to break $Ends(\mathcal{T}_2)$ into $\mid G \mid$ partitions labeled by the elements of $G$. Then if $(a,b) \in V_{(G,\theta)}$ and $a$ has some $g \in G$ on one of its branches, we can interpret g as a label for which partite set of $Ends(\mathcal{T}_2)$ to map to. However, when $\theta \not= id_g$, the same method of embedding fails.  
+\end{remark}
+
+\section{Demonstrative Groups}
+\begin{definition} \cite{Bleak1}
+Suppose a group $G$ acts by homeomorphisms on a topological space $X$. For a group $H \le G$, the action of $H$ in $G$ is \emph{demonstrative} if and only if there exists an open set $U \subset X$ such that for all $h_1, h_2 \in G,\text{ } h_1U \cap h_2U \not= \emptyset \text{ if and only if } h_1=h_2$. The set $U$ is called a \emph{demonstration set}. 
+
+For this discussion, let $G = V$ and $X = Ends(\mathcal{T}_2)$. In this case, if $U$ is a metric ball (i.e. $U = w*$ for some $w* \subseteq Ends(\mathcal{T}_2)$), then we refer to $U$ as a \emph{demonstration node}.
+\end{definition}
+
+\begin{definition}
+Let $H \le G$ and let $H$ act on a topological space $S$. We define $G \times_H S$ to be $\{(g,s) : g\in G, s \in S\}/\sim$, where $(gh,s) \sim (g, h\cdot s)$. 
+
+The $\emph{induced action}$ of $G$ on $S$ is $*: G \times (G \times_H S) \to G\times_H S$ defined by $g_1*(g_2,s)=(g_1g_2,s)$.
+\end{definition}
+
+\begin{theorem}\label{dem1}
+If $H \le G \text{ where }[G:H] =m, \text{ for some } m\in \mathbb{N}$, then $G$ embeds in $V$. Moreover, if $H$ embeds as a demonstrative subgroup in $V$, then $G$ embeds as a demonstrative subgroup of $V$.
+\end{theorem}
+\begin{proof}Assume $H \le G$. Choose a left transversal $T = \{t_1, t_2, ... , t_m\}$ for $H$ in $G$ with $t_1=1$. 
+We can induce an action of $G$ on $G \times_H Ends(\mathcal{T}_2)$ by:
+\[g \cdot (t_i,x) = (gt_i,x), \text{ for } x \in Ends(\mathcal{T}_2)\]
+We know we can write $gt_i$ as $t_jh$ for unique $t_j \in T$ and $h \in H$. So,
+\[(gt_i,x)=(t_jh,x) = (t_j, h \cdot x)\]
+Now, we can embed $G \times_H Ends(\mathcal{T}_2) \hookrightarrow Ends(\mathcal{T}_2)$ by choosing a partition of $Ends(\mathcal{T}_2), W = \{w_1\ast , w_2\ast , \dots, w_m\ast\}$ and an injective function $\phi : T \to W$ by $\phi (t_i)=w_i \ast$. Now define $\Phi: G \times_H Ends(\mathcal{T}_2) \to Ends(\mathcal{T}_2)$ by $\Phi((t_i,x)) = \phi(t_i)x=w_ix$.
+
+It can be easily checked that 
+\[g \cdot (w_ix)=g \cdot \Phi(t_i,x)=\Phi(gt_i,x)=\Phi(t_j,h \cdot x)=w_jh(x)\] 
+is a group action of $G$ on $Ends(\mathcal{T}_2)$. Additionally, because elements of $H$ act as elements of $V$, so do elements of $G$. Therefore, $G$ embeds in $V$. 
+
+Now, assume $H$ has a demonstrative embedding in $V$ with demonstration node $a_1a_2 ... a_{n}* \text{ for } a_i \in \{0,1\}$.
+
+We will show that $w_ia_1 \dots a_n*$ is a demonstration node for $G$. We compute the action of each of $g,g' \in G$ on $w_ia_1 \dots a_n*$:
+\begin{align*}
+g \cdot w_ia_1 \dots a_n* &= w_jh(a_1 \dots a_n*) \\
+g' \cdot w_ia_1 \dots a_n* &= w_kh'(a_1 \dots a_n*)
+\end{align*}
+Since $w_1*, \dots , w_m*$ partition $Ends(\mathcal{T}_2)$, if $w_j* \cap w_k*\not=\emptyset$ then $j=k$. Moreover, since $H$ is a demonstrative subgroup of $G$ with demonstration node $a_1a_2 \dots a_n *$, $h(a_1 \dots a_n \ast) \cap h'(a_1 \dots a_n*) \not= \emptyset$ if and only if $h=h'$. Thus, $w_jh(a_1 \dots a_n*) \cap w_kh'(a_1 \dots a_n*) \not= \emptyset$ if and only if $j=k$ and $h=h'$, in other words, if and only if $g=g'$. Thus, $G$ is demonstrative in $V$ with demonstration node $w_ia_1 \dots a_n* \text { for any } i \in \{1, ... , m\}$. 
+\end{proof}
+
+We will use the following statement of the Ping Pong Lemma from \cite{schu}.
+\begin{lemma} \label{pingpong}(\cite{schu} ,Proposition 12.4)
+Let $G$ be a group generated by two of its subgroups $G_1$ and  $G_2$ where $G_1 and G_2$ are such that $G_1 \cap G_2 = H$ and $H \subsetneq G_1, G_2$ where $H$ does not have index 2 in both $G_1$ and $G_2$. Let $G$ act on a set $\Omega$ where $\Omega_1$ and $\Omega_2$ are disjoint non-empty subsets of $\Omega$. If
+\begin{enumerate}
+\item{$\Omega_1 (G_1-H) \subset \Omega_2, \quad \Omega_2 (G_2 - H) \subset \Omega_1$}
+\item{$\Omega_1 H \subset \Omega_1, \quad \Omega_2 H \subset \Omega_2.$}
+\end{enumerate}
+then $G = G_1 *_H G_2$, the free product of $G_1$ and $G_2$ with $H$ amalgamated.
+\end{lemma}
+
+\begin{theorem} \label{dem2}
+If $H$ is a demonstrative subgroup of $V$ and $G_1, G_2$ are such that $[G_1:H]=m$ and $[G_2:H]=n$, then there exists an embedding of $G_1 *_H G_2$, where each of $G_1,G_2,H$ is demonstrative.
+\end{theorem}
+\begin{proof}
+Since $[G_1:H], [G_2:H] < \infty$ we can construct demonstrative embeddings of both $G_1$ and $G_2$ in $V$, by following the process given in Theorem \ref{dem1} with the following choice of partitions: \[W_1=\{w_1*,w_2*, ..., w_m*\}\]
+and 
+\[W_2=\{\hat{w}_1*,\hat{w}_2, ..., \hat{w}_n*\}.\]
+Where $w_1*=0*$ and $w_2*, ... , w_m*$ partition $1*$ and $\hat{w}_1*=1*$ and $\hat{w}_2*, ... , \hat{w}_n*$ partition $0*$
+Now using Lemma \ref{pingpong}, with $\Omega_1=0*$ and $\Omega_2=1*$. 
+
+For arbitrary $h \in H$, 
+\[h\cdot \Omega_1=h \cdot 0*=w_1h(*)=0* \subseteq \Omega_1\]
+and 
+\[h \cdot \Omega_2=h \cdot 1*=\hat{w}_1h(*)=1* \subseteq \Omega_2\text{.}\]
+Let $f \in (G_1-H)$
+\[f \cdot \Omega_1=f\cdot 0*=w_jh_k(*) = w_j*\text{.}\]
+Since $f \notin H, j \not= 1$ therefore $w_j \not= 0$, so $w_j* \subseteq 1* = \Omega_2$.
+
+Let $f' \in (G_2-H)$
+\[f \cdot \Omega_2=f \cdot 1*=\hat{w}_jh_k(*)= \hat{w}_j* \text{.}\]
+Since $f \notin H, j\not= 1$,therefore $\hat{w}_j \not=1$, so $\hat{w}_j* \subseteq 0* = \Omega_1$.
+
+Thus, by Lemma \ref{pingpong}, this is an embedding of $G_1 *_H G_2$.
+\end{proof}
+\begin{example}
+Consider the braid group on three strands, $B_3$. We know $B_3 \cong G_1 *_H G_2$ where $G_1=G_2=H=\mathbb{Z}$, $[G_1:H]=2$, $[G_2:H]=3$, $G_1 \cong \langle g_1 \rangle$, and $G_2 \cong \langle g_2 \rangle$. 
+
+The following is a demonstrative embedding of $H$ in $V$ with demonstration node $10*$:
+\begin{align*}
+h: 0* &\mapsto 00* \\
+10* &\mapsto 01* \\
+11* &\mapsto 1*
+\end{align*}
+Use the left transversals $T_1 = \{1, g_1 \}$ and $T_2 = \{1, g_2, (g_2)^2 \}$. 
+
+We now compute the induced actions of $G_1$ and $G_2$ on $G_1 \times_H Ends(\mathcal{T}_2)$ and $G_2 \times_H Ends(\mathcal{T}_2)$, respectively.
+For any $x \in Ends(\mathcal{T}_2)$, we have
+\begin{align*}
+g_1(1,x) &= (g_1,x)\\
+g_1(g_1,x) &= (1,h(x)),
+\end{align*}
+and
+\begin{align*}
+g_2(1,x) &= (g_2,x)\\
+g_2(g_2,x) &= ((g_2)^2,x)\\
+g_2((g_2)^2,x) &=(1,h(x))
+\end{align*}
+
+Now, we define two partitions $W_1=\{0*,1*\}$ and $W_2=\{00*,01*,1*\}$ and functions $\phi_1$ and $\phi_2$ from the two transversals to these partitions where $\phi_1: T_1 \to W_1$ by taking $1 \text{ to } 0*$ and $g_1 \text{ to } 1*$ and  
+\begin{align*}
+\phi_2:T_2 &\to W_2\\
+1 &\mapsto 1*\\
+g_2 &\mapsto 00*\\
+(g_2)^2 &\mapsto 01*.
+\end{align*}
+
+Define $\Phi_1: G_1 \times_H Ends(\mathcal{T}_2) \to Ends(\mathcal{T}_2)$ by $\Phi_1((t_i,x)) = \phi_1(t_i)x=w_ix$ and $\Phi_2: G_2 \times_H Ends(\mathcal{T}_2) \to Ends(\mathcal{T}_2)$ by $\Phi_2((\hat{t}_i,x)) = \phi_2(\hat{t}_i)x=\hat{w}_ix$. These identifications determine an action of $G_1$ and $G_2$ on $Ends(\mathcal{T}_2)$. Combining this with the map for $H$ we get $\hat{g}_1$ and $\hat{g}_2$ as generating elements for the embedding of $G_1 *_H G_2$ in V. 
+
+\begin{align*}
+\hat{g}_1: 0* &\mapsto 1* \\
+10* &\mapsto 000*\\
+110* &\mapsto 001*\\
+111* &\mapsto 01*
+\end{align*}
+and 
+\begin{align*}
+\hat{g}_2: 00* &\mapsto 01*\\
+010* &\mapsto 100*\\
+0110* &\mapsto 101*\\
+0111* &\mapsto 11*\\
+1* &\mapsto 00*
+\end{align*}
+These are illustrated by the tree pairs in Figure \ref{fig:????}. 
+
+\begin{figure}[b]
+\center{
+\includegraphics[width=300pt]{braidGroup.jpg}
+\caption{Tree pairs representing $\hat{g}_1$ and $\hat{g}_2$.}
+\label{fig:????}}
+\end{figure}
+
+We know from Theorem \ref{dem2} that $\Psi: G_1 *_H G_2 \to V$ by $\Psi(g_1)=\hat{g}_1, \Psi(g_2)=\hat{g}_2$ will give an embedding of $G_1 *_H G_2$ in $V$.
+\end{example}
+\section{Main Result}
+
+\begin{lemma} \label{testpartition}
+Let $\Sigma = \{A,B,C,\pi_0,g_{ij}\}$. Define $\Phi: \Sigma^* \to V$ by the homomorphism 
+\begin{align*}
+\Phi: A &\mapsto A \\
+B &\mapsto B \\
+C &\mapsto C \\
+\pi_0 &\mapsto \pi_0 \\
+g_{ij} &\mapsto 1_V
+\end{align*} 
+If $w=b_1 \cdots b_m \in \Sigma^*$ satisfies $\Phi(w) \not= 1$, then there is some cyclic permutation $b_j \cdots b_mb_1 \cdots b_{j-1}$ and some $B \in \{a_1a_2a_3*:a_i \in {0,1}\}$ that satisfy $b_j \cdots b_mb_1 \cdots b_{j-1}(B)\cap B \not= \emptyset$.
+\end{lemma}
+
+\begin{proof}
+Consider $w=b_1 \cdots b_m \in \Sigma^*$. If $\Phi(w) \not= 1$, then $\Phi(w) \in CoWP(V)$. We know $\{a_1a_2a_3*:a_i \in {0,1}\}$ is a test partition for $V$ \cite{Farley}. So, there is some cyclic permutation $\Phi(w)'$ of $\Phi(w)$ and some $B \in \{a_1a_2a_3*:a_i \in \{0,1\}\}$ such that $\Phi(w)'(B) \cap B \not= \emptyset$. Since $\Phi$ takes all the generators of group elements to 1, $\Phi$ will preserve the shape of any tree pair. Thus, if $\Phi(w)'$ is such that $\Phi(w)'(B) \cap B \not= \emptyset$, then $w'(B) \cap B \not= \emptyset$ where $w'$ is some cyclic shift $b_j \cdots b_mb_1 \cdots b_{j-1}$ of $w$. 
+\end{proof}
+
+\begin{definition}
+Let $\mathcal{L}$ be a language. The \emph{cyclic shift} of $\mathcal{L}$, denoted $\mathcal{L}^{\circ}$, is
+\[\mathcal{L}^{\circ}=\{w_2w_1 \in \Sigma^* \mid w_1w_2 \in \mathcal{L}, w_1, w_2 \in \Sigma^*\}. \]
+
+A \emph{cyclic permutation} $w^{\prime}$ of a word $w = w_1w_2$ is $w^{\prime} = w_2w_1$. 
+Note that context-free languages are closed under cyclic shifts \cite{Lehnert}.
+\end{definition}
+
+
+
+\begin{theorem} \label{main}
+The group $V_{(G,\theta)}$ is co$\mathcal{C} \mathcal{F}$.
+\end{theorem}
+
+\begin{proof} 
+ 
+We design an automaton $P$ to accept by empty stack, with stack alphabet $\Gamma = \{0, 1, g \mid g \in G \backslash \{1_G\} \}$ and input alphabet $\Sigma = \{A, B, C, \pi_0, g_{ij}\}$, where each $g_{ij}$ is a generator of G. 
+
+We define the sets $\mathcal{L}_{B_i}$ and $\mathcal{L}_{G}$: 
+
+$\mathcal{L}_{B_i} = \{w \in \Sigma^* \mid w(B_i) \cap B_j \not= \emptyset$ for some $j \not= i\} $.
+
+$\mathcal{L}_{G} = \{w \in \Sigma^* \mid w(B_i) \cap B_i \not= \emptyset$ and $w$ expressed as a reduced tree pair has some nontrivial group element on the range tree$\}$.
+
+We design $P$ such that $\mathcal{L_P}= (\mathop{\bigcup}_{i=1}^8 \mathcal{L}_{B_i}) \cup \mathcal{L}_G $. Figure \ref{fig:bigautomaton} depicts the outline of the automaton. Note that unlabeled arrows represent $(\epsilon, \epsilon, \epsilon)$ transitions.
+
+\begin{figure}[h]
+\center{
+\includegraphics[width=400pt]{bigautomaton.jpg}
+\caption{The automaton for $V_{(G,\theta)}$.}
+\label{fig:bigautomaton}}
+\end{figure}
+
+To start off, $P$ enters a non-deterministic loading phase where a finite string of 1's and 0's is entered onto the stack by taking either $(\epsilon, \epsilon, 0)$ or $(\epsilon, \epsilon, 1)$ transitions. 
+
+The loading phase ends by taking a transition $(\epsilon, \epsilon, B_k)$ where
+\[B_k \in \{000, 001, 010, 100, 011, 110, 101, 111\},\] 
+i.e. $B_k$ for $k\in\{1,...,8\}$ is one of the 8 metric balls in the test partition. 
+
+Next, $P$ enters the reading phase which has a single state for each generator where the first element on the input tape is read and that generator is applied to the appropriate prefix at the top of the stack. 
+For example, the reading phase for A would read and delete a 0, and then add 10; the reading phase for $g_{2b}$ would read and delete 10, and then add $10g_2$.
+
+After the reading phase, $P$ enters the clean-up state, which consists of the pushing and combining of stack elements. This phase allows $P$ to ``clean-up" the stack so that there are at least three 0's and 1's for the next element on the input tape to successfully act on the stack. First, $P$ ``pushes" elements within the first three spots to the fourth spot on the stack. For example, as shown in Figure \ref{cleanup}, one set of transitions will read and delete $0g0$ or $0g1$ from the stack and then add $00g$ or $01$($\theta(g)$), respectively, to the stack for all $g \in G \backslash \{ 1_G \}$. Similar transitions can be followed if the group element is preceded by the prefix 0, 1, 01, 10, 00, or 11. 
+
+\begin{figure}[ht]
+\center{
+\includegraphics[scale=.7]{Cleanup.png}
+\caption{The clean-up phase. Let $a_1, a_2, a_3 \in \{0, 1\}$ and $g,g^{\prime} \in G \backslash \{I_G\}$. }}
+\label{cleanup}
+\end{figure}
+
+
+Next, $P$ enters the combining state where group elements are rewritten as a single element of the group (in accordance with the group operation). For example, one collection of edges is able to read and delete $010(g)(g')$ and add $010(gg')$ for all $g, g' \in G \backslash \{1_G\}$. Note that if $gg'=1_G$, then the path reads and deletes $010(g)(g')$, and writes 010. Similar paths exist when combining any two group elements preceded by any three-digit prefix.
+
+After exiting the clean-up phase, $P$ reads the next element on the input tape and repeats the process of the reading phase. When the input tape is empty and $P$ has gone through the reading and clean-up phases, $P$ then moves onto one of two accept states.
+
+If the word took one metric ball $B_k$ in the test partition to some other metric ball $B_l$, then we enter the \emph{test partition accept state}. At this point we ``unload" all of the 0's and 1's and group elements off the stack with paths $(\epsilon,x,\epsilon)$ for $x \in \{0, 1, g \mid g \in G\backslash \{1_G\}\}$. Once every stack element has been deleted, $P$ takes the path $(\epsilon,\#,\epsilon)$ which deletes the start symbol and accepts the word. So the language accepted by the test partition accept state is $(\mathop{\bigcup}_{i=1}^8 \mathcal{L}_{B_i})$.
+
+If the word does not displace metric ball $B_k$, then we enter the \emph{group element accept state}. Here, we delete every 0 and 1 on the stack until $P$ arrives at a group element. The group element is then``pushed" further down the stack, and the 0 or 1 it pushes past is deleted.  For example, one path is $(\epsilon, g0, g)$ for $g \in G \backslash \{1_G\}$. If the group element is followed on the stack by a second group element, then they are ``combined" in a manner mimicking the previously described combining portion of the clean-up phase. This is repeated until there are no 0's or 1's left on the stack. At this point, if there is still a group element remaining on the stack followed by the start symbol, then they are both deleted and thus the word is accepted. However, if there is no group element on the stack then the start symbol cannot be deleted so the word is not accepted. So the language accepted by the group element accept state is $\mathcal{L}_G$. 
+
+Thus, $\mathcal{L}_P = (\mathop{\bigcup}_{i=1}^8 \mathcal{L}_{B_i}) \cup \mathcal{L}_G $.
+
+Claim: CoWP($V_{(G, \theta)}$)= $(\mathcal{L}_P)^{\circ}$.
+
+Let $w \in \mathcal{L}_P, w \in  \mathcal{L}_G$ or $w \in \mathcal{L}_{B_{i}}$. If $w \in \mathcal{L}_G$, then, for some $a_1.....a_n*$ loaded onto $P$, $w(a_1.....a_n*)$ contains group elements, so $w(a_1.....a_n*) \not= a_1.....a_n*$. Thus, $w \in $ CoWP($V_{(G, \theta)}$). If $w \in \mathcal{L}_{B_{i}}$ for some $1\leq i\leq8$, then $w(B_i) \cap B_j$ for $j\not= i$, so $w \in $ CoWP($V_{(G, \theta)}$. Therefore, $(\mathcal{L}_P) \subseteq$ CoWP($V_{(G, \theta)}$). The CoWP of a group is closed under cyclic shift, and thus $(\mathcal{L}_P)^{\circ} \subseteq$ CoWP($V_{(G, \theta)}$).
+
+% $a_1...a_n* \in B_{i}$ loaded onto $P$, $w(a_1....a_n*) \cap B_{j} \not= \emptyset$ where $j\not=i$. Thus, $w(a_1.....a_n*) \not= a_1.....a_n*$ and $w \in $ CoWP($V_{(G, \theta)}$).
+
+
+
+Let $w \in $CoWP($V_{(G, \theta)}$). We will use the surjective homomorphism $\Phi$ from Lemma \ref{testpartition}.
+
+%We define $\Phi : V_{(G, \theta)} \rightarrow V$ by 
+%\begin{align*}
+%\Phi: A &\mapsto A \\
+%B &\mapsto B \\
+%C &\mapsto C \\
+%\pi_0 &\mapsto \pi_0 \\
+%g_{ij} &\mapsto 1_V
+%\end{align*} 
+
+If $w \notin ker(\Phi)$, then$\Phi(w) \not=1_V$. By Lemma \ref{testpartition}, there is some cyclic permutation $w'$ and some $B_i$ such that $w' (B_i) \cap B_i \not= \emptyset$, i.e. $w^{\prime} \in \mathcal{L}_{B_i}$. Therefore, $w \in (\mathcal{L}_{B_i})^{\circ}\subseteq (\mathcal{L}_P)^{\circ}$.
+
+%Therefore, for some cyclic permutation $(\Phi(w))^{\prime}$ of $\Phi(w)$, $(\Phi(w))^{\prime} \in \mathcal{L}_{B_i}$ for some $B_i$. So there exists some $a_1....a_n* \in B_i$ such that $(\Phi(w))^{\prime} \cdot (a_1....a_n*) \subseteq B_j$ for some $j \not= i$. Since $\Phi$ preserves the shape of trees there is a corresponding cyclic permutation $w^{\prime}$ of $w$ such that $w^{\prime} \in \mathcal{L}_{B_i}$. Therefore, $w \in (\mathcal{L}_{B_i})^{\circ}\subseteq (\mathcal{L}_P)^{\circ}$.
+
+If $w \in ker(\Phi)\backslash 1_{V_{(G,\theta)}}$, then $\Phi(w)={1_V}$, which implies that $w$ (as a reduced tree pair) does not change any prefixes; it simply adds group elements. Therefore, $w\in{\mathcal{L}_G}\subseteq (\mathcal{L}_P)^{\circ}$.
+
+We now have that CoWP($V_{(G, \theta)}$)= $(\mathcal{L}_P)^{\circ}$. A language is context-free if and only if it's shuffle is also context free. Since $\mathcal{L}_P$ is context-free, CoWP($V_{(G, \theta)}$) is context-free, and $V_{(G, \theta)}$ is co$\mathcal{CF}$. 
+
+\end{proof}
+
+\begin{remark}
+We attempted a similar method of proof with the group generated by Thompson's group V and the Grigorchuk group G, $R=\langle V,G \rangle$. Like $V_{(G,\theta)}$, elements of $R$ can be thought of as Thompson's group $V$ elements with Grigorchuk group elements, $g$ attached to the leaves. However, the Grigorchuk group elements continue to act on the tree whereas the group elements in $V_{(G,\theta)}$ just sit at the end of the branches. This became a problem because it is impossible to complete the calculation of the action of $g$ on any finite test string loaded onto an automaton. We also ran into problems because the test partitions argument used in Theorem \ref{main}. and for Finite Similarty Structure Groups \cite{Hughes1} fails.
+\end{remark}
+
+\subsection*{Acknowledgments}
+We would like to first thank our research advisor, Dr. Dan Farley, for aiding us in our research endeavors and providing us with the knowledge needed for us to be successful. We also thank our graduate assistant, Hannah Hoganson. Her constant support and aide enabled us to achieve our goals for this program. We thank SUMSRI for giving us the opportunity to participate in undergraduate research in mathematics, and we thank the faculty and staff for making this program possible. In addition, we would like to express our gratitude to Miami University for providing funding, housing, and a place to research. Finally, we thank the National Science Foundation for funding SUMSRI and making our research possible. 
+\bibliographystyle{plain}
+\bibliography{AlgebraPaper}
+\nocite{FarleyHughes}
+\end{document}
