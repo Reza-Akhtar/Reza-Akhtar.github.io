@@ -1,0 +1,642 @@
+%These are notes on a project with Dan Farley.
+
+
+\documentclass{amsart}
+
+
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amscd}
+%\usepackage{xy}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{tikz-cd}
+
+\usetikzlibrary{arrows}
+
+\newenvironment{proof*}{\noindent\emph{Proof}}{$\square$\smallskip}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{Definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{Example}[theorem]{Example}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{Remark}[theorem]{Remark}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{fig}[theorem]{Figure}
+\newtheorem{Exercise}[theorem]{Exercise}
+\newtheorem{Exercises}[theorem]{Exercises}
+\newtheorem{Notation}[theorem]{Notation}
+\newtheorem{Convention}[theorem]{Convention}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+
+%These new environments eliminate italics from definitions, examples, remarks, exercises.
+\newenvironment{definition}{\begin{Definition}\normalfont}{\end{Definition}}
+\newenvironment{example}{\begin{Example}\normalfont}{\end{Example}}
+\newenvironment{remark}{\begin{Remark}\normalfont}{\end{Remark}}
+\newenvironment{exercise}{\begin{Exercise}\normalfont}{\end{Exercise}}
+\newenvironment{exercises}{\begin{Exercises}\normalfont}{\end{Exercises}}
+\newenvironment{notation}{\begin{Notation}\normalfont}{\end{Notation}}
+\newenvironment{convention}{\begin{Convention}\normalfont}{\end{Convention}}
+
+
+%Definitions that I'll probably want in most papers:
+\newcommand{\br}{\ensuremath{\mathbb{R}}} %The real numbers
+\newcommand{\bz}{\ensuremath{\mathbb{Z}}} %The integers
+\newcommand{\bn}{\ensuremath{\mathbb{N}}} %The natural numbers
+\newcommand{\bc}{\ensuremath{\mathbb{C}}} %The complex numbers
+\newcommand{\bq}{\ensuremath{\mathbb{Q}}} %The natural numbers
+\newcommand{\id}{\ensuremath{\mathrm{id}}} %The identity morphism
+\newcommand{\incl}{\ensuremath{\mathrm{incl}}} %The inclusion morphism
+\newcommand{\bm}{\ensuremath{\mathbb{M}}} %The m for matrix algebra
+\newcommand{\diam}{\ensuremath{\mathrm{diam}}} %The diameter
+\newcommand{\e}{\ensuremath{\mathrm{e}}} %The number e
+\newcommand{\image}{\ensuremath{\mathrm{im}}} %The image of a map
+
+%Defintions that are specific to another paper (or series of papers):
+%\newcommand{\lig}{\text{$\Cal G_{LI}(X)$}} %Notation for the local isometry groupoid of X
+\newcommand{\ligx}{\ensuremath{\mathcal{G}_{LI}(X)}} %Better name for notation for the local isometry groupoid of X
+\newcommand{\lsgx}{\ensuremath{\mathcal{G}_{LS}(X)}} %Notation for the local similarity groupoid of X
+\newcommand{\symtv}{\ensuremath{Sym_\infty(T,v)}} %Notation for the symmetry group at infinity of (T,v)
+\newcommand{\plix}{\ensuremath{\mathcal{P}_{LI}(X)}} %Notation for the pseudogroup of local isometries on X
+\newcommand{\eligx}{\ensuremath{{\mathcal{G}}^{\epsilon}_{LI}(X)}} %Notation for the epsilon local isometry groupoid of X
+\newcommand{\eiligx}{\ensuremath{{\mathcal{G}}^{\epsilon_i}_{LI}(X)}} %Notation for the epsilon_i local isometry groupoid of X
+\newcommand{\eioligx}{\ensuremath{{\mathcal{G}}^{\epsilon_{i+1}}_{LI}(X)}} %Notation for the epsilon_i+1 local isometry groupoid of X
+\newcommand{\pgd}{\ensuremath{{\mathcal{PG}}({D},v_0)}} %Notation for the path groudoid of D based at v_0
+\newcommand{\pgb}{\ensuremath{{\mathcal{PG}}({B(T,v)})}} %Notation for the path groudoid of the Bratteli diagram B(T,v)
+\newcommand{\pb}{\ensuremath{{\mathcal{P}}({B(T,v)})}} %Notation for the path space of the Bratteli diagram B(T,v)
+\newcommand{\gammax}{\ensuremath{\mathcal{G}_{\Gamma}(X)}} %Notation for the Gamma groupoid of X
+\newcommand{\gammay}{\ensuremath{\mathcal{G}_{\Gamma}(Y)}} %Notation for the Gamma groupoid of Y
+\newcommand{\g}{\ensuremath{\mathcal{G}}} %Notation for a groupoid 
+\newcommand{\Cay}{\ensuremath{{\rm Cay}}} %Notation for Cayley graph
+\newcommand{\co}{\ensuremath{\colon}} % colon for funnctions
+\newcommand{\symdiff}{\ensuremath{,\triangle\,}} %Notatin for the triangle in a symmetric difference.
+
+
+%Definitions specific to this paper "Notes on Ultrametrics"
+\newcommand{\sm}{\ensuremath{{\rm Sim}}} %Notation for similarity structure
+\newcommand{\Aut}{\ensuremath{{\rm Aut}}} %Notation for automorphism group
+%\newcommand{\ld}{\ensuremath{{\ell_{\mathrm{dom}}}}} %Notation for domain length function
+%\newcommand{\lr}{\ensuremath{{\ell_{\mathrm{ran}}}}} %Notation for range length function
+
+%%%%%For metric book
+\newcommand{\sH}{\ensuremath{\mathcal{H}}} %Notation for hyperspace
+
+%Definitions specific to this paper "Local similarities and the Haagerup Property"
+\newcommand{\bi}{\ensuremath{{\rm Bi}}} %Notation for the set of bijections
+
+%Definitions specific to Notes with Dan Farley
+\newcommand{\lk}{\ensuremath{{\rm lk}}} %Notation for link
+\newcommand{\sta}{\ensuremath{{\rm st}}} %Notation for star
+\newcommand{\dlk}{\ensuremath{{\lk_{\downarrow}}}} %Notation for link
+\newcommand{\expa}{\ensuremath{{\rm expansion}}} %Notation expansion of a vertex
+\newcommand{\depth}{\ensuremath{{\rm depth}}} %Notation depth of a vertex
+
+ 
+\title[ Rational Homology and Discrete Morse Theory on Thompson's Group T]{Rational Homology and Discrete Morse Theory on Thompson's Group T}  
+\author{Fernando Betancourt, Daniel Farley, Sabrina Lato, and Angelo Taranto}
+\address{Department of Mathematics and Statistics,  Miami University, Oxford, OH 45056 U.S.A.}
+\email{farleyds@muohio.edu}
+\email{fernando.betancourt@upr.edu}
+\email{slato@carthage.edu}
+\email{ant9@njit.edu}
+     
+
+\date{\today}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,chains,matrix,positioning,scopes}
+
+\makeatletter
+\tikzset{join/.code=\tikzset{after node path={%
+\ifx\tikzchainprevious\pgfutil@empty\else(\tikzchainprevious)%
+edge[every join]#1(\tikzchaincurrent)\fi}}}
+\makeatother
+
+%\tikzset{>=stealth',every on chain/.append style={join},
+      %   every join/.style={->}}
+
+\tikzset{
+	commutative diagrams/.cd,
+	arrow style=tikz,
+	diagrams={>=latex}}
+
+
+\begin{document}
+\maketitle
+
+
+
+\begin{abstract} 
+Thompson's group $T$ was introduced by Richard Thompson in 1965 and is an infinite simple group with a finite presentation. The homology of $T$ was first calculated by Ghys and Sergiescu in 1987 using very complicated tools. We attempt to compute the homology of $T$ directly from the cellular chain complex $\mathcal{C}$ associated to a natural cell complex on which $T$ acts. To simplify calculations, we use discrete Morse theory on $\mathcal{C}$ to create a more manageable object called the Morse complex. More specifically, we construct a discrete gradient vector field on the complex $\mathcal{C}$ and use a filtration by sub-complexes to create finitely generated chain groups with which to calculate the homology.
+
+As a result of our methods, we are able to compute up to the second homology by hand and we are in the process of determining the generators for the cohomology ring of T on the cochain level. 
+
+\end{abstract}
+
+\section{Introduction}
+For our purposes, Thompson's group $T$ can be seen as relations on binary trees which preserve the order of the ends of the trees up to cyclic permutation.
+
+
+\section{Background}
+
+\subsection{The Quotient Complex \boldmath{$T \backslash X $}}
+To calculate the homology of $T$, we must first create a complex on which $T$ acts and then form the quotient of this complex by the action of $T$. Here, we describe such a complex and its quotient by $T$ in order to work with it in later stages.
+
+Consider a diagram group $\widetilde{K}_{a}(\mathcal{P}, x)$ for $\mathcal{P} = \langle x | x = x^{2} \rangle$. This complex consists of vertices represented by annular $(w, *)$-diagrams without a base point on the outer circle. In higher dimensions, $n$-cells consist of these same diagrams with $n$ marked outermost transistors. 
+
+Cells in the quotient may be represented by what we will henceforth call bubble pictures. Bubble pictures of $n$-cells consist of circles made of $n$ sides with arches connecting the ends of these sides. Arches, or bubbles, must only connect ends that are two sides away. These bubble pictures are represented by $n$-tuples which, geometrically, are equivalent up to cyclic permutation. Algebraically, cyclic permutation may introduce a sign change in the formal sum of cells. Using the annular transistor pictures from before, it is easy to verify that one cyclic permutation in even dimensions produces a sign change, while cyclic permutations in odd dimensions do not alter the sign of the cell.
+
+It is known that $T \curvearrowright \widetilde{K}_{a}(\mathcal{P}, x)$ properly and by isometries, but not by covering transformations. That is, $T\backslash \widetilde{K}_{a}(\mathcal{P}, x)$ is not a $K(T,1)$ complex. As such, each $C_{n}$ is not a free $\mathbb{Z}T$-module. We can still compute $H_{n}(T, \bq)$ by taking the tensor product of each chain group by $\bq$ over $\bq T$. The resulting chain complex is shown below.
+
+\bigskip 															
+
+\begin{center}
+	
+	\begin{tikzcd}
+		\ldots \arrow[swap]{r} 
+		& \bq\underset{\bq T}{\otimes}C_{3}\arrow{r}{\scriptstyle\partial_3} 
+		& \bq\underset{\bq T}{\otimes}C_{2}\arrow{r}{\scriptstyle\partial_2} 
+		& \bq\underset{\bq T}{\otimes}C_{1}\arrow{r}{\scriptstyle\partial_1} 
+		& \bq\underset{\bq T}{\otimes}C_{0}\arrow{r}
+		& 0 
+	\end{tikzcd}
+	
+\end{center}
+
+\bigskip
+
+Because $T$ does not act by covering transformations, we can find a $g \in T$ such that for some n-cell $e_{n} \in X$, we have $g \cdot e_{n} = -e_{n}$. Taking the tensor product yields $1 \otimes e_{n} = (-1 \otimes -e_{n}) = (-1 \otimes g \cdot e_{n}) = (-1 \otimes e_{n}) = (-1)(1 \otimes e_{n}) \implies 2(1 \otimes e_{n}) = 0 \implies (1 \otimes e_{n}) = 0$. Thus cells in the original complex whose orientation, but not their orbit, are changed by elements of $T$ become $0$ in the quotient complex. We can classify these cells that do not exist in the quotient using the same bubble pictures as before.
+
+\begin{lemma}
+	If an $mn$-cell $e \in T\backslash X$ is composed of $m$ groups of $n$ entries repeating ($m$ times), then the cell will have symmetries corresponding to $n$ $m$-cycles. Consequently, if $m$ is odd then the cell will survive in the quotient, and if $m$ is even the cell will only survive if $n$ is even. Otherwise, it does not appear in $T \backslash X$. Note that $m>1$ to avoid the identity symmetry represented by 1-cycles.
+\end{lemma}
+
+\begin{proof}
+	Note that if there are $m$ groups of $n$ entries repeating, then the first entry will repeat $m$ times, as will every distinct entry. Thus, the figure can be rotated $m$ times which corresponds to $m$-cycles. There are $n$ of these because there are $n$ distinct elements to rotate $m$ times.
+	
+	We begin with the $m$ is odd case. If $m$ is odd, then there will be some number $n$ of odd cycles, which decompose into even numbers of 2-cycles. This can only result in an even number of 2-cycles because an even multiplied by anything is even.
+	
+	If $m$ is even, then there will be $n$ even cycles which decompose into odd numbers of 2-cycles. Thus, only cells with $n$ even will survive in the quotient because the only way to get an even number from an odd is to multiply it by an even number.
+\end{proof}
+
+\begin{Definition} The Boundary map $\partial_{m}$:    $C_{m}$(X)$\to$C$_{m-1}$(X) on the $m^{th}$ dimensional chain group is defined by:\\
+	$$\partial_{m}(n_{1},n_{2},...,n_{m}) = (n_{2},...,n_{m}+n_{1}+1)-(n_{2},...,n_{m}+n_{1}+2)+$$ 
+	
+	$\sum_{k=1}^{m-1}(-1)^{k}[(n_{1},...,n_{k-1},n_{k}+n_{k+1}+1,...,n_{m})-
+	(n_{1},...,n_{k-1},n_{k}+n_{k+1}+2,...,n_{m})]$.
+	
+\end{Definition}
+
+\begin{corollary}
+	$\partial_{2}(m,n) = 0$ $ \forall (m,n)$.
+\end{corollary}
+	\begin{proof}
+		The proof follows by application of Definition 2.1.
+		
+		\bigskip
+		
+		$\partial_{2}(m,n) = (n+m+1) - (n+m+2) - (m+n+1) + (m+n+2) = 0$.
+	\end{proof}
+
+\subsection{Discrete Morse Theory}
+We use discrete Morse theory as developed in [FS05]. The object is to lessen the number of cells in each dimension, in a sense. 
+
+To do this, we define a discrete gradient vector field $V$ as follows:
+\begin{Definition}
+A discrete vector field V on X is a sequence of partial functions ${V_{i}}$:${K_{i}}$$\to$$ {K_{i+1}}$ such that:\\
+(i) Each $V_{i}$ is injective.\\
+(ii) If $V_{i}$($\sigma) = \tau$, then $\sigma$ is a regular face of $\tau$.\\
+(iii) $Im(V_{i}) \cap Dom(V_{i+1}) = \emptyset$.
+
+\end{Definition}
+
+\begin{Definition}
+Let V be a discrete vector field on X. A V-$\textit{path of dimension p}$ is a sequence of p-cells $\sigma_{0},\sigma_{1},...,\sigma_{r} $ 
+such that if V($\sigma_{i}$) is undefined, then $\sigma_{i}$= $\sigma_{i+1}$,and otherwise $\sigma_{i+1}\neq \sigma_{i}$ ,and $\sigma_{i+1}<V($$\sigma_{i}$). The V-path is $\textit{closed}$ if $\sigma_{r}$ =$\sigma_{0}$ ,and non-stationary if $\sigma_{0}$ = $\sigma_{1}$. A discrete vector field V is a $\textit{discrete gradient
+vector field}$ if V has no non-stationary closed paths.
+\end{Definition}
+
+\begin{Definition}
+(i) A cell $\sigma$ $\in$ K is $\textit{redundant}$ if  $\sigma$ $\in$ Dom(V).\\
+(ii) A cell $\sigma$ is $\textit{collapsible}$ if  $\sigma$ $\in$ Im(V).\\
+(iii) A cell  $\sigma$ is $\textit{critical}$ otherwise. 
+
+\end{Definition}
+
+We form a new chain complex $\mathcal{M}$, called the Morse complex, whose chain groups are generated by the critical cells of the corresponding chain groups in $\mathcal{C}$. There are natural maps from the cellular chain group in each dimension to the corresponding Morse chain group, namely the projection map $\pi$ which acts as the identity on critical cells and sends all other cells to 0.
+
+\begin{Definition}
+	The flow $F$ of an n-cell $e$ in the Morse complex is defined to be $F(e) = Id(e) + \partial_{n+1}(\widetilde{V}_{n}(e))$. $F$ is said to \textit{stabilize} when $F^{k}(e) = e$, and taking at least $k$ iterations of $F$ of a cell $e$ is denoted $F^{\infty}(e)$. $\widetilde{V}$ is a signed version of $V$ called algebraic $V$, with sign chosen so that if $e$ appears in $\partial_{n+1}(V_{n}(e))$, it will cancel with the $e$ that comes from $Id(e)$. If need be, a rational coefficient may also be introduced as part of $\widetilde{V}$ to ensure cancellation of $e$.
+\end{Definition}
+
+\begin{Definition}
+	The generalized flow $f$ of an n-cell $e$ in the Morse complex is defined to be $f(e) = Id(e) + \partial_{n+1}(\widetilde{V}_{n}(e)) + \widetilde{V}_{n-1}(\partial_{n}(e))$.
+\end{Definition}
+
+\begin{Definition}
+	The boundary operator on the Morse complex, $\widetilde{\partial}_{n}$, is defined as $\widetilde{\partial}_{n} = \pi F^{\infty} \partial_{n}$.
+\end{Definition}
+
+The diagram below shows how the Morse chain complex relates to the original chain complex.
+
+\bigskip 															
+
+\begin{center}
+
+\begin{tikzcd}
+	\ldots \arrow[swap]{r} 
+	& C_2\arrow{r}{\partial_2}\arrow{d}{\pi_2} 
+	& C_1\arrow{r}{\partial_1}\arrow{d}{\pi_1} 
+	& C_0\arrow{r}\arrow{d}{\pi_0} 
+	& 0 \\
+	\ldots \arrow{r} 
+	& M_2\arrow{r}[swap]{\widetilde{\partial}_2} 
+	& M_1\arrow{r}[swap]{\widetilde{\partial}_1} 
+	& M_0\arrow{r}
+	& 0 
+\end{tikzcd}
+
+\end{center}
+
+\bigskip
+
+The next theorem allows the use of $\mathcal{M}$ to calculate the homology of $T\backslash X$.
+
+\begin{theorem}
+	Given a discrete gradient vector field and a resultant Morse chain complex, the homology of the Morse chain complex is isomorphic to the homology of the original chain complex.
+\end{theorem}
+
+\begin{theorem}
+	If $k \geq 3n+6$ then $X_{k}$ is $n$-connected for Thompson's group T.
+\end{theorem}
+\begin{theorem}
+	If $X_{n}$ is $N$-connected, then $H_{k}(T\backslash X_{n}, \bq) \cong H_{k}(T\backslash X, \bq)$
+\end{theorem}
+
+\section{Results}
+In this section we present some computational results concerning the rational homology of Thompson's group $T$, verifying part of the results in [GS87]. 
+
+\begin{lemma}
+	There can be no redundant 1-cells in any discrete gradient vector field $V$ on $T \backslash X$.
+\end{lemma}
+\begin{proof}
+	The proof follows directly from the fact that $\partial_{2}(m,n) = 0$ for all 2-cells.
+\end{proof}
+
+\begin{theorem}
+	Any discrete gradient vector field on $T\backslash X$ will result in infinitely many critical 2-cells.
+\end{theorem}
+	\begin{proof}
+		Suppose there are not infinitely many critical 2-cells. Consider a 0-cell of $n$ sides in $T \backslash X$, which we will henceforth refer to as an $n$-circle. There are only finitely many ways to place two bubbles on this $n$-circle, and no 2-cell can be collapsible from Lemma 3.1. Since there are only finitely many critical 2-cells, $\exists$ an odd $n$-circle such that no placement of two bubbles on it is critical. We use this $n$-circle. 
+		
+		We will now construct a closed non-stationary path. There are $k$ ways of placing two bubbles on this $n$-circle. Begin with any arbitrary configuration and follow any non-stationary $V$-path. By the Pigeonhole Principle, after $k+1$ steps a configuration $P$ must have appeared twice, creating a closed non-stationary path $P \to ... \to P$. 
+	\end{proof}
+
+To avoid the possible pitfall of having an infinite kernel, we use a filtration of finitely generated subcomplexes $X_{1} \subset X_{2} \subset ... \subset X$ where $X = \widetilde{K}_{a}(\mathcal{P}, x)$. Here, $X_{n}$ will be the subcomplex generated by cells of numbers of sides $1$ up to $n$. This will allow for $0$ up to $\lfloor \frac{(3n+6)}{2} \rfloor$-cells. Naturally, there will be $n$ 0-cells and $n-1$ 1-cells, as only the cell of one side does not admit a 1-cell. All 1-cells on the same number of sides will be the same because of the equivalence up to cyclic permutation on n-cells. Clearly, this gives a chain complex where each chain group is finitely generated.
+
+\begin{theorem}
+$H_{0}(T, \bq) \cong \bq$ and $H_{1}(T, \bq) \cong \{0\}$.
+
+\begin{proof}
+	We begin with the calculation of $H_{0}(T, \mathbb{Q})$. The calculation of this homology group in the filtered complex requires at least 0-connectivity, corresponding to the subcomplex $X_{6}$. This subcomplex consists of 0, 1, 2, and 3 cells of at most 6 sides. We avoid discrete Morse theory for the 0 dimensional homology since it is simple enough without it.
+	
+	Because we can only calculate $H_{0}(T, \mathbb{Q})$ from $X_{6}$, we need only worry about 0 and 1-cells. There are 6 0-cells, one of each number of possible sides, and 5 1-cells for each number of sides excluding that of 1 side since it cannot accommodate a bubble. The image of all 0-cells must be 0 in the chain complex, and thus $Ker(\partial_{0}) \cong C_{0} \cong \mathbb{Q}^6$. Note also that $\partial_{1}(n) = [n+1] - [n+2]$, where $[m]$ denotes a 0-cell of side number $m$. Because the maximum number of sides is 6, there are only 5 choices for $n$: 0, 1, 2, 3, and 4. This results in 5 distinct images. Thus $Im(\partial_{1}) \cong \mathbb{Q}^{5}$ and $H_{0}(T, \mathbb{Q}) \cong Ker(\partial_{0})/Im(\partial_{1}) \cong \mathbb{Q}$.
+	
+	
+	To compute $H_{1}(T, \mathbb{Q})$, we consider the subcomplex $X_{9}$  as the computation requires at least 1-connectivity. In this subcomplex there are 9 0-cells, and 8 1-cells. Define a discrete gradient vector field on 0-cells, $V_{0}: C_{0} \to C_{1}$ by $[n] \mapsto (n-2)$. This function has only one critical 0-cell: $[1]$, and no collapsible 1-cells. Define $V_{1}: C_{1} \to C_{2}$ as the empty function. Thus we have 0 critical 1-cells, or equivalently $M_{1} \cong \{0\}$. Therefore $Ker(\widetilde{\partial_{1}}) \cong \{0\}$. By Corollary 2.6, $Im(\partial_{2}) \cong \{0\}$ and $\widetilde{\partial_{2}} = \pi(F^{\infty}(\partial_{2}))$ so that $\widetilde{\partial_{2}} = 0$ or $Im(\widetilde{\partial_{2}}) \cong \{0\}$. This gives $H_{1}(T, \mathbb{Q}) \cong \{0\}/\{0\} \cong \{0\}$.
+\end{proof}
+
+\end{theorem}
+
+\subsection{A Discrete Gradient Vector Field on the Filtered Subcomplex}
+
+We now construct a discrete gradient vector field on the filtered complex.
+Define $V_{0}: C_{0} \to C_{1}$ by $[n] \mapsto (n-2)$ for $n \geq 2$. This gives 1 critical 0-cell, namely $[1]$. $V_{1}$ is defined to be the empty function, as all 1-cells are collapsible from the definition of $V_{0}$. Define $V_{2}$ by 
+
+$$
+V_{2}(n,m) = 
+(0,n-2,m), \;  n \geq 2 \; \text{is maximally even}
+$$
+
+\bigskip
+
+This definition categorizes all but one critical 2-cells as being of the forms $(0,n)$ for $n \geq 1$, $(m,n)$ for $m,n$ even, or $(p,q)$ for $p,q$ odd. We continue in a similar way for $V_{3}$.
+
+$$
+V_{3}(n_{1},n_{2},n_{3}) =
+(0,n_{1}-2,n_{2}, n_{3}), \;  n_{1} \geq 2 \; \text{is maximally even
+and at least one of} \; n_{2}, n_{3} \; \text{is odd}
+$$
+
+\bigskip
+
+This categorizes critollapsible cells as being of the forms $(0,0,n), (0,0,p), (0,n,m), (0,p,q)$, $(n,m,l)$, $(p,q,r)$ and $(0,0,0)$ for $n,m,l$ all even and $p,q,r$ all odd.
+
+In general, $V_{k}$ is defined by 
+
+$$
+V_{k}(n_{1},n_{2},\ldots,n_{k}) =
+(0,n_{1}-2,n_{2},\ldots, n_{k}), \;  n_{1} \geq 2, \; \text{at least one of} \; n_{2},\ldots, n_{k} \; \text{is odd}
+$$
+
+\bigskip
+
+Here, $n_{1}$ is maximally even. The critollapsible cells are then given by $k$-tuples with any number of zeros and any number of elements with the same parity. In odd dimensions, $(0, \ldots, 0)$ is also critollapsible. In even dimensions, the cell $(0, \ldots, 0)$ does not exist because geometrically it has an odd permutation (by action of an element of $T$).
+
+\begin{definition}\label{meefonz}\textbf{Meefonz:} maximal even element following an odd number of zeroes. \end{definition}
+
+\begin{definition}\label{meefonz}\textbf{Near meefonz:} An element $m_s$ such that $m_s+2$ is a meefonz. \end{definition}
+\begin{theorem}\label{collapsible}A cell $m=(m_1,m_2,\ldots,m_n)$ is collapsible if and only if there exists a strict meefonz $m_e$ (that is, $m_e$ follows an odd number of zeroes and $m_e$ is strictly greater than all other elements following an odd number of zeroes) such that $m_e+2$ is maximal in $m$ or there exists an odd number of such meefonzes, or there exist an even number of meefonzes with that property and an odd number of near meefonzes.\end{theorem}
+\begin{proof}For the base case, let $(m_1,m_2,m_3)$ be collapsible, that is, $(m_1,m_2,m_3)=V_2(n_1,n_2)$ where $(n_1,n_2)$ is redundant. We may assume without loss of generality that $m_1=0,m_2=n_1-2,$ and $m_3=n2$. Since $(n_1,n_2)$ is redundant, we know $n_1$ is the maximal even, and $n_1 \geq 2$. If $n_2$ is even, then $n_1>n_2$ (or else the cell dies) and $n_2 \neq 0$ (or else the cell is critical.) Clearly, $m_2$ is an even following a single zero, and indeed, it is only the only even following an odd number of zeroes, so $m_2$ is the strict meefonz. We note that if $m_3$ is even then $m_2+2=n_1>n_2=m_3$, so $m_2+2$ is the maximal even in $m$. \\
+	Conversely, suppose that we make a cell $(0,m_e,m_g)$ where $m_g \neq 0$ and $m_e+2$ is the maximal even. Then $(0,m_e,m_g)=V_2(m_e+2,m_g)$ unless $(m_e+2,m_g)$ is non-redundant. But the only way that is possible is if $m_g=0$, which it's not. So the cell is collapsible, and thus the theorem holds in the base case. \\
+	Now, we may select an arbitrary $k$ such that a cell $m=(m_1,m_2,\ldots,m_k)$ is collapsible if and only if there exists a strict meefonz $m_e$ such that $m_e+2$ is maximal in $m$. We consider the collapsible cell $(m_1,m_2,\ldots,m_k,m_{k+1})=V_k(n)$ where $n=(n_1,n_2,\ldots,n_k)$ is not critollapsible. We may assume without loss of generality that $m_1=0,m_2=n_1-2,\ldots,m_{k+1}=n_k$. \\
+	Suppose that there exists a strict meefonz that is different from $m_2$. Then we know there exists an $s$ with $2 < s \leq k$ such that $m_{s+1}=n_s$ is a meefonz. Then, since $n$ is not collapsible and $n$ has $k$ terms in it, we know $n_s+2$ is not maximal even, so $n_1 > n_s+2$. But this implies $m_2=n_1-2 > n_s=m_{s+1}$ which contradicts our assumption that $m_2$ wasn't the strict meefonz, so $m_2$ is maximal even of that type, and, since $m_2+2=n_1 \geq n_j=m_{j+1}$ for all $1 \leq j \leq k$ for all even $m_j$, we know $m_2+2$ is a maximal even in m. \\
+	Now suppose there exist $j$ meefonzes such that each is strictly greater than $m_2$. Then we know $n$ has $j$ meefonzes as well and, since $n$ is non-collapsible and, if $n_e$ is a meefonz and both $n_e$ and $m_2$, $n_e=m_{e+1}>m_2$, we know $n_e \geq m_2+2=n_1$, so we know that $j$ must be even. Further, the number of near-meefonzes in $n$ must be even, and $m_2$ is a near meefonz, so $m$ must contain an even number of meefonzes and an odd number of near-meefonzes. \\
+	Suppose there exists no strict meefonz. Since $m_2$ follows a zero, we know there must $j>1$ even elements following a zero with the same value as $m_2$. Thus $n$ has at least one even element $n_f$ following a zero. Further, since $n_f=m_2=n_1-2$, $n_f+2=n_1$, meaning $n_f+2$ is maximal even. Since $n$ is not collapsible, by the inductive hypothesis we know that $n_f$ is not strictly maximal, nor are there an odd number of elements with the value of $n_f$. Thus $j-1$ is even, meaning $j$ is odd, so the proof holds in this case.  \\
+	Conversely, suppose we have an element $m_e$ such that $m_e$ is the meefonz, and suppose further that $m_e+2$ is maximal in $m$. Then the $k+1$-cell $(m_{e-1},m_e,\ldots,m_{e+1})=V_k(m_e+2,m_{e+1},\ldots,m_{e+2})$ is collapsible unless $(m_e+2,m_{e+1},\ldots,m_{e-2})$ is collapsible. Since this cell has $k$ elements, we use the inductive hypothesis to see that if it were collapsible, there would exists an element $m_f$ such that $m_f$ is the meefonz. (Note that $m_f \neq m_e+2$, since $m_e+2$ is preceded by an even number of zeroes.) Further, $m_f+2 \geq m_e+2$, which implies $m_f \geq m_e$, which is is a contradiction, since $m_e$ was the strict meefonz. Thus $(m_e+2,m_{e+1},\ldots,m_{e-1})$ is not collapsible, so $(m_{e-1},m_e,\ldots,m_{e-2})$ is collapsible, and thus the theorem holds.
+\end{proof}
+A cell is critical if there exist an even number of meefonzes and near-meefonzes such that a meefonz+2 is maximally even.
+\subsection{Injectivity}
+\begin{lemma}\label{realLemma}
+	For $n \geq 3$, given an ordered collapsible element $(u_1,u_2,\ldots,u_{s-1},u_s+2,\ldots,u_n)$ such that $V_{n-1}^{-1}(u)$ contains even and odd elements, $u_1=0$, and $u_2$ is the maximal even element after a zero, if $u_2 > u_s+2$, then $(u_1,u_2,\ldots,u_{s-1},0,u_s,\ldots,u_n)$ is collapsible as well.
+\end{lemma}
+\begin{proof}We will proceed by induction. Suppose that $(u_1,u_2,u_3+2)$ is collapsible, so we can write it as $V_2(u_2+2,u_3+2)$ where $(u_2+2,u_3+2)$ is not collapsible. We note that $V_3(u_2+2,0,u_3)=(u_1,u_2,0,u_3)$, so $(u_1,u_2,0,u_3)$ is collapsible unless $(u_2+2,0,u_3)$ is. If that were collapsible, then we must have $u_3=0$ or $V_2(u_3+2,u_1+2)=(0,u_3+2,u_1+2)$. However, if $u_3=0$, then $(u_1,u_2,u_3+2)$ contains all even elements, a contradiction, and we know $u_1>u_3$, so by extension $u_1+2>u_3+2$, and thus $(0,u_3,u_2+2)$ cannot be collapsible. So our statement holds for the base case. \\
+	We may select an arbitrary $k-1$ such that if $(u_1,u_2,\ldots,u_s+2,\ldots,u_{k-1})$ is collapsible and satisfies the aforementioned properties, $(u_1,u_2,\ldots,0,u_s,\ldots,u_{k-1})$ is collapsible. Consider the ordered collapsible element $(u_1,u_2,\ldots,u_s+2,\ldots,u_{k-1},u_k)$ where $V_{k-1}^{-1}(u)$ contains even and odd elements and $u_2 > u_s+2$. We can write $(u_1,u_2,\ldots,u_s+2,\ldots,u_k)=V_{k-1}(u_2+2,u_3,\ldots,u_s+2,\ldots,u_k)$. We note that $V_{k-1}(u_2,u_3,\ldots,0,u_s,\ldots,u_k)=(u_1,u_2,\ldots,0,u_s,\ldots,u_k)$, so the latter cell is collapsible unless $(u_2+2,u_3,\ldots,0,u_s,\ldots,u_k)$ is. However, $u_2$ is strictly maximal and thus the only way for the cell to be collapsible is if $u_k=0$. But if $u_k=0$, then $(u_k,u_2+2,u_3,\ldots,u_s+2,\ldots,u_{k-1})=V_{k-2}(u_2+4,u_3,\ldots,u_s+2,\ldots,u_{k-1})$.  Since $(u_1,u_2,\ldots,u_s+2,\ldots,u_k)=V_{k-1}(u_2+2,u_3,\ldots,u_s+2,\ldots,u_k)=V_{k-1}(V_{k-2}(u_2+4,u_3,\ldots,u_s+2,\ldots,u_{k-1}))$ is collapsible, $(u_2+4,u_3,\ldots,u_s+2,\ldots,u_{k-1})$ must be collapsible, so by the inductive hypothesis $(u_2+4,u_3,\ldots,0,u_s,\ldots,u_{k-1})$ is collapsible as well. So $V_{k-2}(u_2+4,u_3,\ldots,0,u_s,\ldots,u_{k-1})$ is not a valid element of the image, and thus $(u_k,u_2+2,u_3,\ldots,0,u_s,\ldots,u_{k-1})$ is not in fact collapsible, meaning $(u_1,u_2,\ldots,0,u_s,\ldots,u_k)$ is. So by induction, collapsibility of $(u_1,u_2,\ldots,u_s+2,\ldots,u_n)$ implies collapsibility of $(u_1,u_2,\ldots,0,u_s,\ldots,u_n)$. 
+\end{proof}
+\begin{theorem}\label{injectivity}$V_k$ is injective.\end{theorem}
+\begin{proof}
+	Let $m=(m_1,m_2,\ldots,m_k)$ and $n=(n_2,n_3,\ldots,n_{k+1})$ be two cells with even elements ordered such that $V_k(m)=V_k(n)$, that is, $(0,m_1-2,m_2,\ldots,m_k)=(n'_s,n'_{s+1},\ldots,n'_{s-1})$ for some $1 \leq s \leq k+1$. We define $n'_1=0,n'_2=n_2-2,$ and $n'_i=n_i$ for all $2 < i \leq k$, and we note that $n=m$ exactly if $m_i=n_{i+1}$ for all $1 \leq i \leq k$. We may assume without loss of generality that $m_1 > n_2$. \\
+	If $2 < s < k+1$, then we can write $n$ and $m$ as below, where corresponding columns are equal. We also note that since $2 < s < k+1$, $s \geq 3$ and $k+1 \geq s+1$, so we know $k \geq 3$. 
+	$$0 \hspace{.3in} m_1-2 \hspace{.3in} m_2 \hspace{.3in} m_3 \hspace{.3in} \ldots \hspace{.3in} m_{k+1-s} \hspace{.3in} m_{k+2-s} \hspace{.3in} m_{k+3-s} \hspace{.3in} \ldots \hspace{.3in} m_{k-1} \hspace{.3in} m_k$$
+	$$n_s \hspace{.3in} n_{s+1} \hspace{.3in} n_{s+2} \hspace{.3in} n_{s+3} \hspace{.3in} \ldots \hspace{.3in} n_{k+1} \hspace{.6in} 0 \hspace{.5in} n_2-2 \hspace{.3in} \ldots \hspace{.3in} n_{s-2} \hspace{.3in} n_{s-1}$$
+	In particular, this means that $n=(n_2,n_3,\ldots,n_{k+1})=(n_{s+1},n_{s+2},\ldots,n_{k+1},n_2,\ldots,n_s)=(m_1-2,m_2,\ldots,m_{k-s},m_{k+2-s}+2,\ldots,m_k,0)=V_{k-1}(m_1,m_2,\ldots,m_{k-s},m_{k+2-s}+2,\ldots,m_k)$, so $n$ is collapsible unless $(m_1,m_2,\ldots,m_{k-s},m_{k+2-s}+2,\ldots,m_k)$ is. However, we know by Lemma \ref{realLemma} that if $(m_1,m_2,\ldots,m_{k+1-s},m_{k+2-s}+2,\ldots,m_k)$ is collapsible, then so too is $(m_1,m_2,\ldots,m_{k+1-s},0,m_{k+2-s},\ldots,m_k)=m$. So either $m$ or $n$ must be collapsible, which means they're not both in the domain, and thus there is no problem with injectivity in this case. \\
+	Suppose $s=k+1$, as shown.
+	$$0 \hspace{.7in} m_1-2 \hspace{.7in} m_2 \hspace{.7in} m_3 \hspace{.7in} \ldots \hspace{.7in} m_{k-1} \hspace{.7in} m_k$$
+	$$n_{k+1} \hspace{.7in} 0 \hspace{.7in} n_2-2 \hspace{.7in} n_3 \hspace{.7in} \ldots \hspace{.7in} n_{k-1} \hspace{.7in} n_k$$
+	We note that $m_1=2$ and, since $m_1 > n_2$, but $n$ still contains a positive even element, $n_2=2$. Thus $m_2=n_2-2=0$, so $0 \leq n_3 \leq 0$, making $m_3=0$, and so on until $0 \leq n_k \leq 0$, so $m_k=0,$ and then finally we get that $n_{k+1}=0$. So $n=(2,0,0,\ldots,0)=m$, meaning $V_k$ is still injective. \\
+	Now, suppose $s=2$. 
+	$$0 \hspace{.9in} m_1-2 \hspace{.7in} m_2 \hspace{.7in} m_3 \hspace{.7in} \ldots \hspace{.7in} m_{k-1} \hspace{.7in} m_k$$
+	$$n_2-2 \hspace{.7in} n_3 \hspace{.9in} n_4 \hspace{.7in} n_5 \hspace{.7in} \ldots \hspace{.7in} n_{k+1} \hspace{.7in} 0$$
+	We can easily see that $2 \leq k$, so if $k < 3$, then we have $m=(m_1,m_2)$ and $n=(2,m_1-2)$, and, since $V_2(m_1,m_2)=V_2(2,m_1-2)$ we know $(0,m_1-2,m_2)$ is cyclically equivalent to $(0,0,m_1-2)$, so $m_2=0$. However, then we have $m_1-2$ is even and $m_2=0$, so $m$ doesn't contain an even element, so we don't need to consider it here. \\
+	Now, suppose $k \geq 3$. We note that $m=(m_1,m_2,\ldots,m_k)=(n_3+2,n_4,\ldots,n_{k+1},0)=V_{k-1}(n_3+4,n_4,\ldots,n_{k+1})$ is collapsible unless $(n_3+4,n_4,\ldots,n_{k+1})$ is. However, by Lemma \ref{lemmaThreePointO}, since $n_3+4=m_1+2>n_2+2$, if $(n_{k+1},n_3+4,n_4,\ldots,n_k)$ is collapsible, $(n_{k+1},n_2,n_3,\ldots,n_k)$ must be collapsible as well. So once again $n$ or $m$ must be collapsible, so there is no problem with injectivity. \end{proof}
+\subsection{No Closed Nonstationary Paths}
+\begin{definition}\label{critColl} A cell that is either critical or collapsible is \textbf{critollapsible}.\end{definition}
+\begin{lemma}\label{nonStationary}If the path brings you somewhere that has no closed non-stationary path, there is no path back to the starting point.\end{lemma}
+\begin{proof}Let $n$ be a cell with no non-stationary paths back to itself, and let $m$ be a cell with a path leading to $n$. Now suppose there is a path from $m$ to $n$ and back to $m$. This implies that there must be a path starting at $n$, leading to $m$, and returning to $n$, which is a contradiction to the idea that $n$ had no closed non-stationary paths. Thus the statement holds.\end{proof}
+Given a cell with $n$ elements, we will proceed by induction on the number of positive elements in the cell. If there is only one positive element, then obviously every non-zero element has the same parity, so it is critollapsible, and thus there is no closed nonstationary path from it. Now, we may select an arbitrary $1 \leq k < n$ such that any cell with $k$ positive elements has no closed non-stationary paths. \\
+We can write the cell $m$ as $(m_1,m_2,\ldots,m_n)$ where $m_1$ is a maximal even element. So $V_n(m_1,m_2,\ldots,m_n)=(0,m_1-2,m_2,\ldots,m_n)$. We now want to take faces of it such that we have a hope of creating a non-stationary path. \\
+First of all, for this, and all future elements of the path, we must take the longer face, since it is impossible to increase the sum of the elements of the tuple. Next, we note that it is impossible to decrease the number of zeroes we have, since at every step of the path we add a zero, and all cells with two adjacent zeroes are critical, so we can never remove two zeroes. Thus we are not able to decrease the total number of zeroes, so we can only increase it or keep it the same. If we increase it, then we know by the inductive hypothesis we have no closed nonstationary paths, so we want to keep the same number of zeroes as $m$ in the next element of the path. \\
+Suppose we want to leave the new bubble we inserted. Then $m_1-2$ is a meefonz or a near-meefonz in the new element of the path. If $m_1-2$ is a meefonz, then the new cell must have a meefonz in it such that the meefonz plus two is a maximal even, thus the cell is critollapsible. If $m_1-2$ is a near-meefonz, then there must be a meefonz with the value of $m_1$ in the original cell, and since $m_1$ is even maximal, $m_1+2$ is definitely maximal, so the cell is critollapsible. Thus any path that doesn't collapse the newly inserted bubble is not closed. \\
+We return to finding a face of $(0,m_1-2,m_2,\ldots,m_n)$. The only non-stationary option left for us is to collapse the bubble between $m_n$ and $0$ to get $(m_1-2,m_2,\ldots,m_n+2)$. Generally, the only way we can change the value of an element is to subtract two from the maximal element and add two to the element to the left of it, since any other option leads us somewhere that has no closed non-stationary paths. To return to the starting point, there is going to need to be some step where we add two to $m_1-2$ by subtracting it from $m'_2$. Then $m'_2$ must at some point have two added to it, and this comes from subtracting two from $m''_3$. Since the cell contains an odd element (and there's no way to get rid of that without removing a zero, thus creating a path through a loop-free zone) we know at some point we'll have $m^{s-1}_s+2$, where $m^{s-1}_s$ is odd. Since we've increased the value of an odd element, we have no hope of ever decreasing it and returning to our starting point. So we don't have any closed non-stationary paths with $k+1$ non-zero entries, and, by induction, a cell of length $n$ with positive even and odd entries has no closed non-stationary paths.
+
+\subsection{Regularity of Faces}
+\begin{Definition}
+	An $(n-1)$-cell $e_{n-1}$ is said to be an algebraically regular face of an $n$-cell $e_{n}$ if and only if $e_{n-1}$ appears in $\partial_{n}(V_{n-1}(e_{n-1}))$.
+\end{Definition}
+
+This definition ensures that algebraic $\widetilde{V}$ can be chosen with appropriate sign so that $e_{n-1}$ can be made to cancel in the computation of the flow $F$.
+
+The discrete gradient vector field $V$ on n-cells is defined so that whenever an $(n-1)$-cell is an irregular (in the usual sense) face of an $n$-cell, $\partial_{n}(V_{n-1}(e_{n-1}))$ is calculated and if $e_{n-1}$ does not appear, the cell is made critical.
+
+\begin{lemma}
+	A set of functions $V_{i}$ satisfying all conditions for discrete gradient vector fields except regularity of faces will still be a discrete gradient vector field if its non-regular faces are algebraically regular.
+\end{lemma}
+
+\subsection{Low Dimensional Homology Calculations}
+
+Using the above-defined discrete gradient vector field and a Python program made for computing homologies, we compute up to the 4th dimensional homology.
+
+\begin{gather*}
+H_{2}(T, \bq) \cong \bq^2\\
+H_{3}(T, \bq) \cong 0\\
+H_{4}(T, \bq) \cong \bq^2\\
+\end{gather*}
+
+The code that generated these calculations can be found in the references.
+
+\subsection{Some Results on the Cohomology of \boldmath{$T$}}
+
+In this section we use an example discrete gradient vector field $V_{2}: C_{2} \to C_{3}$ on $X_{12}$ to calculate generators of the second cohomology on $T$. This $V_{2}$ is given by the rule:
+\begin{gather*}
+(3,0) \mapsto (1,0,0)\\
+(4,0) \mapsto (1,1,0)\\
+(4,1) \mapsto (1,1,1)\\
+(5,0) \mapsto (1,2,0)\\
+(5,1) \mapsto (2,1,1)\\
+(6,0) \mapsto (3,1,0)\\
+(5,2) \mapsto (1,2,2)\\
+(6,1) \mapsto (1,3,1)\\
+(7,0) \mapsto (1,4,0)\\
+(7,1) \mapsto (2,3,1)\\
+(8,0) \mapsto (3,3,0)
+\end{gather*}
+The assignment is arbitrary but creates a simpler calculation of cohomology. There are no closed non-stationary paths, the assignment is clearly injective, and each 2-cell is at least algebraically regular. These statements are very easily verifiable. This leaves 9 critical 2-cells in $X_{12}$, namely $(1,0), (2,0), (2,1), (3,1), (3,2), (4,2), (4,3), (5,3)$ and $(6,2)$. No 2-cells are collapsible as we can take $V_{1}$ to be the empty function as before. We note that the cohomology of Richard Thompson's group F has been computed already [B04]. This can be used to say something about the cohomology of T, also addressed by Ghys and Sergiescu in their original paper. 
+
+We also define $V_{3}$ on $X_{12}$ by a similarly arbitrary assignment as follows:
+\begin{gather*}
+(0,2,2) \mapsto (0,0,0,2)\\
+(2,2,2) \mapsto (0,0,2,2)\\
+(3,0,0) \mapsto (0,1,0,0)\\
+(2,1,3) \mapsto (0,0,1,3)\\
+(2,4,0) \mapsto (0,0,4,0)\\
+(4,1,0) \mapsto (0,2,1,0)\\
+(5,0,0) \mapsto (0,0,3,0)
+\end{gather*}
+This leaves 12 critical 3-cells: $(0,0,0), (2,0,0), (4,0,0), (1,3,0), (4,2,0), (2,1,0),\\ (4,1,1), (6,0,0), (2,3,0), (3,2,0), (1,5,0)$, and $(5,1,0)$. This function is clearly injective, it has no closed non-stationary paths and no algebraically irregular faces. Again, this is a simple verification which we omit. We now compute the Morse boundary of critical 3-cells. A sample calculation is shown below.
+
+\begin{gather*}
+\widetilde{\partial_{3}}(2,0,0) = \pi F^{\infty} \partial_{3}(2,0,0), \partial_{3}(2,0,0) = 2(4,0) - 2(3,0) + (2,1)\\
+F(2,1) = (2,1), F(3,0) = F^{\infty}(3,0) = (3,0) + \partial_{3}(\widetilde{V}_{2}(3,0))\\ 
+= (3,0) + (- \frac{1}{2})(2(3,0) - 2(2,0) + (2,1)) = (2,0) -\frac{1}{2}(2,1)\\
+F(4,0) = (4,0) + \partial_{3}(\widetilde{V}_2(4,0)) = (4,0) + (-1)((1,2) - (1,3) - (3,0) + (4,0) + (1,2) - (1,3))\\
+= 2(2,1) - 2(3,1) + (3,0)
+F(2(2,1) - 2(3,1) + (3,0)) = F^{\infty}(4,0)\\
+= \frac{3}{2}(2,1) + (2,0) - 2(3,1).\\
+\implies \widetilde{\partial_{3}}(2,0,0) = 3(2,1) + 2(2,0) - 4(3,1) -2(2,0) + (2,1) + (2,1) = 5(2,1) -4(3,1).
+\end{gather*}
+
+Calculations like this are done for all critical 3-cells and entered as rows into a matrix $M$ to be multiplied by a column vector of critical 2-cells ordered as such:
+
+\bigskip
+
+$$
+\left(
+\begin{array}{*{9}c}
+-3 & 3 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 5 & -4 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & -3 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & -2 & \nicefrac{9}{4} & 0 & 1\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 2 & \nicefrac{7}{2} & -2 & -2\\
+0 & 0 & 0 & 1 & \nicefrac{1}{2} & -\nicefrac{1}{2} & \nicefrac{7}{2} & -4 & -1\\
+0 & 0 & 0 & 0 & 0 & -1 & \nicefrac{11}{4} & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & -1 & \nicefrac{11}{4} & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 2 & \nicefrac{11}{4} & -4 & -1\\
+0 & 0 & 0 & 0 & 0 & 2 & \nicefrac{11}{4} & -4 & -1
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+	(1,0)\\
+	(2,0)\\
+	(2,1)\\
+	(3,1)\\
+	(3,2)\\
+	(4,2)\\
+	(4,3)\\
+	(5,3)\\
+	(6,2)
+\end{array}
+\right)
+$$
+
+\bigskip
+
+Note that it is actually $M^{T}$ that describes the linear transformation $\widetilde{\partial}_{3}$, not $M$ itself. Thus $Im(\widetilde{\partial}_{3}) = Col(M^{T})$, the column space of $M^{T}$.
+
+\begin{remark}
+	Using a computer-aided matrix calculator, we found that $dim(Row(M)) = dim(Col(M^{T})) = 7$, or equivalently $Im(\widetilde{\partial}_{3}) \cong \bq^{7}$. This agrees with [GS87], as it means $H_{2}(T, \bq) \cong \bq^{9}/ \bq^{7} \cong \bq^{2}$. 
+\end{remark}
+
+By the Universal Coefficient theorem, $H^{n}(T, \bq) \cong Hom(H_{n}(T, \bq), \bq) \implies H^{2}(T, \bq) \cong \bq^{2}$. We can find generators for $Hom(H_{n}(T, \bq), \bq)$ by identifying explicit generators for $H_{2}(T, \bq)$ in the original infinite complex. Denote these $\alpha$ and $\beta$. Row-reducing the above matrix $M$ gives the following equivalent matrix:
+
+\bigskip
+
+$$
+\left(
+\begin{array}{*{9}c}
+1 & -1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & -\nicefrac{84}{65}\\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & -\nicefrac{21}{13}\\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & -\nicefrac{7}{13}\\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & -\nicefrac{11}{13}\\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & -\nicefrac{4}{13}\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & -\nicefrac{5}{13}\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\end{array}
+\right)
+$$
+\bigskip
+
+Clearly, the only linearly independent rows missing are 
+
+$$
+\left(
+\begin{array}{*{9}c}
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0
+\end{array}
+\right)
+$$
+
+and
+
+$$
+\left(
+\begin{array}{*{9}c}
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1
+\end{array}
+\right)
+$$
+\bigskip
+
+These rows correspond to the critical 2-cells $(2,0)$ and $(6,2)$. We use the general flow $f$ on these critical cells to get generators of the second homology on $T$. $f(2,0) = Id(2,0) + \partial_{3}(V_{2}(2,0)) + V_{1}(\partial_{2}(2,0)) = (2,0)$ because $(2,0)$ is critical and the second boundary is always $0$. For the same reasons, $f(6,2) = (6,2)$. Therefore these critical 2-cells are the generators of $H_{2}(T, \bq)$. Let $\alpha = (2,0)$ and $\beta = (6,2)$. 
+
+We now seek generators of $Hom(H_{2}(T, \bq), \bq)$. Call these $f_{\alpha}$ and $f_{\beta}$. To be generators, these must satisfy the following:
+
+\begin{align*}
+f_{\alpha} : \alpha \mapsto 1\\
+\beta \mapsto 0\\
+\bigskip
+f_{\beta}: \alpha \mapsto 0\\
+\beta \mapsto 1
+\end{align*} 
+
+In addition, $f_{\alpha}(\partial_{3}(c))=0$ and $f_{\beta}(\partial_{3}(c))=0$ for any 3-cell $c$. That is, $f_{\alpha}$ and $f_{\beta}$ are 2-cocycles. Note that by definition $f_{\alpha}$ and $f_{\beta}$ are linearly independent. The function $f_{\alpha}$ that satisfies this is $f_{\alpha}(n,0) = 1$ and $f_{\alpha}(m,n) = 0$, $\forall m,n \in \mathbb{N}, m,n \neq 0$. To verify this, note that $\partial_{3}(n_{1},n_{2},n_{3}) = (n_{2},n_{3}+n_{1}+1)-(n_{2},n_{3}+n_{1}+2)-(n_{1}+n_{2}+1,n_{3})+(n_{1}+n_{2}+2,n_{3})+(n_{1},n_{2}+n_{3}+1)-(n_{1},n_{2}+n_{3}+2)$ so that unless $n_{1}$ or $n_{2}$ is 0, all terms map to 0. If $n_{1}$ is 0, then all terms but $(n_{1},n_{2}+n_{3}+1)-(n_{1},n_{2}+n_{3}+2)$ map to 0. But under $f_{\alpha}$, both of these are sent to 1 so that they cancel. If $n_{2}$ is 0, then all terms but $(n_{2},n_{3}+n_{1}+1)-(n_{2},n_{3}+n_{1}+2)$ map to 0, but both these terms map to 1 so that they cancel again.
+
+The computation of $f_{\beta}$ is slightly less obvious. We proceed by computing all boundaries of 3-cells, starting with those that have the smallest entries. This is done so that many $(0,0), (1,0), (2,0),$ etc. terms appear in the first few boundaries. The rest of the calculation is a simple solution of linear equations. Setting $(3,0) = x$ (under the mapping $f_{\beta}$) and solving for $x$ gives $(3,0) \mapsto -\frac{11}{4}$. This uniquely determines all other assignments, but as it turns out we will only need to know that $(2,1) \mapsto \frac{11}{7}$ because of how the critical cells flow.
+
+The quotient of Thompson's group $F$ consists of bubble pictures similar to those in the quotient of $T$, but they are arranged in a line instead of made into a circle. Thus there are no cyclic permutations allowed, and objects like $(a,b,c)$ represent 2-cells, the boundary of which is calculated similarly to the boundary in $T$. As such there is a natural inclusion $\iota_{2}: F\backslash X^F_{12} \hookrightarrow T\backslash X^T_{12}$ that sends $(a,b,c)$ to $(b,a+c)$. This induces a homomorphism $H^2(T, \bq) \to H^2(F, \bq)$. To find generators of cohomology of $F$, we take the critical cells of $C^F_2$ and flow them under the general flow $f$ until stabilization. Then, take the inclusion of these to get cells in $C^T_2$ and take $f_{\alpha}$ and $f_{\beta}$ of these. This will give us $\widetilde{f}_{\alpha}$ and $\widetilde{f}_{\beta}$, the generators of the second cohomology on $F$. The two figures below describe what is happening in the chain complexes.
+
+\bigskip 															
+
+\begin{center}
+	
+	\begin{tikzcd}
+		\ldots \arrow[swap]{r} 
+		& C^F_2\arrow{r}{\partial^F_2}\arrow[hookrightarrow]{d}{\iota_2} 
+		& C^F_1\arrow{r}{\partial^F_1}\arrow[hookrightarrow]{d}{\iota_1} 
+		& C^F_0\arrow{r}\arrow[hookrightarrow]{d}{\iota_0} 
+		& 0 \\
+		\ldots \arrow{r} 
+		& C^T_2\arrow{r}[swap]{\partial^T_2} 
+		& C^T_1\arrow{r}[swap]{\partial^T_1} 
+		& C^T_0\arrow{r}
+		& 0
+	\end{tikzcd}
+	
+\end{center}
+
+\bigskip 			
+
+$$ \boldmath{\downarrow Hom}$$												
+
+\begin{center}
+		\begin{tikzcd}
+			\ldots 
+			& Hom(C^F_2, \bq)\arrow[swap]{l}
+			& Hom(C^F_1, \bq)\arrow[swap]{l}{\delta^F_2}
+			& Hom(C^F_0, \bq)\arrow[swap]{l}{\delta^F_1} 
+			& 0 \arrow[swap]{l}\\
+			\ldots 
+			& Hom(C^T_2, \bq)\arrow{l}\arrow{u}
+			& Hom(C^T_1, \bq)\arrow{l}{\delta^T_2}\arrow{u} 
+			& Hom(C^T_0, \bq)\arrow{l}{\delta^T_1}\arrow{u}
+			& 0 \arrow{l}
+		\end{tikzcd}
+		
+\end{center}
+
+\bigskip
+
+The most natural choice of discrete gradient vector field $V$ on $F$ is the one that places a bubble at the first possible opportunity, $(a,...,n,...,m) \mapsto (a,...,0,n-2,...,m)$ if $n$ is the first entry $\geq 2$. The only critical 2-cells under this $V$ are $(1,1,0)$ and $(1,1,1)$. Flowing these gives 
+
+\begin{gather*}
+f^{\infty}(1,1,0) = (1,1,0) - (0,2,0) - (1,0,1) + (0,1,1)\\ 
+f^{\infty}(1,1,1) = (1,1,1) - (0,2,1) - (1,0,2) + (0,1,2)
+\end{gather*}
+
+Under $\iota_{2}$, these are mapped to $(1,1) - (2,0) - (0,2) + (1,1)$ and $(1,2) - (2,1) - (0,3) + (1,2) = (3,0) - 3(2,1)$ respectively. $(1,1)$ is not a valid cell in dimension 2 because of its odd symmetry so that $\iota_{2}(f^{\infty}(1,1,0)) = -(2,0) - (0,2) = 0$. Thus $\widetilde{f}_{\alpha}(1,1,0) = \widetilde{f}_{\beta}(1,1,0) = 0$. Finally, $f_{\alpha}((3,0)-3(2,1)) = 1 - 3 \cdot 0 = 1$ and $f_{\beta}((3,0)-3(2,1)) = -\frac{11}{4} - \frac{33}{7} = - \frac{209}{28}$. Note that this means $\widetilde{f}_{\beta} = -\frac{209}{28}\widetilde{f}_{\alpha}$. We have shown that when pushed into $H^{2}(F, \bq)$, the generators for $H^{2}(T, \bq)$ become linearly dependent non-zero elements of $H^{2}(F, \bq)$. These elements can not be generators of the second cohomology because they are not linearly independent. 
+
+We may also say that $f_{\alpha} \smile f_{\alpha}$ and $f_{\beta} \smile f_{\beta}$ will be non-zero elements of $H^{4}(T, \bq)$, which we could further study having verified that $H_{4}(T, \bq) \cong \bq^2$. Because of the way the cohomology ring of $F$ works as shown by Ken Brown in 2004, we may extend our previous statement and say that $f_{\alpha}$ and $f_{\beta}$ have infinite multiplicative order.
+
+\section{Further Research}
+Using the discrete gradient vector field defined above, we have computed the homology up through dimension four. However, computing further dimensions remains difficult and time-consuming, even for a computer. Either an improved lower bound for connectivity or a more efficient discrete gradient vector field would both facilitate in the calculations. Additionally, it would be nice to be able to generalize the computations to any arbitrary dimension, as Ghys and Sergiescu did. \\
+While we have found generators for the second cohomology on $T$ and discovered in a way how the cup product works1 concretely, we have not yet verified that $f_{\alpha} \smile f_{\beta} = 0$. This is an open problem in further verifying the results of Ghys and Sergiescu. Furthermore, our findings do not address the odd dimensional cohomology of $T$ nor the behavior of the cup product there. 
+
+\section{Acknowledgments}
+
+We would like to thank Miami University and the faculty of the Mathematics and Statistics department for their great both for their help in this research and for running the SUMSRI program in which it was conducted. Thanks to Dr. Reza Akhtar and Dr. Patrick Dowling for a wonderful series of short courses and overall supervision of the program. Thanks also to Dr. Dan Farley for a deep and interesting research topic and for working with us patiently. This paper would not have been possible without his care and commitment to his students and research assistants. Thanks to Dr. Dan Pritikin for his GRE Prep course and the years of wisdom he imparted upon us in only a few weeks. We would also like to thank the graduate assistant Hannah Hoganson for her kind help and invaluable perspective. 
+
+Finally, we thank SUMSRI for this incredible opportunity and the NSA for providing funding.
+
+\section{References}
+\begin{itemize}
+\item $\textbf{R.Forman}$, Morse theory for cell complexes, Adv. Math. 134 (1998) 90–145 Math Review.
+\item $\textbf{D.Farley,L.Sabalka}$, Discrete Morse Theory and Graph Braid Groups, Algebraic $\and$ Geometric Top. Volume 5(2005) 1075-1109. 
+\item $\textbf{K.Brown}$, Cohomology of Groups, Springer Verlag(1982).
+
+\end{itemize}
+
+\end{document}

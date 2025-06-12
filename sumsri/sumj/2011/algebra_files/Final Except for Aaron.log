@@ -1,0 +1,1113 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2011.7.20)  21 JUL 2011 04:56
+entering extended mode
+**Final*Except*for*Aaron.tex
+("E:\Zone Labs\ZoneAlarm\New\Final Except for Aaron\Final Except for Aaron.tex"
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, loaded.
+("F:\Program Files\MiKTeX 2.8\tex\latex\ams\classes\amsart.cls"
+Document Class: amsart 2009/07/02 v2.20.1
+\linespacing=\dimen102
+\normalparindent=\dimen103
+\normaltopskip=\skip41
+("F:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip42
+
+For additional information on amsmath, use the `?' option.
+("F:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("F:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen104
+))
+("F:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen105
+)
+("F:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count79
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count80
+\leftroot@=\count81
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count82
+\DOTSCASE@=\count83
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count84
+\c@MaxMatrixCols=\count85
+\dotsspace@=\muskip10
+\c@parentequation=\count86
+\dspbrk@lvl=\count87
+\tag@help=\toks15
+\row@=\count88
+\column@=\count89
+\maxfields@=\count90
+\andhelp@=\toks16
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks17
+\multlinegap=\skip43
+\multlinetaggap=\skip44
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 388.
+
+("F:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+("F:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+)
+\copyins=\insert233
+\abstractbox=\box28
+\listisep=\skip45
+\c@part=\count91
+\c@section=\count92
+\c@subsection=\count93
+\c@subsubsection=\count94
+\c@paragraph=\count95
+\c@subparagraph=\count96
+\c@figure=\count97
+\c@table=\count98
+\abovecaptionskip=\skip46
+\belowcaptionskip=\skip47
+\captionindent=\dimen113
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip48
+\thm@postskip=\skip49
+\thm@headsep=\skip50
+\dth@everypar=\toks24
+)
+\c@theorem=\count99
+\c@sublemma=\count100
+\c@claim=\count101
+
+("F:\Program Files\MiKTeX 2.8\tex\latex\preprint\fullpage.sty"
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip51
+)
+("F:\Program Files\MiKTeX 2.8\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("F:\Program Files\MiKTeX 2.8\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks25
+)
+("F:\Program Files\MiKTeX 2.8\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("F:\Program Files\MiKTeX 2.8\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("F:\Program Files\MiKTeX 2.8\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("F:\Program Files\MiKTeX 2.8\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2010/02/14 v0.04n Graphics/color for pdfTeX
+\Gread@gobject=\count102
+))
+\Gin@req@height=\dimen114
+\Gin@req@width=\dimen115
+)
+("F:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2009/06/22 v3.00
+)
+("F:\Program Files\MiKTeX 2.8\tex\latex\tools\enumerate.sty"
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks26
+)
+("F:\Program Files\MiKTeX 2.8\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks27
+\verbatim@line=\toks28
+\verbatim@in@stream=\read1
+)
+("E:\Zone Labs\ZoneAlarm\New\Final Except for Aaron\Final Except for Aaron.aux"
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Try loading font information for U+msa on input line 34.
+ ("F:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 34.
+
+("F:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+("F:\Program Files\MiKTeX 2.8\tex\context\base\supp-pdf.tex"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count103
+\scratchdimen=\dimen116
+\scratchbox=\box29
+\nofMPsegments=\count104
+\nofMParguments=\count105
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen117
+\MPnumerator=\count107
+\everyMPtoPDFconversion=\toks30
+) [1{C:/ProgramData/MiKTeX/2.8/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <12> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 144.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 193--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--202
+
+ []
+
+
+Overfull \hbox (4.57974pt too wide) in paragraph at lines 202--203
+\OT1/cmr/m/n/12 al-ready de-fined as the set of la-bels of the sec-tors, will t
+hen be the set $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 x[]; x[]; x[]; [] x[]\OMS/cm
+sy/m/n/12 g$\OT1/cmr/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+
+ []
+
+<z2minus2spider.png, id=32, 117.43875pt x 390.70969pt>
+File: z2minus2spider.png Graphic file (type png)
+
+<use z2minus2spider.png> [5 <E:/Zone Labs/ZoneAlarm/New/Final Except for Aaron/
+z2minus2spider.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+
+ []
+
+<z2minus2criticalportrait.png, id=37, 271.0125pt x 271.0125pt>
+File: z2minus2criticalportrait.png Graphic file (type png)
+
+<use z2minus2criticalportrait.png>
+Underfull \hbox (badness 10000) in paragraph at lines 238--240
+
+ []
+
+<z_2.png, id=38, 219.06844pt x 114.4275pt>
+File: z_2.png Graphic file (type png)
+ <use z_2.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <E:/Zone Labs/ZoneAlarm/New/Final Except for Aaron/z2minus2criticalportrait
+.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
+
+ []
+
+<plus_3z_spider.png, id=43, 409.53pt x 508.14844pt>
+File: plus_3z_spider.png Graphic file (type png)
+ <use plus_3z_spider.png>
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
+
+ []
+
+<plus3zcritical.png, id=44, 235.63031pt x 325.215pt>
+File: plus3zcritical.png Graphic file (type png)
+ <use plus3zcritical.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7 <E:/Zone Labs/ZoneAlarm/New/Final Except for Aaron/z_2.png> <E:/Zone Labs/Z
+oneAlarm/New/Final Except for Aaron/plus_3z_spider.png>]
+<z_33z.png, id=51, 210.03468pt x 141.52875pt>
+File: z_33z.png Graphic file (type png)
+ <use z_33z.png>
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+
+ []
+
+<minus_3_spider2.png, id=52, 418.56375pt x 338.76563pt>
+File: minus_3_spider2.png Graphic file (type png)
+
+<use minus_3_spider2.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <E:/Zone Labs/ZoneAlarm/New/Final Except for Aaron/plus3zcritical.png> <E:/
+Zone Labs/ZoneAlarm/New/Final Except for Aaron/z_33z.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
+
+ []
+
+<minus3critical2.png, id=58, 330.033pt x 261.1356pt>
+File: minus3critical2.png Graphic file (type png)
+ <use minus3critical2.png>
+<z_3_3z.png, id=59, 232.61906pt x 148.30406pt>
+File: z_3_3z.png Graphic file (type png)
+ <use z_3_3z.png>
+Underfull \hbox (badness 10000) in paragraph at lines 299--301
+
+ []
+
+[9 <E:/Zone Labs/ZoneAlarm/New/Final Except for Aaron/minus_3_spider2.png> <E:/
+Zone Labs/ZoneAlarm/New/Final Except for Aaron/minus3critical2.png> <E:/Zone La
+bs/ZoneAlarm/New/Final Except for Aaron/z_3_3z.png>]
+<1_5_spider_2.png, id=66, 715.67375pt x 682.55pt>
+File: 1_5_spider_2.png Graphic file (type png)
+ <use 1_5_spider_2.png>
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
+
+ []
+
+<1_5critical1.png, id=67, 291.33844pt x 316.93407pt>
+File: 1_5critical1.png Graphic file (type png)
+ <use 1_5critical1.png>
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+
+ []
+
+<z_32z.png, id=68, 236.38312pt x 127.22531pt>
+File: z_32z.png Graphic file (type png)
+ <use z_32z.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10 <E:/Zone Labs/ZoneAlarm/New/Final Except for Aaron/1_5_spider_2.png (PNG c
+opy)> <E:/Zone Labs/ZoneAlarm/New/Final Except for Aaron/1_5critical1.png (PNG 
+copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+
+ []
+
+
+Overfull \hbox (1.69049pt too wide) in paragraph at lines 326--327
+\OT1/cmr/bx/n/12 Proposition 3.1. \OT1/cmr/m/it/12 The it-er-ated mon-odromy gr
+oups of $\OML/cmm/m/it/12 p; p[]; p[]$\OT1/cmr/m/it/12 , and $\OML/cmm/m/it/12 
+p[]$ \OT1/cmr/m/it/12 have poly-no-mial growth. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--336
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--341
+
+ []
+
+[11 <E:/Zone Labs/ZoneAlarm/New/Final Except for Aaron/z_32z.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--381
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 417--418
+
+ []
+
+<growthA.png, id=82, 87.32625pt x 172.39406pt>
+File: growthA.png Graphic file (type png)
+ <use growthA.png>
+Underfull \hbox (badness 10000) in paragraph at lines 424--441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--441
+
+ []
+
+[13 <E:/Zone Labs/ZoneAlarm/New/Final Except for Aaron/growthA.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
+
+ []
+
+
+LaTeX Warning: Reference `BP' on page 14 undefined on input line 448.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--450
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--450
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--450
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--450
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--450
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--450
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 450--453
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 450--453
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 453--454
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 453--454
+
+ []
+
+
+Overfull \hbox (5.15244pt too wide) in paragraph at lines 454--457
+[]\OT1/cmr/m/n/12 Take the left-most string of the form $\OML/cmm/m/it/12 \OT1
+/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; x[]\OT1/cmr/m/n/12 )$ in-side $\OML/cmm/m/it
+/12 w$ \OT1/cmr/m/n/12 and use the prop-erty $\OML/cmm/m/it/12 \OT1/cmr/m/n/12
+ (\OML/cmm/m/it/12 x[]; x[]\OT1/cmr/m/n/12 )$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--457
+
+ []
+
+
+Overfull \hbox (30.7053pt too wide) in paragraph at lines 454--457
+\OML/cmm/m/it/12 x[]x[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 \OT1/cmr/m/n/12 (
+\OML/cmm/m/it/12 x[]; x[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 \OT1/cmr/m/n/12 (\O
+ML/cmm/m/it/12 x[]; x[]\OT1/cmr/m/n/12 ) = (\OML/cmm/m/it/12 x[]; x[]\OT1/cmr/m
+/n/12 )\OML/cmm/m/it/12 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; x[]\OT1/cmr/m/
+n/12 ) = (\OML/cmm/m/it/12 x[]; x[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 x[]; x[]\
+OT1/cmr/m/n/12 )$. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--457
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--457
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--457
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 460--461
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--461
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 464--466
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 464--466
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 464--466
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--474
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--474
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--476
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--476
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--484
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--484
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--484
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--484
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--484
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--484
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--484
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 486--487
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--487
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--490
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--490
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--490
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--492
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--492
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Overfull \hbox (2.4138pt too wide) in paragraph at lines 494--519
+[]$\OT1/cmr/m/n/12 : For a block $\OML/cmm/m/it/12 b \OMS/cmsy/m/n/12 2 \OML/cm
+m/m/it/12 P[]$\OT1/cmr/m/n/12 , $\OML/cmm/m/it/12 b$ \OT1/cmr/m/n/12 has the fo
+rm $\OML/cmm/m/it/12 \U/msa/m/n/12 \OML/cmm/m/it/12 []\U/msa/m/n/12 \OML/
+cmm/m/it/12 []\U/msa/m/n/12 \OML/cmm/m/it/12 []\U/msa/m/n/12 \OML/cmm/m
+/it/12 []$ \OT1/cmr/m/n/12 and cre-ates $\OML/cmm/m/it/12 $
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--519
+
+ []
+
+[17]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+Underfull \hbox (badness 10000) in paragraph at lines 520--524
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 525--528
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 525--528
+
+ []
+
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 535.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--536
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--538
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--538
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--539
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--539
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--541
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 544--545
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--545
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 556--558
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 556--558
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 556--558
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 556--558
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 559--560
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 559--560
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 559--560
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 581--582
+
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 583--584
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 589--591
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 592--593
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 594--595
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 597--599
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 600--601
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 603--605
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 609--610
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 614--615
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 621--626
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 640--643
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 643--644
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 651--652
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 658--659
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 661--662
+
+ []
+
+
+Overfull \hbox (10.65826pt too wide) in paragraph at lines 664--668
+[]\OT1/cmr/m/n/12 Choose $\U/msb/m/n/12 B \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\
+OML/cmm/m/it/12 zLz[] \OMS/cmsy/m/n/12 j \OML/cmm/m/it/12 L \OMS/cmsy/m/n/12 2 
+h\OML/cmm/m/it/12 L[]; [] L[]\OMS/cmsy/m/n/12 i\OT1/cmr/m/n/12 ; \OML/cmm/m/it/
+12 z \OMS/cmsy/m/n/12 2 Z[]g$\OT1/cmr/m/n/12 , that is, the nor-mal clo-sure of
+ $\OMS/cmsy/m/n/12 h\OML/cmm/m/it/12 L[]; [] L[]\OMS/cmsy/m/n/12 i$\OT1/cmr/m/n
+/12 .
+ []
+
+[24]
+Overfull \hbox (111.7569pt too wide) in paragraph at lines 728--728
+[]\OT1/cmr/m/sc/10 (Kindelin) De-part-ment of Math-e-mat-ics, Uni-ver-sity of D
+ay-ton, Day-ton, OH 45302 kindelinl1@notes.udayton.edu 
+ []
+
+
+Overfull \hbox (49.3599pt too wide) in paragraph at lines 728--728
+[]\OT1/cmr/m/sc/10 (Reaves) De-part-ment of Math-e-mat-ics, More-house Col-lege
+, At-lanta, GA 30314 reavesam@gmail.com 
+ []
+
+
+Overfull \hbox (11.52823pt too wide) in paragraph at lines 728--728
+[]\OT1/cmr/m/sc/10 (Zakahi) De-part-ment of Math-e-mat-ics and Com-puter Sci-en
+ce, Deni-son Uni-ver-sity, Granville,
+ []
+
+[25]
+("E:\Zone Labs\ZoneAlarm\New\Final Except for Aaron\Final Except for Aaron.aux"
+)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2471 strings out of 495285
+ 29577 string characters out of 3180391
+ 97069 words of memory out of 3000000
+ 5489 multiletter control sequences out of 15000+200000
+ 15483 words of font info for 57 fonts, out of 3000000 for 9000
+ 175 hyphenation exceptions out of 8191
+ 34i,9n,32p,1359b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
+<F:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx10.pfb><F:/Pr
+ogram Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx12.pfb><F:/Program Fi
+les/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx8.pfb><F:/Program Files/MiKTe
+X 2.8/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><F:/Program Files/MiKTeX 2.8/f
+onts/type1/public/amsfonts/cm/cmex10.pfb><F:/Program Files/MiKTeX 2.8/fonts/typ
+e1/public/amsfonts/cm/cmmi12.pfb><F:/Program Files/MiKTeX 2.8/fonts/type1/publi
+c/amsfonts/cm/cmmi6.pfb><F:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfont
+s/cm/cmmi8.pfb><F:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb><F:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr12.pfb><F:
+/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr6.pfb><F:/Program F
+iles/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr8.pfb><F:/Program Files/MiKTe
+X 2.8/fonts/type1/public/amsfonts/cm/cmr9.pfb><F:/Program Files/MiKTeX 2.8/font
+s/type1/public/amsfonts/cm/cmss12.pfb><F:/Program Files/MiKTeX 2.8/fonts/type1/
+public/amsfonts/cm/cmssi12.pfb><F:/Program Files/MiKTeX 2.8/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb><F:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts
+/cm/cmsy6.pfb><F:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmsy8
+.pfb><F:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmti10.pfb><F:
+/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmti12.pfb><F:/Program
+ Files/MiKTeX 2.8/fonts/type1/public/amsfonts/symbols/msam10.pfb><F:/Program Fi
+les/MiKTeX 2.8/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "Final Except for Aaron.pdf" (25 pages, 505602 bytes).
+PDF statistics:
+ 196 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+

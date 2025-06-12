@@ -1,0 +1,786 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Online application</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="javascript"><!--  cloaking engaged>
+
+// Eric Lamont Rankin erankin@morgan.edu
+
+ 
+
+// remaining:  1)distinguish between NC2.0-3.0-4.0 &IE3.0-4.0
+
+ 
+
+//             use object method to prevent high maintenance
+
+ 
+
+//             ie if (item.feature)
+
+ 
+
+//             2)auto shutdown of page after valid submission
+
+ 
+
+//             and possible blanking of screen after cancel
+
+ 
+
+//             3)status bar messaging for clarity
+
+ 
+
+//             4)possible full form validation
+
+ 
+
+// ----------------------------------------------------------------------------
+
+ 
+
+// this script is the intermediary for form submission; it accepts the entire
+
+ 
+
+// form as an argument, this will provide a space for more advance validation
+
+ 
+
+// in the future
+
+ 
+
+function isOK(form) {
+
+ 
+
+  var email_field = form.email_address.value;
+
+ 
+
+  var who = form.name.value;
+
+ 
+
+  var msg1 = "Thank You "
+
+ 
+
+  var msg2 = "Please mail all additional information.   " 
+
+ 
+
+  var msg3 = "Mail references to SUMSRI."
+
+ 
+
+  var attempts=0;
+
+ 
+
+  for(attempts==1;attempts<3;attempts++) {
+
+ 
+
+    if (isEmail(email_field)) {
+
+ 
+
+      alert(msg1 + who + msg2 + msg3);
+
+ 
+
+      return true;
+
+ 
+
+    } else { 
+
+ 
+
+      email_field = prompt('We need your COMPLETE EMAIL ADDRESS.  (i.e. sacs@muohio.edu)');
+
+ 
+
+      if (email_field==null) 
+
+ 
+
+        // the cancel button was pressed so abort submission (email_field="null")
+
+ 
+
+        return false;
+
+ 
+
+    } 
+
+ 
+
+  } 
+
+ 
+
+  alert('Sorry, but there seems to be a problem with your application.  Try again or mail in the printed form.');
+
+ 
+
+  return false;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+  
+
+ 
+
+// -----------------------------------------------------------------------------
+
+ 
+
+// this script will not allow a membership application if it does not contain at least a valid email address
+
+ 
+
+// the following does not work adequately enough under netscape 3.0 because it uses
+
+ 
+
+// regular expressions; the result is return true whenever a @ is present
+
+ 
+
+function isEmail(str) {
+
+ 
+
+  if (window.RegExp) {
+
+ 
+
+    var reg1str = "(@.*@)|(\\.\\.)|(@\\.)|(\\.@)|(^\\.)";
+
+ 
+
+    var reg2str = "^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$";
+
+ 
+
+    var reg1 = new RegExp(reg1str);
+
+ 
+
+    var reg2 = new RegExp(reg2str);
+
+ 
+
+    if (!reg1.test(str) && reg2.test(str)) {
+
+ 
+
+      return true;
+
+ 
+
+    }
+
+ 
+
+    return false;
+
+ 
+
+  } else {
+
+ 
+
+    if(str.indexOf("@") >= 0) { 
+
+ 
+
+      return true;
+
+ 
+
+    }
+
+ 
+
+    return false;
+
+ 
+
+  }
+
+ 
+
+}
+
+ 
+
+// -----------------------------------------------------------------------------
+
+ 
+
+//This segment is for the control of images during onmouseover events
+
+ 
+
+//UP to this point there is no code in this page that is capable of 
+
+ 
+
+//filtering these scripts against stupid web browsers, but it will come in time
+
+ 
+
+gohome1 = new Image(90,40);
+
+ 
+
+gohome1.src = "Images/sh2.gif"
+
+ 
+
+gohome2 = new Image(90,40);
+
+ 
+
+gohome2.src = "Images/sh1.gif"
+
+ 
+
+function highlight(imgDocID,imgObjName) {
+
+ 
+
+  //determines which image to show
+
+ 
+
+  document.images[imgDocID].src = eval(imgObjName + ".src")
+
+ 
+
+}
+
+ 
+
+// --></script> <meta content="MSHTML 6.00.2800.1126" name="GENERATOR">
+</head>
+<body text="#ffffff" vlink="#00ffff" alink="#ff0000" link="#00ffff" background="file://///munov01/WEB/dept/sumsri/public.www/bluesand.gif" bgcolor="#ffffff">
+<form method="Post"></form>
+<p><font size="-2"><a href="http://www.units.muohio.edu/">Miami University</a>
+</font><br>
+&nbsp; </p>
+<center> <table cellspacing="0" width="100%" border="0">
+<tbody>
+<tr>
+<td> <center>***This application is not encrypted***&nbsp;</center>
+</td>
+</tr>
+<tr>
+<td> <center><b><i><font size="+2">Application For</font></i></b> <p><b><i><font size="+2">Summer Undergraduate Mathematics Science Research
+          Institute  (SUMSRI)</font></i></b></p>
+</center>
+</td>
+</tr>
+</tbody> </table>
+</center>
+<center><!-- the actual application --> <form action="http://netapps.muohio.edu/cgi-bin/fdh" method="Post" subject="MEMBERSHIP APPLICATION"></form>
+</center>
+<center> <table cellspacing="0" width="100%" bgcolor="#000080" border="0">
+<tbody>
+<tr>
+<td width="12%" bgcolor="#000080" 8="" =""><b><i>Name:</i></b></td>
+<td bgcolor="#000080" colspan="3" 8="" =""><input maxlength="40" size="25" name="name"></td>
+<td colspan="4">&nbsp;</td>
+</tr>
+<tr>
+<td width="12%">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#000080" colspan="8"><b><i>College/University:</i></b><br>
+<textarea name="college/university" rows="5" cols="50"></textarea></td>
+</tr>
+<tr>
+<td width="12%">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#000080" colspan="2"><b><i>Email Address:</i></b></td>
+<td bgcolor="#000080" colspan="2"><input size="25" name="email_address"></td>
+<td colspan="4">&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#000080" colspan="2"><b><i>Local Address:</i></b></td>
+<td colspan="6">&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#000080" colspan="2"> <div align="Right"><i>Street:</i></div>
+</td>
+<td bgcolor="#000080" colspan="2"><input size="25" name="local_street"></td>
+<td colspan="4">&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#000080" colspan="2"> <div align="Right"><i>City:</i></div>
+</td>
+<td bgcolor="#000080" colspan="2"><input size="25" name="local_city"></td>
+<td colspan="4">&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#000080" colspan="2"> <div align="Right"><i>State:</i></div>
+</td>
+<td bgcolor="#000080" colspan="2"> <select name="local_state">
+<option>Alabama&nbsp;</option>
+<option>Alaska&nbsp;</option>
+<option>Arizona&nbsp;</option>
+<option>Arkansas;&nbsp;</option>
+<option>California&nbsp;</option>
+<option>Colorado&nbsp;</option>
+<option>Connecticut;&nbsp;</option>
+<option>Delaware&nbsp;</option>
+<option>D.C.;&nbsp;</option>
+<option>Florida;&nbsp;</option>
+<option>Georgia;&nbsp;</option>
+<option>Guam and Wake          Islands;&nbsp;</option>
+<option>Hawaii;&nbsp;</option>
+<option>Idaho&nbsp;</option>
+<option>Illinois&nbsp;</option>
+<option>Indiana&nbsp;</option>
+<option>Iowa;&nbsp;</option>
+<option>Kansas&nbsp;</option>
+<option>Kentucky;&nbsp;</option>
+<option>Louisiana;&nbsp;</option>
+<option>Maine&nbsp;</option>
+<option>Maryland&nbsp;</option>
+<option>Massachusetts&nbsp;</option>
+<option>Michigan&nbsp;</option>
+<option>Minnesota&nbsp;</option>
+<option>Mississippi&nbsp;</option>
+<option>Missouri&nbsp;</option>
+<option>Montana;&nbsp;</option>
+<option>Nebraska&nbsp;</option>
+<option>Nevada&nbsp;</option>
+<option>New Hampshire&nbsp;</option>
+<option>New Jersey&nbsp;</option>
+<option>New Mexico&nbsp;</option>
+<option>New York&nbsp;</option>
+<option>North Carolina&nbsp;</option>
+<option>North Dakota;&nbsp;</option>
+<option selected="">Ohio&nbsp;</option>
+<option>Oklahoma&nbsp;</option>
+<option>Oregon;&nbsp;</option>
+<option>Pennsylvania;&nbsp;</option>
+<option>Puerto Rico;&nbsp;</option>
+<option>Rhode Island;&nbsp;</option>
+<option>South Carolina&nbsp;</option>
+<option>South          Dakota;&nbsp;</option>
+<option>Tennessee&nbsp;</option>
+<option>Texas;&nbsp;</option>
+<option>U.S. Virgin          Islands;&nbsp;</option>
+<option>Utah;&nbsp;</option>
+<option>Vermont&nbsp;</option>
+<option>Virginia;&nbsp;</option>
+<option>Washington&nbsp;</option>
+<option>West Virginia&nbsp;</option>
+<option>Wisconsin&nbsp;</option>
+<option>Wyoming;&nbsp;</option>
+</select>
+</td>
+<td bgcolor="#000080"><i>Zip:</i></td>
+<td colspan="3"><input maxlength="10" size="25" name="local_zip"></td>
+</tr>
+<tr>
+<td width="12%">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#000080" colspan="8"><b><i>Telephone Number(s):</i></b></td>
+</tr>
+<tr>
+<td bgcolor="#000080" colspan="5"> <div align="Right"><i>Local:</i><input maxlength="14" size="25" name="local_phone"></div>
+</td>
+<td bgcolor="#000080" colspan="3"><i>Permanent:</i><input maxlength="14" size="25" name="permanent_phone"></td>
+</tr>
+<tr>
+<td width="12%">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="5"><i><b>U.S. Citizen or Permanent Resident?<input type="checkbox" value="Yes" name="Citizenship"></b>
+Yes&nbsp;<input type="checkbox" value="No" name="citizen">No</i></td>
+<td colspan="3"><i><b>Married?<input type="checkbox" value="Yes" name="Married"></b>
+Yes&nbsp;<input type="checkbox" value="No" name="Married">No</i></td>
+</tr>
+<tr>
+<td width="12%">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td width="12%" bgcolor="#000080"><b><i>Classification:</i></b></td>
+<td bgcolor="#000080" colspan="7"><input type="radio" value="Freshman" name="classification"><i>
+Freshman&nbsp;<input type="radio" value="Sophomore" name="classification">
+Sophomore&nbsp;<input type="radio" value="Junior" name="classification">
+Junior&nbsp;<input type="radio" value="Senior" name="classification">
+Senior</i></td>
+</tr>
+<tr>
+<td width="12%">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#000080" colspan="2"><b><i>Major:</i></b></td>
+<td bgcolor="#000080" colspan="6"> <select name="major">
+<option>Accounting;&nbsp;</option>
+<option>Biology&nbsp;</option>
+<option>Business Administration;&nbsp;</option>
+<option>Chemistry&nbsp;</option>
+<option>Civil          Engineering&nbsp;</option>
+<option>Computer Science;&nbsp;</option>
+<option>Economics&nbsp;</option>
+<option>Education&nbsp;</option>
+<option>Electrical Engineering;&nbsp;</option>
+<option>Finance;&nbsp;</option>
+<option>Industrial          Engineering&nbsp;</option>
+<option>Information Systems          Management;&nbsp;</option>
+<option>Management&nbsp;</option>
+<option>Marketing&nbsp;</option>
+<option selected="">Mathematics&nbsp;</option>
+<option>Medical          Technology;&nbsp;</option>
+<option>Physics and Engineering          Physics&nbsp;</option>
+<option>Political Science&nbsp;</option>
+<option>Psychology;&nbsp;</option>
+<option>Undecided;&nbsp;</option>
+<option>Other;&nbsp;</option>
+</select>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000080" colspan="8"><b><i>GPA(s):</i></b></td>
+</tr>
+<tr>
+<td bgcolor="#000080" colspan="5"> <div align="Right"><i>Overall GPA:</i><input maxlength="14" size="25" name="overall_gpa"></div>
+</td>
+<td bgcolor="#000080" colspan="3"><i>Major GPA:</i><input maxlength="14" size="25" name="major_gpa"></td>
+</tr>
+<tr>
+<td width="12%">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#000080" colspan="5"> <div align="Right"><i>Ethnicity:</i><input maxlength="18" size="25" name="ethnicity"></div>
+</td>
+<td bgcolor="#000080" colspan="3"><i>Gender:</i><input maxlength="14" size="25" name="gender"></td>
+</tr>
+<tr>
+<td width="12%">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#000080" colspan="3"><i>Date:</i><input maxlength="14" size="25" name="date"></td>
+</tr>
+<tr>
+<td width="12%">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody> </table>
+</center>
+<center>Please include mathematics, statistics and computer science courses
+   you  are currently taking</center>
+<center> <table cellspacing="0" width="100%" border="0">
+<tbody>
+<tr>
+<td width="10%" bgcolor="#000080" rowspan="4"><b><i>Year</i></b><br>
+&nbsp; <p><i>Freshman</i></p>
+</td>
+<td bgcolor="#000080"><b><i>Course</i></b><br>
+<textarea name="freshmancourses" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Author of Text:</i></b><br>
+<textarea name="Author" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Instructor:</i></b><br>
+<textarea name="instructor" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Grade:</i></b>
+<textarea name="grade" rows="1"></textarea> <center></center>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000080"><b><i>Course</i></b><br>
+<textarea name="freshmancourses" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Author of Text:</i></b><br>
+<textarea name="Author" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Instructor:</i></b><br>
+<textarea name="instructor" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Grade:</i></b>
+<textarea name="grade" rows="1"></textarea> <center></center>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000080"><b><i>Course</i></b><br>
+<textarea name="freshmancourses" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Author of Text:</i></b><br>
+<textarea name="Author" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Instructor:</i></b><br>
+<textarea name="instructor" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Grade:</i></b>
+<textarea name="grade" rows="1"></textarea> <center></center>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000080"><b><i>Course</i></b><br>
+<textarea name="freshmancourses" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Author of Text:</i></b><br>
+<textarea name="Author" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Instructor:</i></b><br>
+<textarea name="instructor" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Grade:</i></b>
+<textarea name="grade" rows="1"></textarea> <center></center>
+</td>
+</tr>
+<tr>
+<td width="10%" bgcolor="#000080" rowspan="4"><b><i>Year</i></b><br>
+&nbsp; <p><i>Sophomore</i></p>
+</td>
+<td bgcolor="#000080"><b><i>Course</i></b><br>
+<textarea name="sophomorecourses" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Author of Text:</i></b><br>
+<textarea name="Author" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Instructor:</i></b><br>
+<textarea name="instructor" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Grade:</i></b> 
+<textarea name="grade" rows="1"></textarea><center></center>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000080"><b><i>Course</i></b><br>
+<textarea name="sophomorecourses" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Author of Text:</i></b><br>
+<textarea name="Author" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Instructor:</i></b><br>
+<textarea name="instructor" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Grade:</i></b> 
+<textarea name="grade" rows="1"></textarea><center></center>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000080"><b><i>Course</i></b><br>
+<textarea name="sophomorecourses" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Author of Text:</i></b><br>
+<textarea name="Author" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Instructor:</i></b><br>
+<textarea name="instructor" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Grade:</i></b>
+<textarea name="grade" rows="1"></textarea> <center></center>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000080"><b><i>Course</i></b><br>
+<textarea name="sophomorecourses" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Author of Text:</i></b><br>
+<textarea name="Author" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Instructor:</i></b><br>
+<textarea name="instructor" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Grade:</i></b>
+<textarea name="grade" rows="1"></textarea> <center></center>
+</td>
+</tr>
+<tr>
+<td width="10%" bgcolor="#000080" rowspan="4"><b><i>Year</i></b><br>
+&nbsp; <p><i>Junior</i></p>
+</td>
+<td bgcolor="#000080"><b><i>Course</i></b><br>
+<textarea name="juniorcourses" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Author of Text:</i></b><br>
+<textarea name="Author" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Instructor:</i></b><br>
+<textarea name="instructor" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Grade:</i></b>
+<textarea name="grade" rows="1"></textarea>
+ <center></center>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000080"><b><i>Course</i></b><br>
+<textarea name="juniorcourses" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Author of Text:</i></b><br>
+<textarea name="Author" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Instructor:</i></b><br>
+<textarea name="instructor" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Grade:</i></b>
+<textarea name="grade" rows="1"></textarea> <center></center>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000080"><b><i>Course</i></b><br>
+<textarea name="juniorcourses" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Author of Text:</i></b><br>
+<textarea name="Author" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Instructor:</i></b><br>
+<textarea name="instructor" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Grade:</i></b>
+<textarea name="grade" rows="1"></textarea> <center></center>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000080"><b><i>Course</i></b><br>
+<textarea name="juniorcourses" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Author of Text:</i></b><br>
+<textarea name="Author" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Instructor:</i></b><br>
+<textarea name="instructor" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Grade:</i></b>
+<textarea name="grade" rows="1"></textarea> <center></center>
+</td>
+</tr>
+<tr>
+<td width="10%" bgcolor="#000080" rowspan="4"><b><i>Year</i></b><br>
+&nbsp; <p><i>Senior</i></p>
+</td>
+<td bgcolor="#000080"><b><i>Course</i></b><br>
+<textarea name="seniorcourses" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Author of Text:</i></b><br>
+<textarea name="Author" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Instructor:</i></b><br>
+<textarea name="instructor" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Grade:</i></b>
+<textarea name="grade" rows="1"></textarea> <center></center>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000080"><b><i>Course</i></b><br>
+<textarea name="seniorcourses" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Author of Text:</i></b><br>
+<textarea name="Author" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Instructor:</i></b><br>
+<textarea name="instructor" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Grade:</i></b>
+<textarea name="grade" rows="1"></textarea> <center></center>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000080"><b><i>Course</i></b><br>
+<textarea name="seniorcourses" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Author of Text:</i></b><br>
+<textarea name="Author" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Instructor:</i></b><br>
+<textarea name="instructor" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Grade:</i></b>
+<textarea name="grade" rows="1"></textarea> <center></center>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000080"><b><i>Course</i></b><br>
+<textarea name="seniorcourses" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Author of Text:</i></b><br>
+<textarea name="Author" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Instructor:</i></b><br>
+<textarea name="instructor" rows="1"></textarea></td>
+<td bgcolor="#000080"><b><i>Grade:</i></b>
+<textarea name="grade" rows="1"></textarea> <center></center>
+</td>
+</tr>
+</tbody> </table>
+</center>
+<i>Explain  your career plans and why you would like to participate in <b>
+SUMSRI</b>.</i> 
+<center>
+<P><textarea name="letter" rows="35" cols="70"><\textarea><\p>
+</center>
+<center>
+<table border="0" cellspacing="0">
+<tbody>
+<tr>
+<td>$nbsp;</td>
+<td width="50%">
+<center><input type="submit" name="Submit" value="submit">
+</td>
+<td>$nbsp;</td>
+<center><input type="reset" value="Clear Form"></center>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<center><!-- end of application html --></center>
+
+<p> Please have two letters of recommendation and official academic transcripts sent to: </p>
+<center>
+<p>Vasant Waikar or Dennis Davenport <br>
+SUMSRI<br>
+Department of Mathematics and Statistics <br>
+Miami University <br>
+Oxford, OH 45056 <br>
+or mailto: porterbm@muohio.edu</p>
+</center>
+<a href="http://www.unites.muohio.edu/sumsri/index.html">home</center>
+
+</body>
+</html>
+
+

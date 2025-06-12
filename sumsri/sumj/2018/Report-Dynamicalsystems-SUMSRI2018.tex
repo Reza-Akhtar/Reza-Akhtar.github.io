@@ -1,0 +1,798 @@
+\documentclass{amsart}
+\usepackage{amsthm,amsfonts,amssymb,amsmath,oldgerm}
+%\usepackage{epsfig}
+\numberwithin{equation}{section}
+%\usepackage[thinlines]{easybmat}
+\usepackage{fullpage}
+%\usepackage{amsrefs}
+\usepackage{color}
+%\usepackage{showkeys}
+\usepackage{calrsfs}
+\usepackage{bbm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{multicol}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{proposition}[theorem]{Proposition}
+
+
+\begin{document}
+\title{Report of the Dynamical Systems Seminar-SUMSRI 2018\\Mathematical Analysis of Epidemics Models}
+\author{Vincent Filardi, Darreon Phipps, Tamantha Pizarro, Alena Turner}
+\date{\today}
+
+\begin{abstract}
+First, we consider the classical Kermack-McKendrick Model, that ignores the population growth and assumes that infected individuals cannot recover. We also consider a generalized Kermack-McKendrick model, which is modified to account for epidemic prevention efforts and growth of the vulnerable population due to births.
+To prove our results we use dynamical systems methods, in particular phase-plane analysis. We graph the solutions using the fourth order Runge-Kutta method.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec1}
+
+
+
+In the late 18th century, Malthus studied population dynamics for the first time. In the 19th century, the dynamics of competing species was studied and understood using the Volterra-Lotka model. With the development of mathematical biology and population dynamics, Kermack and McKendrick proposed (\cite{Contributions to the Mathematical Theory  of Epidemics-III. Further Studies of the Problem of Endemicity.}) a model, in 1927, meant to understand the epidemics that ravaged human communities since historical times. This model was used to analyze the spread of an epidemic due to person-to-person interaction. They showed that this model fits the Bubonic Plague and Cholera outbreaks in London between the 15th and 19th centuries \cite{Contributions to the Mathematical Theory  of Epidemics-III. Further Studies of the Problem of Endemicity.}. The Kermack-McKendrick model allowed for the escalation of diseases to be categorized and, potentially, predicted in a simulated population \cite{"The Kermack-McKendrick Epidemic Model Revisited."}.
+
+The model was almost forgotten until Anderson and May published their seminal paper \cite{AM}. The Kermack-McKendrick model proves to be the basis for most epidemic models discussed in the literature, see \cite{Murray,Strogatz}. More recently, the model and its variations have been used to study various other epidemics, such as AIDS and SARS, \cite{HV,YDK}.
+
+\vspace{0.3cm}
+
+\noindent\textbf{The Model.} We consider a population totaling $N$ individuals  susceptible to an epidemic. Assuming that the population remains constant, the total population is divided into three groups as follows:
+\begin{itemize}
+\item
+$x(t)$=the number of healthy individuals at time $t$;
+\item
+$y(t)$=the number of infected individuals at time $t$;
+\item
+$z(t)$=the number of deceased individuals at time $t$.
+\end{itemize}
+\begin{hypothesis}
+This Classical Kermack-McKendrick Model models a population satisfying the following assumptions:
+\begin{itemize}
+\item Individuals become infected at a rate of $k>0$, for some constant $k$, proportional to contact between healthy and infected individuals. In other words, individuals will transfer from $x(t)$ (healthy population) to $y(t)$ (infected population) at this rate of $k>0$;
+\item Infected individuals cannot recover, and die at a rate $l>0$, for some constant $l$, proportional to their number. In other words, individuals who become infected will transfer from $y(t)$ (infected individuals) to $z(t)$ (dead population) at this rate of $l>0$;
+\item The time scale is small enough to ignore any population growth. That is, the epidemic evolves so rapidly that we can ignore the slower changes in the population due to births and deaths by other causes;
+\item At time $t=0$, there are no dead individuals.
+\end{itemize}
+\end{hypothesis}
+\noindent Taking into account all the assumptions above, we arrive at the following model
+\begin{equation}\label{K-McK}
+\left\{\begin{array}{ll} x'=-kxy\\
+y'=kxy-ly\\
+z'=ly. \end{array}\right.
+\end{equation}
+
+\vspace{0.3cm}
+
+\noindent\textbf{Plan.} Our report is organized as follows. In Section 2, we analyze the classical Kermack-McKendrick Model by decoupling the $z$-equation from the $xy$ equations; thus, reducing the system to an autonomous scalar equation and a two dimensional autonomous system. In Section 3 we focus on a modified version of the model used to describe AIDS epidemics introduced in \cite{HV}. To graph the solutions of systems of differential equations, we use the the fourth order Runge-Kutta method, see \cite{A,B}.
+
+
+
+
+\section{Mathematical Analysis of the Classical Kermack-McKendrick Model}\label{sec2}
+
+In this section, we analyze system \eqref{K-McK} using dynamical systems techniques. Our analysis is based on the observation that the $xy$ equations of \eqref{K-McK} can be decoupled from the $z$-equation. This section is divided in three parts. First, we consider the scalar $z$-equation (see \eqref{z-eq} below) and determine the behavior of the solutions as $t\to +\infty$. Then, we will use the phase plane-analysis method to study the $xy$ decoupled system. Finally, the solutions will be graphed using the fourth order Runge-Kutta method.
+
+\subsection{The \textit{z}-equation}
+
+{\begin{remark}\label{consistent-K-McK}
+Adding the equations of \eqref{K-McK} we obtain that $x'+y'+z'=(-kxy)+(kxy-ly)+(ly)=0$, proving that the sum $x+y+z$ is conserved, which is consistent with our assumption that the total population $N$ is classified as $x$, $y$, or $z$. Moreover, we note that from the third equation of \eqref{K-McK}, we infer that the maximum of $z'$ and $y$ occurs in the same time, called the peak of the epidemic. Therefore, we have an explanation why the number of deaths is the highest when the number of infected is the highest.
+\end{remark}
+Next, we show that the $z$-component of a solution of \eqref{K-McK} satisfies a scalar autonomous equation. The first step is to prove that
+\begin{equation}\label{z-1}
+x(t)=x_0e^{\frac{-k}{l}z(t)}\quad\mbox{for any}\quad t \geq 0.
+\end{equation}
+Indeed, from the third equation of \eqref{K-McK} we have that $y=\frac{z'}{l}$. Since $x'= -kxy$, it follows that
+\begin{equation}\label{z-2}
+x'(t)=\frac{-k}{l}z'(t)x(t)\quad\mbox{for any}\quad t \geq 0,
+\end{equation}
+which is a linear differential equation in $x$. Solving the equation for $x$ in terms of $z$, and using that $z(0)=0$, we obtain that
+\begin{equation}\label{z-3}
+x(t)=x_{0}\mathrm{exp}\Bigl(\int_{0}^{t}\frac{-k}{l} z'(s)ds\Bigr)=x_0e^{\frac{-k}{l}z(t)}\quad\mbox{for any}\quad t \geq 0,
+\end{equation}
+proving the claim \eqref{z-1}. We recall that the sum $x+y+z$ is conserved, as pointed out in Remark~\ref{consistent-K-McK}. Substituting $y=N-x-z$ in the third equation of \eqref{K-McK} and using \eqref{z-1} we infer that
+\begin{equation}\label{z-eq}
+z'=l(N-z-x_0e^{\frac{-k}{l}z}).
+\end{equation}
+We analyze this equation by finding its equilibria and studying the monotonicity of the solutions and its convexity.
+
+\begin{proposition}\label{part4}
+Equation \eqref{z-eq} has a unique stable equilibrium $z_{root}>\max\{0,\frac{l}{k}\ln(\frac{kx_0}{l})\}$, where $x_0$ is the initial number of  healthy individuals. The solution of \eqref{z-eq} is increasing up to the equilibrium $z_{root}$. If $x_0 \leq \frac{l}{k}$, then the solution of equation \eqref{z-eq} is concave down. If $x_0>\frac{l}{k}$, then the solution of equation \eqref{z-eq} is concave up until it reaches the threshold $\frac{l}{k}\ln(\frac{kx_0}{l})$, where it becomes concave down as it approaches the equilibrium $z_{root}$.
+\end{proposition}
+\begin{proof}
+To simplify the calculation, we make the change of variables $u=\frac{k}{l}z$, which is equivalent to $z=\frac{l}{k}u$. Thus, the $u$ equation is
+\begin{equation}\label{u-eq}
+u'=a-bu-ce^{-u},\quad\mbox{where}\quad a=lN,\text{ } b=\frac{l^2}{k},\text{ } c=lx_0.
+\end{equation}
+We must point out that at the beginning of the epidemic, the number of dead individuals is zero. Hence, $z(0)=0$, which implies that $u(0)=0$. Next, we look for the equilibria of equation \eqref{u-eq}. We introduce the function $f:\mathbb{R} \to \mathbb{R}$ defined by $f(u)=a-bu-ce^{-u}$.
+Since we cannot find the explicit roots of $f$, we first look for the roots of $f'$. Computing $f'(u)=-b+ce^{-u}$, we have that the root of $f'$ is given by $u=ln(\frac{c}{b})=ln(\frac{kx_0}{l})$. Since $z$ represents a population, $z$ must be nonnegative. Therefore, $u$ must also be nonnegative. For this reason, we need to distinguish between the cases where $u=ln(\frac{kx_0}{l})$ is either nonnegative or negative.\\
+
+\noindent \textbf{Case 1:} $x_0 \leq \frac{l}{k}$. In this case, $f'(u)<0$ for any $u>0$, which implies that the function $f$ is decreasing on $\mathbb{R}_+$. Moreover, we notice that $f(0)=a-c=l(N-x_0)>0$ and $\lim\limits_{u\to \infty}f(u)=-\infty$. We conclude that the function $f$ has a unique positive root, denoted by $u_{root}$. Since $f'(u_{root})<0$, we conclude that $u_{root}$ is the unique stable equilibrium of equation \eqref{u-eq}. In addition, because $f(u)>0$ and $f(u)f'(u)<0$ for any $u\in [0,u_{root}]$, we have that the solution of \eqref{u-eq} with $u(0)=0$ is increasing, is concave downwards and $\lim\limits_{t\to \infty}u(t)=u_{root}$. Now, we can conclude that $z$, the solution of equation \eqref{z-eq} with $z(0)=0$, is increasing, is concave downwards and $\lim_{t\to \infty}z(t)=\frac{l}{k}u_{root}=z_{root}$.\\
+
+\noindent \textbf{Case 2:} $x_0 > \frac{l}{k}$. In this case, $f'(u)>0$ for any $u \in \big[0,\ln(\frac{kx_0}{l})\big)$ and $f'(u)<0$ for any $u>\ln(\frac{kx_0}{l})$. Hence, $f$ is increasing on $\big[0,\ln(\frac{kx_0}{l})\big]$ and is decreasing on $\big[\ln(\frac{kx_0}{l}),+\infty \big)$. Thus, we conclude that
+\begin{equation}\label{u-eq2}
+f(u) \geq f(0) = l(N-x_0)>0 \quad \mbox{for any}\quad u \in \big[0,\ln(\frac{kx_0}{l})\big).
+\end{equation}
+Since $f(\frac{kN}{l})=-lx_0e^{-\frac{kN}{l}}<0$, then from \eqref{u-eq2} we infer that $f$ has a unique nonnegative root, $u_{root} \in \big(\ln(\frac{kx_0}{l}),\frac{k}{l} \big)$. Similar to Case 1, \eqref{u-eq} has an unique stable equilibrium $u_{root}$. Summarizing, we have that $f(u)>0$ for any $u\in [0,u_{root}]$ and $f(u)f'(u)>0$ for any $u \in \big[0,\ln(\frac{kx_0}{l})\big)$ and $f(u)f'(u)<0$ for any $u \in \big(\ln(\frac{kx_0}{l}), u_{root}\big)$. It follows that the solution of \eqref{u-eq} with $u(0)=0$ is increasing, is concave upwards until it reaches the threshold $\ln(\frac{kx_0}{l})$ and is concave down as it approaches the equilibrium $u_{root}$ as $t \to +\infty$. Finally, we obtain that $z$, the solution of \eqref{z-eq} with $z(0)=0$, is increasing.  Furthermore, $\lim\limits_{t\to\infty}z(t)=\frac{l}{k}u_{root}=:z_{root}$, $z$ is concave upwards until it reaches the threshold $\frac{l}{k}\ln(\frac{kx_0}{l})$ and is concave down as it approaches its limit at $+\infty$, proving the proposition.
+\end{proof}
+
+
+\subsection{The \textit{xy} system}
+We turn our attention to the $xy$ equations of the system \eqref{K-McK}, called the reduced Kermack-McKendrick system.
+\begin{equation}\label{xy-sys}
+\left\{\begin{array}{ll} x'=-kxy\\
+y'=kxy-ly. \end{array}\right.
+\end{equation}
+First, we look for conserved quantities of \eqref{xy-sys}. Our result is summarized in the following lemma.
+\begin{lemma}\label{conserved}
+The reduced Kermack-McKendrick system \eqref{xy-sys} has the conserved quantity
+\[E(x,y) = y +x -\dfrac{l}{k}\ln{x}.\]
+\end{lemma}
+\begin{proof}
+Dividing the two equations of \eqref{xy-sys} we find the separable differential equation
+\[\dfrac{d y}{d x}=-1 +\dfrac{l}{kx},\]
+whose solution is given by
+ \[y=-x +\dfrac{l}{k}\ln{x} + C.\]
+Solving this equation for $C$, we find that the system satisfies the definition of a conservative system with $E(x,y) = y +x -\dfrac{l}{k}\ln{x}$.
+\end{proof}
+To analyze the system \eqref{xy-sys} using the phase-portrait method we need to find and classify its equilibria.
+\begin{proposition}\label{nodes}
+The reduced Kermack-McKendrick system \eqref{xy-sys} has a line of equilibria given by $\{(a,0):a\geq0\}$. Moreover, $(a,0)$ is a stable node for any $a\in[0,\frac{l}{k})$ and an unstable node for any $a\in[\frac{l}{k},\infty)$.
+\end{proposition}
+\begin{proof}
+To find the critical points, we solve the system
+\begin{equation}\label{xy-null}
+\left\{\begin{array}{ll} kxy=0\\
+kxy-ly=0. \end{array}\right.
+\end{equation}
+We notice that the $y$-component of any equilibria is $0$. In fact, we have that $(a,0)$ is an equilibrium of \eqref{xy-sys} for any $a\geq 0$. To classify the equilibria, we compute the Jacobian of \eqref{xy-sys}
+\begin{equation}\label{Jac}
+J(x,y)= \begin{bmatrix}
+    -ky  &  -kx\\
+    -ky  &  kx-l
+\end{bmatrix}.
+\end{equation}
+Using \eqref{Jac}, one can readily check that
+\begin{equation}\label{eigen-1}
+\mathrm{det}(J(a,0)-\lambda I_2)=-\lambda(ka-l-\lambda)=\lambda^2-(ka-l)\lambda\quad\mbox{for any}\quad\lambda\in\mathbb{C},
+\end{equation}
+which implies that the eigenvalues of the Jacobian $J(a,0)$ are $\lambda_1=0, \lambda_2=ka-l$. The eigenspaces associated to the eigenvalues $\lambda_1$ and $\lambda_2$, respectively, are spanned by the eigenvectors
+\begin{equation}\label{general-eigenvectors}
+w_1=\begin{bmatrix}
+  1\\
+  0\\
+\end{bmatrix}, w_2=\begin{bmatrix}
+  -ka\\
+  ka-l\\
+\end{bmatrix}.
+\end{equation}
+We are going to analyze the following cases separately: $a$=0, $a=\dfrac{l}{k}$ and $a\in (0,+\infty)\setminus\{\frac{l}{k}\}$.
+
+\noindent\textbf{Case 1: $a=0$.} Linearizing the system \eqref{xy-sys} at the equilibrium $(0,0)$ we find
+\[\begin{cases}
+    x'=0 \\
+    y'=-ly. \\
+   \end{cases}\]
+ We note that the system above decouples and that the $y$ equation is a linear differential equation. Hence,
+\[\begin{cases}
+    x(t)=x_0 \\
+    y(t)=y_0e^{-lt} \\
+   \end{cases}\quad\mbox{for any}\quad t\geq 0.\]
+It follows that $x$ and $y$ are approaching $x_0$ and $0$, as $t\to\infty$, respectively, therefore $(0,0)$ is a stable node.
+
+\noindent \textbf{Case 2: $a=\dfrac{l}{k}$.} Linearizing the system when $a =\frac{l}{k}$, we find
+\[\begin{cases}
+    x'=-ly \\
+    y'=0.\\
+   \end{cases}\]
+	One can immediately see that $y(t)=y_0$ for any $t\geq 0$. Integrating the first equation, we obtain that
+\[\begin{cases}
+    x(t)=x_0-lyt \\
+    y(t)=y_0 \\
+   \end{cases}\quad\mbox{for any}\quad t\geq 0.\]
+We find that $x$ approaches $-\infty$ as $t\to+\infty$ and $y$ remains a constant. This implies that we have an unstable node at $\big(\frac{l}{k},0\Big)$.
+
+\noindent \textbf{Case 3: $a\ne 0$ and $a\ne\dfrac{l}{k}$.} From \eqref{eigen-1} and \eqref{general-eigenvectors}, we infer that the solution of the linearization of \eqref{xy-sys} at the equilibrium $(a,0)$ has the form
+\begin{equation}\label{ane0}
+(x(t),y(t))^{\mathrm{T}}= c_1 w_1 + c_2 e^{(ka-l)t} w_2,\quad\mbox{for}\quad t\ge 0
+\end{equation}
+  for some constants $c_1$ and $c_2$ that can be computed in terms of the initial conditions $x_0$ and $y_0$. It follows that $(a,0)$ is a stable node for any $a\in(0,\frac{l}{k})$ and a unstable node if $a>\frac{l}{k}$.
+\end{proof}
+
+\begin{lemma}\label{y initial increase}
+An epidemic occurs if and only if $x_0>\frac{l}{k}$.
+\end{lemma}
+\begin{proof}
+We recall that an epidemic occurs if and only if the number of infected individuals $y(t)$ is increasing on an interval $(0,t_1)$, for some $t_1>0$. Since $x(t) \geq 0$ and $y(t) \geq 0$ for any $t\geq 0$, from equation $x'=-kxy$, we conclude that $x$ is always decreasing. It follows that $kx-l$ is decreasing and its initial value is $kx_0-l$. Two cases arise from this finding.
+
+\noindent\textbf{Case 1:} $x_0>\frac{l}{k}$.
+Since the solution $x(\cdot)$ is a continuous function, we have that $kx(t)-l>0$ for any $t \in [0,t_1]$, for some $t_1>0$. It follows that $y'(t) \geq 0$ for any $t \in [0,t_1]$. Thus, an epidemic occurs.
+
+\noindent\textbf{Case 2:} $x_0\leq\frac{l}{k}$.
+In this case, we have that $kx(t)-l\leq 0$ for any $t \geq 0$. This inequality implies that $y'(t) \leq 0$ for any $t \geq 0$, and thus $y(\cdot)$ is decreasing. Hence, an epidemic does not occur in this case.
+
+\noindent Summarizing we conclude that an epidemic occurs if and only if $x_0>\frac{l}{k}$, proving the lemma.
+\end{proof}
+When modeling epidemics, it is important to predict future outbreaks of the disease, especially periodic outbreaks. In the remaining of this section, we prove that the reduced Kermack-McKendrick model \eqref{xy-sys} does not have periodic solutions. To establish this result, we recall the following calculus result.
+\begin{lemma}\label{nonconstant-periodic}
+If $f:\mathbb{R} \rightarrow \mathbb{R}$ is a non constant periodic function, then $\lim\limits_{x\to\infty}{f(x)}$ does not exist.
+\begin{proof}
+Let $f:\mathbb{R} \rightarrow \mathbb{R}$ be a non-constant periodic function. Because $f$ is non constant, then there exists a $x_1,x_2\in \mathbb{R}$ such that $f(x_1)\neq f(x_2)$. Let $T$ be the period of the function $f$. Since $f$ is a periodic function, it follows that
+\begin{equation}\label{periodic}
+ f(x_1)=f(x_1+nT)\neq f(x_2+nT)=f(x_2)\quad\mbox{for all}\quad n\in\mathbb{Z}.
+\end{equation}
+For sake of contradiction, lets assume that $\lim\limits_{x\to\infty}{f(x)}$ \textit{does exist}. From \eqref{periodic}, we infer that
+\begin{equation}\label{contradiction}
+f(x_1)=\lim_{n\to\infty}(f(x_1+nT)=\lim_{x\to\infty}f(x)=\lim_{n\to\infty}(f(x_2+nT)=f(x_2),
+\end{equation}
+which is a contradiction. We can conclude $\lim\limits_{x\to\infty}{f(x)}$ does not exist, proving the lemma.
+\end{proof}
+\end{lemma}
+\begin{lemma}\label{no periodic}
+The reduced Kermack-McKendrick system\eqref{xy-sys}
+does not have any periodic solutions.
+\end{lemma}
+\begin{proof}
+Assume for a contradiction that $x(\cdot)$ and $y(\cdot)$ are non-trivial periodic solutions of \eqref{xy-sys}. We recall that $x+y+z$ is conserved (Remark~\ref{consistent-K-McK}). Solving for $z$, we find $z=N-y-x$. Moreover, $z(\cdot)$ has a finite limit as $t$ approaches infinity (Lemma~\ref{part4}). Due to the fact $N$ is constant and $z$ has finite limit, then we obtain that $x(\cdot) + y(\cdot)$ must have finite limit as $t$ approaches infinity. From Lemma~\ref{nonconstant-periodic}, it follows that there exists a constant $C_0$ such that $x(t)+y(t) = C_0$ for any $t\geq 0$. We conclude that $x(\cdot)$ is a non-trivial, periodic solution of the scalar, autonomous differential equation
+\begin{equation*}
+x'=-kx(C_0-x).
+\end{equation*}
+Hence, $x(t)$ must approach one of the equilibrium or infinity as $t$ approaches infinity. In addition, $x(\cdot)$ is increasing or decreasing. However, this is only true for a non-periodic solution of \eqref{xy-sys}. We have found our contradiction; hence, there exists no periodic solutions of \eqref{xy-sys} as desired.
+\end{proof}
+\subsection{Phase-Portrait of the reduced classical Kermack-McKendrick}
+
+To illustrate the results of this section, we use the \textit{pplane} online tool \cite{ODE Software for MATLAB} to draw the phase portrait of \eqref{xy-sys} in the case when
+$k>l$ and $l<k$, respectively, see Figure \ref{fig:figure 1} and Figure \ref{fig:figure 2} below. A particular solution of the system \eqref{K-McK} is graphed below using the fourth order Runge-Kutta method, see Figures \ref{fig:figure a} and \ref{fig:figure b}, respectively. These graphs validate our findings, that along the line of equilibria $\{(a,0):a\geq0\}$ we have stable nodes if $a<\frac{l}{k}$ and unstable nodes if $a\geq\frac{l}{k}$, and that there are no periodic solutions. Also, we can see from the phase-portrait that an epidemic occurs if and only if the number of healthy individuals is greater than the rate $\frac{l}{k}$. The graphs \ref{fig:figure a} and \ref{fig:figure b} suggest that there is no difference in the qualitative behavior of solutions when $k>l$ or $k<l$.
+\begin{figure}[ht!]
+\begin{multicols}{2}
+  \includegraphics[scale=.42]{PP_x-y_k_larger_then_l.JPG}
+  \caption{Phase-portrait of system \eqref{xy-sys} when $k>l$.}
+  \label{fig:figure 1}
+  \includegraphics[scale=.4]{RK_x-y_k_larger_then_l.jpg}
+  \caption{A particular solution of \eqref{xy-sys} when $k>l$.}
+  \label{fig:figure a}
+\end{multicols}
+\end{figure}
+\begin{figure}[ht!]
+\begin{multicols}{2}
+  \includegraphics[scale=.42]{PP_x-y_l_larger_then_k.JPG}
+  \caption{Phase-portrait of system \eqref{xy-sys} when $l>k$.}
+  \label{fig:figure 2}
+  \includegraphics[scale=.4]{RK_x-y_l_larger_then_k.jpg}
+  \caption{A particular solution of \eqref{xy-sys} when $l>k$.}
+  \label{fig:figure b}
+\end{multicols}
+\end{figure}
+
+
+
+
+\section{Mathematical Analysis of the Modified Kermack-McKendrick Model}\label{sec3}
+In this section, we focus our analysis on a modified model that incorporates terms
+that take into account the effect of prevention policies, and the transmission of the
+disease by other means, such as needle sharing or blood transfusions. Similar to the previous section, we use phase-plane analysis to study the dynamics of the system \eqref{uv-sys} below.
+Let $u(t)$ and $v(t)$ be the population of infected and susceptible individuals, respectively at time $t$. The new system is listed below:
+\begin{equation}\label{uv-sys}
+\left\{\begin{array}{ll} u'=\alpha uv - \beta u\\
+v'=-\alpha uv - \gamma u^{2}v + \varepsilon u + \delta v. \end{array}\right.
+\end{equation}
+The new terms introduced in the system of equations contain the following interactions with one another:
+\begin{itemize}
+\item $\alpha uv:$ the increase rate of infected individuals due to contact with susceptible individuals;
+\item $-\alpha uv:$ the decrease rate of susceptible individulas when encountered with an infected
+individual;
+\item $-\beta u:$ the death term of the infected individuals due to the epidemic;
+\item $-\gamma u^2v:$ the rate of decrease of susceptible individuals due to education and epidemic prevention,
+which is proportional to the populations of susceptible individuals and the square of
+the infected individuals;
+\item $\varepsilon u:$ the increase of susceptible individuals is proportional to the population of infected individuals
+individuals;
+\item $\delta v:$ the birth rate of the susceptible population.
+\end{itemize}
+
+
+\subsection{The generic case.} First, we analyze the generic case when all the coefficients in \eqref{uv-sys} are positive. We begin the analysis of this model by finding and classifying all equilibria.
+\begin{lemma}\label{l3.1}
+The modified Kermack-McKendrick model \eqref{uv-sys} has three equilibria: $(0,0)$, an endemic equilibrium and a non-physical equilibrium at
+\begin{equation}\label{endemic}
+\Bigg(\frac{\alpha(\varepsilon-\beta)+\sqrt{\alpha^2(\beta -\varepsilon)^2+4\gamma\delta\beta^2}}{2\gamma \beta},\frac{\beta}{\alpha}\Bigg),\; \Bigg(\frac{\alpha(\varepsilon-\beta)-\sqrt{\alpha^2(\beta -\varepsilon)^2+4\gamma\delta\beta^2}}{2\gamma \beta},\frac{\beta}{\alpha}\Bigg),\;\mbox{respectively}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+First, we recall that the equilibria of the system \eqref{uv-sys} satisfy the system
+\begin{equation}\label{uv-null}
+\left\{\begin{array}{ll} -\alpha uv-\beta u=0\\
+-\alpha uv-\gamma u^{2}v+\varepsilon u+\delta v=0. \end{array}\right.
+\end{equation}
+From the first equation we obtain that the $u$-nullclines are given by $u=0$ or $v=\frac{\beta}{\alpha}$. If $u=0$, from the second equation we immediately find that $v=0$, therefore
+$(0,0)$ is an equilibrium of \eqref{uv-sys}. If $v=\frac{\beta}{\alpha}$, we obtain the quadratic equation
+\begin{equation}\label{3.1-1}
+\gamma\beta u^2+\alpha(\beta-\varepsilon)u-\delta\beta=0.
+\end{equation}
+We note that the discriminant of this quadratic equation is $\Delta=\alpha^2(\beta -\varepsilon)^2+4\gamma\delta\beta^2>0$, which shows that equation \eqref{3.1-1} has two real solutions $u_1<u_2$. Since $u_1u_2=-\frac{\delta}{\gamma}<0$, we have that there exists a unique physical equilibrium, called endemic equilibrium, given by $(u_2,\frac{\beta}{\alpha})$ and a non-physical equilibrium at $(u_1,\frac{\beta}{\alpha})$. The formula \eqref{endemic} follows shortly from the quadratic formula.
+\end{proof}
+We are now ready to study the nature of the three equilibria found in Lemma~\ref{l3.1}. To formulate our result, we introduce the notation
+\begin{align}\label{definition-D}
+D&=\Big(\alpha \frac{\varepsilon}{\beta} u_2\Big)^2-4u_2\sqrt{\alpha^2(\beta-\varepsilon)^2+4\gamma\delta\beta^2},\quad\mbox{where}\quad u_2=\frac{\alpha(\varepsilon-\beta)+\sqrt{\alpha^2(\beta -\varepsilon)^2+4\gamma\delta\beta^2}}{2\gamma \beta},\nonumber\\
+\widetilde{D}&=\Big(\alpha \frac{\varepsilon}{\beta} u_1\Big)^2+4u_1\sqrt{\alpha^2(\beta -\varepsilon)^2+4\gamma\delta\beta^2},\quad\mbox{where}\quad u_1=\frac{\alpha(\varepsilon-\beta)-\sqrt{\alpha^2(\beta-\varepsilon)^2+4\gamma\delta\beta^2}}{2\gamma \beta}.
+\end{align}
+\begin{proposition}\label{p3.2}
+The modified Kermack-McKendrick model \eqref{uv-sys} has a saddle at $(0,0)$. The endemic equilibrium is a stable node if $D\geq0$ and is a stable spiral if $D<0$.
+The non-physical equilibrium is an unstable node if $\widetilde{D}\geq0$ and is an unstable spiral if $\widetilde{D}<0$.
+\end{proposition}
+\begin{proof} We begin the proof by computing the Jacobian
+\begin{equation}\label{3.2-1}
+J(u,v)= \left[
+\begin{array}{cc}
+\alpha v - \beta & \alpha u  \\
+-\alpha v - 2\gamma u v + \varepsilon & -\alpha u -\gamma u^2 + \delta  \\
+\end{array}
+\right].
+\end{equation}
+Plugging in $u=v=0$ in \eqref{3.2-1}, we have that
+$
+J(0,0)= \left[
+\begin{array}{cc}
+-\beta & 0  \\
+\varepsilon & \delta  \\
+\end{array}
+\right]$. One can readily check that the eigenvalues of $J(0,0)$ are given by
+$\lambda_1=-\beta$ and $\lambda_2=\delta$, which implies that $(0,0)$ is an unstable saddle.
+
+
+Using \eqref{definition-D} and \eqref{3.2-1}, we simplify the Jacobian as follows:
+\begin{equation}\label{3.2-2}
+J(u_2,\frac{\beta}{\alpha})= \left[
+\begin{array}{cc}
+0 & \alpha u_2  \\
+-\frac{\sqrt{\Delta}}{\alpha} & -\frac{\alpha\varepsilon}{\beta} u_2
+\end{array}
+\right], \quad\mbox{where}\quad \Delta=\alpha^2(\beta -\varepsilon)^2+4\gamma\delta\beta^2>0.
+\end{equation}
+It follows that the characteristic polynomial is given by
+\begin{equation}\label{3.2-3}
+\mathrm{det}\Big(J\big(u_2,\frac{\beta}{\alpha}\big)-\lambda I_2\Big)=\lambda^2+\big(\frac{\alpha \varepsilon}{\beta}u_2\big)\lambda+u_2\sqrt{\Delta}.
+\end{equation}
+We infer that the eigenvalues of the Jacobian, $J(u_2,\frac{\beta}{\alpha})$ are
+\begin{equation}\label{3.2-4}
+\lambda_1=\frac{-\alpha\varepsilon u_2-\beta\sqrt{D}}{2\beta},\quad\mbox{and}\quad \lambda_2=\frac{-\alpha\varepsilon u_2+\beta\sqrt{D}}{2\beta}.
+\end{equation}
+We remark that $\lambda_1+\lambda_2=-\frac{\alpha\varepsilon}{\beta}u_2<0$ and $\lambda_1\lambda_2=u_2\sqrt{\Delta}\geq 0$. Therefore, we infer that the eigenvalues $\lambda_1$ and $\lambda_2$ are either both negative if $D\geq 0$ or both complex having real part $\mathrm{Re}\lambda_1=\mathrm{Re}\lambda_2=-\frac{\alpha\varepsilon}{2\beta}u_2<0$ if $D<0$. We conclude that the endemic equilibrium $(u_2,\frac{\beta}{\alpha})$ is stable node if $D\geq 0$ (see Figure \ref{fig:figure 12}) or a stable spiral if $D<0$ (see Figure \ref{fig:figure 13}), proving the proposition.
+
+To finish the proof of the proposition we study the stability of the non-physical equilibrium $(u_1,\frac{\beta}{\alpha})$. The proof is similar to the proof given above for the case of the endemic equilibrium. For completeness, we give the details below. Simplifying the Jacobian we have that
+\begin{equation}\label{3.2-5}
+J(u_1,\frac{\beta}{\alpha})= \left[
+\begin{array}{cc}
+0 & \alpha u_1  \\
+\frac{\sqrt{\Delta}}{\alpha} & -\frac{\alpha\varepsilon}{\beta} u_1
+\end{array}\right].
+\end{equation}
+Here, we recall that $\Delta=\alpha^2(\beta -\varepsilon)^2+4\gamma\delta\beta^2>0$. Using \eqref{3.2-5}, we have that the characteristic polynomial is given by
+\begin{equation}\label{3.2-6}
+\mathrm{det}\Big(J\big(u_1,\frac{\beta}{\alpha}\big)-\lambda I_2\Big)=\lambda^2+\big(\frac{\alpha \varepsilon}{\beta}u_1\big)\lambda-u_1\sqrt{\Delta}.
+\end{equation}
+It follows that the eigenvalues of of the Jacobian, $J(u_1,\frac{\beta}{\alpha})$ are
+\begin{equation}\label{3.2-7}
+\lambda_3=\frac{-\alpha\varepsilon u_1-\beta\sqrt{\widetilde{D}}}{2\beta},\quad\mbox{and}\quad \lambda_4=\frac{-\alpha\varepsilon u_1+\beta\sqrt{\widetilde{D}}}{2\beta}.
+\end{equation}
+In this case $\lambda_3+\lambda_4=-\frac{\alpha\varepsilon}{\beta}u_1>0$ and $\lambda_3\lambda_4=-u_1\sqrt{\Delta}\geq 0$. We conclude that
+$\lambda_3$ and $\lambda_4$ are either both positive if $\widetilde{D}\geq 0$ or both complex having real part $\mathrm{Re}\lambda_3=\mathrm{Re}\lambda_4=-\frac{\alpha\varepsilon}{2\beta}u_1>0$ if $\widetilde{D}<0$. Therefore, the non-physical equilibrium $(u_2,\frac{\beta}{\alpha})$ is an unstable node if $\widetilde{D}\geq0$ and is an unstable spiral if $\widetilde{D}<0$.
+\end{proof}
+
+
+\subsection{Phase-Portrait of the modified Kermack-McKendrick.} Below we illustrate the results of this subsection by graphing the phase-portraits of system \eqref{uv-sys} and the graphs of a particular solution using the fourth order Runge-Kutta method. The phase portrait shows that the origin is always a saddle equilibrium, the endemic equilibrium is always stable and it is a node or a spiral depending on the sign of $D$. We can also see that nontrivial solutions approach the endemic equilibrium at $+\infty$. We conclude that the disease will not disappear completely as the number of infected individuals will approach in time the $u$-component of the endemic equilibrium. Moreover, there are no periodic solutions, which means that the epidemic will not reappear with the same intensity again. From Figures \ref{fig:figure 12} and \ref{fig:figure 13} below, we infer that the number of infected individuals increases if $v_0$, the initial number of susceptibles, is bigger that the threshold $\frac{\beta}{\alpha}$ and it decreases if $v_0<\frac{\beta}{\alpha}$.
+\begin{figure}[ht!]
+\begin{multicols}{2}
+ \includegraphics[scale=.42]{PP_MM_GEN_D_greater_or_equal_to_0.JPG}
+  \caption{Phase-portrait of system \eqref{uv-sys} when $D\geq 0$}
+  \label{fig:figure 12}
+  \vspace{3cm}
+  \includegraphics[width=6.8cm,height=6.6cm]{RK_MM_GEN_D_greater_equal_0.jpg}
+  \caption{A particular solution of \eqref{uv-sys} when $D\geq 0$}
+  \label{fig:figure c}
+\end{multicols}
+\end{figure}
+\begin{figure}[ht!]
+\begin{multicols}{2}
+  \includegraphics[scale=.42]{PP_MM_GEN_D_less_then_0.JPG}
+  \caption{Phase-portrait of system \eqref{uv-sys} when when $D<0$}
+  \label{fig:figure 13}
+  \vspace{2cm}
+  \includegraphics[width=6.8cm,height=6.6cm]{RK_MM_GEN_D_less_then_0.jpg}
+  \caption{A particular solution of \eqref{uv-sys} when $D<0$}
+  \label{fig:figure d}
+  \end{multicols}
+\end{figure}
+
+
+
+\subsection{Case when $\gamma=0$: prevention is not efficient}
+
+Next, we analyze the system in the case when there is no aid in epidemic prevention or the aid is not efficient. System \eqref{uv-sys} becomes
+\begin{equation}\label{uv-gamma-sys}
+\begin{cases}
+u'=\alpha uv-\beta u \\
+v'=-\alpha uv+\varepsilon u+\delta v
+\end{cases}
+\end{equation}
+\begin{lemma}\label{equilibria-uvgamma}
+The modified Kermack-McKendrick model with $\gamma=0$ has an equilibrium at $(0,0)$. If $\beta>\varepsilon$, it has an endemic equilibrium at  $(\frac{\delta\beta}{\alpha(\beta-\varepsilon)}$,$\frac{\beta}{\alpha})$. If $\beta\leq\varepsilon$, it has no endemic equilibrium, however, it has a non-physical equilibrium.
+\end{lemma}
+\begin{proof}
+When we set $\alpha uv-\beta u=0$, we find out that $u=0$ or $v=\frac{\beta}{\alpha}$. For the case when $u=0$, we obtain the equilibrium $(0,0)$. For the case when $v=\frac{\beta}{\alpha}$, we obtain the equation $\alpha(\beta-\varepsilon)u=\beta\delta$. If $\beta=\varepsilon$, this equation has no solution, therefore our only equilibrium is $(0,0)$. If $\beta\neq\varepsilon$, it has a unique solution, which implies that $(\frac{\delta\beta}{\alpha(\beta-\varepsilon)},\frac{\beta}{\alpha})$ is an equilibrium of \eqref{uv-gamma-sys}.
+If $\beta < \varepsilon$, this would be an unrealistic equilibrium solution given that we would have a negative value for the $u$ component, which represents the population of infectious people. If $\beta>\varepsilon$, we have the equilibrium $(\frac{\delta \beta}{\alpha(\beta-\varepsilon)}, \frac{\beta}{\alpha})$, where we have a positive $u$ component and a positive $v$ component, thus resulting in a realistic solution.
+\end{proof}
+
+After finding our critical points we study their characteristics. To formulate our result, we introduce the quantity
+\begin{equation}\label{def-Gamma}
+\Gamma=\Big(\frac{\delta \varepsilon}{\beta-\varepsilon}\Big)^{2}-4\delta \beta.
+\end{equation}
+\begin{proposition}\label{p3.3}
+The modified Kermack-McKendrick model \eqref{uv-gamma-sys} with $\gamma=0$ has a saddle at $(0,0)$. If $\beta>\varepsilon$, the endemic equilibrium is a stable node if $\Gamma\geq 0$ and a stable spiral if $\Gamma<0$. If $\beta<\varepsilon$ the system has a non-physical equilibrium, which is an unstable node if $\Gamma\geq 0$ and an unstable spiral if $\Gamma<0$.
+\end{proposition}
+\begin{proof}
+The Jacobian of the modified system \eqref{uv-gamma-sys} is given by:
+\begin{equation}\label{Jac-uv}
+J(u,v)= \left[
+\begin{array}{cc}
+\alpha v - \beta & \alpha u  \\
+-\alpha v + \varepsilon & -\alpha u + \delta  \\
+\end{array}
+\right].
+\end{equation}
+When plugging in our first critical point $(0,0)$ into \eqref{Jac-uv}, one can readily check that
+the eigenvalues of $J(0,0)$ are $\delta$ and -$\beta$. This means that $(0,0)$ is an unstable saddle equilibrium, since the two distinct real eigenvalues have opposite signs.
+We then proceed with the same steps for the critical point $(\frac{\delta\beta}{\alpha(\beta-\varepsilon)}$,$\frac{\beta}{\alpha})$.
+For this point, we get the Jacobian
+\begin{equation}\label{Jac-uv2}
+J (\frac{\delta\beta}{\alpha(\beta-\varepsilon)},\frac{\beta}{\alpha})=
+\left[
+\begin{array}{cc}
+0 & \frac{\delta \beta}{\beta-\varepsilon}   \\
+-\beta+\varepsilon & \frac{-\delta \varepsilon}{\beta-\varepsilon} \\
+\end{array}
+\right].
+\end{equation}
+It follows that the characteristic polynomial is given by
+\begin{equation}\label{Jac-uv3}
+\mathrm{det}\Big(J (\frac{\delta\beta}{\alpha(\beta-\varepsilon)},\frac{\beta}{\alpha})-\lambda I_2\Big)=\left[{\begin{array}{cc}
+-\lambda & \frac{\delta \beta}{\beta-\varepsilon} \\
+-\beta+\varepsilon & \frac{\delta \varepsilon}{\beta-\varepsilon}-\lambda \\
+\end{array}}\right]=\lambda^{2}+\frac{\delta \varepsilon}{\beta-\varepsilon}\lambda+\delta \beta.
+\end{equation}
+We note that the discriminant of the characteristic equation is given by $\Gamma$ defined above in \eqref{def-Gamma}.
+For our first case, we determine the characteristics of the eigenvalues when $\Gamma\geq 0$.  In this case, we know that our eigenvalues are nonzero and that they will both have the same sign. Moreover, their sign is equal to the sign of $\varepsilon-\beta$. We obtain that if $\varepsilon>\beta$, then we have two positive eigenvalues. In this case, our critical point, $(\frac{\delta\beta}{\alpha(\beta-\varepsilon)}$,$\frac{\beta}{\alpha})$, will be an unstable node as seen in Figure \ref{fig:figure 3} below.
+If $\varepsilon<\beta$, then we have two negative eigenvalues. In this case, our critical point, $(\frac{\delta\beta}{\alpha(\beta-\varepsilon)}, \frac{\beta}{\alpha})$ will be a stable node (see Figure \ref{fig:figure 4}). For our second case, we determine the characteristics of the eigenvalues when $\Gamma<0$. In this case, we know that our eigenvalues are purely imaginary, with real parts equal to
+$\frac{\delta \varepsilon}{2(\varepsilon-\beta)}$. If $\varepsilon>\beta$, then we have two complex roots with positive real parts, hence the critical point is an unstable spiral (see Figure \ref{fig:figure 5}). If $\beta>\varepsilon$, then we have two complex roots with negative real parts; therefore, the equilibrium is a stable spiral (see Figure \ref{fig:figure 6}).
+\end{proof}
+\begin{remark}\label{prevention-helps} It is important to note that the model \eqref{uv-sys} validates the idea that prevention helps reduce the number of infected individuals. Indeed,
+let the u-component be denoted by $u_{endemic}(\gamma)$. We note that $u_{endemic}'(\gamma)< 0$ for any $\gamma<0$, which shows that $u_{endemic}(\gamma)$ is decreasing. That is, the $u$-component of the endemic equilibrium is consistently decreasing whenever $\gamma$ is increasing.  This means that the limiting number of contagious individuals gets smaller as the prevention is more efficient. However, $u_{endemic}(\gamma)>0$ for any $\gamma\geq 0$, which shows that the limiting number of infected individuals is not going to be $0$, regardless of the efficient of the prevention measures.
+\end{remark}
+
+\subsection{Phase-Portrait of the modified Kermack-McKendrick, when $\gamma=0$.} The phase-portraits of system \eqref{uv-gamma-sys} are given below. Also, in each case, we graph a particular solution using the fourth order Runge-Kutta method. We note that in all of the cases, the origin is a saddle. In the case when $\beta>\varepsilon$, solutions converge to the stable endemic equilibrium, which is a node or a saddle, depending on the sign of $\Gamma$, see Figures \ref{fig:figure 3}, \ref{fig:figure e}, \ref{fig:figure 6} and \ref{fig:figure h}. The behavior of the system is similar to that in the general case when $\gamma>0$. In the case when $\beta<\varepsilon$ the system has an unstable non-physical equilibrium. Regardless of the sign of $\Gamma$, the $u$-component becomes unbounded, see Figures \ref{fig:figure 4}, \ref{fig:figure f}, \ref{fig:figure 5} and \ref{fig:figure g}. We remark that the behavior of the system in this case is significantly different from that of the general case.
+\begin{figure}[ht!]
+\begin{multicols}{2}
+  \includegraphics[scale=.42]{PP_MM_g_0__b_greater_then_e_REAL.JPG}
+  \caption{Phase-portrait of system \eqref{uv-gamma-sys} when $\beta>\varepsilon$ and $\Gamma\geq0$}
+  \label{fig:figure 3}
+  \vspace{3cm}
+  \includegraphics[width=6.8cm,height=6.6cm]{RK_MM_g_0_b_greater__then_e_REAL.jpg}
+  \caption{A particular solution of \eqref{uv-gamma-sys} when $\beta>\varepsilon$ and $\Gamma\geq0$}
+  \label{fig:figure e}
+\end{multicols}
+\end{figure}
+\begin{figure}[ht!]
+\begin{multicols}{2}
+  \includegraphics[scale=.42]{PP_MM_g_0__b_greaterthen_e_IMAG.JPG}
+  \caption{Phase-portrait of system \eqref{uv-gamma-sys} when $\beta>\varepsilon$ and $\Gamma<0$}
+  \label{fig:figure 6}
+   \vspace{3cm}
+  \includegraphics[width=6.8cm,height=6.6cm]{RK_MM_g_0_b_greater_then_e_IMAG.jpg}
+  \caption{A particular solution of \eqref{uv-gamma-sys} when $\beta>\varepsilon$ and $\Gamma<0$}
+  \label{fig:figure h}
+\end{multicols}
+\end{figure}
+\begin{figure}[ht!]
+\begin{multicols}{2}
+  \includegraphics[scale=.42]{PP_MM_g_0__b_lessthen_e_REAL.JPG}
+  \caption{Phase-portrait of system \eqref{uv-gamma-sys} when $\beta<\varepsilon$ and $\Gamma\geq0$}
+  \label{fig:figure 4}
+   \vspace{3cm}
+  \includegraphics[width=6.8cm,height=6.6cm]{RK_MM_g_0_b_less_then_e_REAL.jpg}
+  \caption{A particular solution of \eqref{uv-gamma-sys} when $\beta<\varepsilon$ and $\Gamma\geq0$}
+  \label{fig:figure f}
+  \end{multicols}
+\end{figure}
+\begin{figure}[ht!]
+\begin{multicols}{2}
+  \includegraphics[scale=.42]{PP_MM_g_0__b_lessthen_e_IMAG.JPG}
+  \caption{Phase-portrait of system \eqref{uv-gamma-sys} when $\beta<\varepsilon$ and $\Gamma<0$}
+  \label{fig:figure 5}
+   \vspace{3cm}
+  \includegraphics[width=6.8cm,height=6.6cm]{RK_MM_g_0_b_less_then_e_IMAG.jpg}
+  \caption{A particular solution of \eqref{uv-gamma-sys} when $\beta<\varepsilon$ and $\Gamma\geq0$}
+  \label{fig:figure g}
+\end{multicols}
+\end{figure}
+
+
+\subsection{Case when $\delta=0$: the birth rate of the susceptible population is 0.} Next, we analyze the case when the susceptible population does not increase due to births. Setting $\delta=0$ in \eqref{uv-sys}, we obtain the system
+\begin{equation}\label{uv-delta-sys}
+ \begin{cases}
+    u' = \alpha uv - \beta u \\
+    v' = -\alpha uv-\gamma u^2v+\varepsilon u
+   \end{cases}.
+\end{equation}
+Like in the two previous cases, we find and classify the critical points.
+\begin{lemma}\label{equi-delta}
+The modified Kermack-McKendrick model with $\delta=0$ \eqref{uv-delta-sys} has a line of equilibria given by $\{(0,a):a\geq 0\}$.  If $\varepsilon>\beta$, then the system has the endemic equilibrium at $(\frac{\alpha(\varepsilon-\beta)}{\gamma\beta}$,$\frac{\beta}{\alpha})$. Moreover, if $\varepsilon<\beta$, then the system has an additional non-physical equilibrium.
+\end{lemma}
+\begin{proof}
+Similar to the previous cases in this section, by setting $\alpha uv-\beta u=0$ we obtain that $u=0$ or $v=\frac{\beta}{\alpha}$. In addition, equilibria satisfy the equation
+\begin{equation}\label{second-eq}
+-\alpha uv-\gamma u^2v+\varepsilon u=0
+\end{equation}
+We note that when $u=0$ equation \eqref{second-eq} is satisfied for any value of $v$. It follows that $(0,a)$ is an equilibrium of \eqref{uv-delta-sys} for any $a\geq0$. Plugging in $v=\frac{\beta}{\alpha}$ in \eqref{second-eq}, we obtain the equation $u^2(\frac{-\gamma\beta}{\alpha})+(\varepsilon-\beta)u=0$, whose solutions are given by $u=0$ and $u= \frac{\alpha(\varepsilon-\beta)}{\gamma\beta}$. If $\varepsilon>\beta$, this equilibrium is endemic and if $\varepsilon<\beta$, it is a non-physical equilibrium. Moreover, if $\beta=\varepsilon$ there is no additional endemic nor non-physical equilibrium.
+\end{proof}
+\begin{proposition}\label{uv-delta-stability}
+The modified Kermack-McKendrick model with $\delta=0$ \eqref{uv-delta-sys} has a stable node at $(0,a)$ if $a\in [0,\frac{\beta}{\alpha})$ and an unstable node at $(0,a)$ if $a\in (\frac{\beta}{\alpha},\infty)$. Moreover, $(0,\frac{\beta}{\alpha})$ is a stable node if $\beta=\varepsilon$, and an unstable node if $\beta\ne\varepsilon$. The endemic equilibrium $(\frac{\alpha(\varepsilon-\beta)}{\gamma\beta}$,$\frac{\beta}{\alpha})$ is a stable node if $\alpha^2\varepsilon^2 \geq 4\gamma\beta^3$ or a stable spiral if $\alpha^2\varepsilon^2 < 4\gamma\beta^3$. The non-physical equilibrium is an unstable node if $\alpha^2\varepsilon^2 \geq 4\gamma\beta^3$ or an unstable spiral if $\alpha^2\varepsilon^2 < 4\gamma\beta^3$.
+\end{proposition}
+\begin{proof}
+To classify the critical points, we compute the Jacobian of \eqref{uv-delta-sys}.
+\begin{equation}\label{Jac-uv-delta}
+J(u,v)= \left[
+\begin{array}{cc}
+\alpha v-\beta & \alpha u  \\
+-\alpha v-2\gamma uv+\varepsilon & -\alpha u -\gamma u^2  \\
+\end{array}
+\right].
+\end{equation}
+It follows that
+\begin{equation}\label{char-eq3}
+\mathrm{det}\Big(J(0,a)-\lambda I_2\Big)=\lambda^2+(\beta-\alpha a)\lambda\quad\mbox{for any}\quad \lambda\in\mathbb{C}.
+\end{equation}
+We obtain that the eigenvalues of $J(0,a)$ are given by $\lambda_5=0$ and $\lambda_6=\alpha a-\beta$.
+The eigenspaces associated to the eigenvalues $\lambda_5$ and $\lambda_6$, respectively, are spanned by the eigenvectors:
+\begin{equation}\label{general-eigenvectors-3}
+w_3=\begin{bmatrix}
+  0\\
+  1\\
+\end{bmatrix}, w_4=\begin{bmatrix}
+  \alpha a-\beta\\
+ \varepsilon - \alpha a\\
+\end{bmatrix}.
+\end{equation}
+Below, we analyze separately the cases when $a\ne\frac{\beta}{\alpha}$ and the case when $a=\frac{\beta}{\alpha}$.
+
+\noindent \textbf{Case 1: $a\ne\frac{\beta}{\alpha}$.} From \eqref{char-eq3} and \eqref{general-eigenvectors-3} we have that the linearization of \eqref{uv-delta-sys} at the equilibrium $(0,a)$ has a solution of the form
+\begin{equation}\label{a-ne-beta-alpha}
+(x(t),y(t))^{\mathrm{T}}= c_3 w_3 + c_4 e^{(\alpha a-\beta)t} w_4,\quad\mbox{for}\quad t\ge 0,
+\end{equation}
+for some constants $c_3$ and $c_4$ that can be computed in terms of the initial conditions $u_0$ and $v_0$. We conclude that $(0,a)$ is a stable node if $a\in [0,\frac{\beta}{\alpha})$ and an unstable if $a\in (\frac{\beta}{\alpha},\infty)$.
+
+\noindent \textbf{Case 2: $a=\frac{\beta}{\alpha}$, $\beta=\varepsilon$.} In this case we have that $J(0,\frac{\beta}{\alpha})=O_2$, which implies that the equilibrium $(0,\frac{\beta}{\alpha})$ is a stable node.
+
+\noindent \textbf{Case 3: $a=\frac{\beta}{\alpha}$, $\beta\ne\varepsilon$.} Linearizing the system \eqref{uv-delta-sys} at $(0,\frac{\beta}{\alpha})$, we obtain the system
+\begin{equation}\label{linear-3}
+\begin{cases}
+    u'= 0\\
+    v'=u(\varepsilon-\beta)
+   \end{cases}
+\end{equation}
+Integrating \eqref{linear-3}, we obtain that
+\[\begin{cases}
+    u(t)=u_0 \\
+    v(t)= (\varepsilon-\beta)u_0t+v_0\\
+   \end{cases}\quad\mbox{for any}\quad t\geq 0,\]
+which proves that the equilibrium $(0,\frac{\beta}{\alpha})$ is an unstable node.
+
+Next, we focus our attention on the endemic equilibrium. From \eqref{Jac-uv-delta} we have that
+\begin{equation}\label{Jac-4}
+J\Big(\frac{\alpha(\varepsilon-\beta)}{\gamma\beta},\frac{\beta}{\alpha}\Big)=\left[
+\begin{array}{cc}
+0 & \frac{\alpha^2(\varepsilon-\beta)}{\gamma\beta}  \\
+\beta - \varepsilon & \frac{\alpha^2(\varepsilon\beta-\varepsilon^2)}{\gamma\beta^2}  \\
+\end{array}
+\right].
+\end{equation}
+The characteristic polynomial is given by
+\begin{equation}\label{char-4}
+\mathrm{det}\Big(J\big(\frac{\alpha(\varepsilon-\beta)}{\gamma\beta},\frac{\beta}{\alpha}\big)-\lambda I_2\Big)=\left[
+\begin{array}{cc}
+-\lambda & \frac{\alpha^2(\varepsilon-\beta)}{\gamma\beta}  \\
+\beta - \varepsilon & -\lambda + \frac{\alpha^2(\varepsilon\beta-\varepsilon^2)}{\gamma\beta^2}\\
+\end{array}
+\right]=\lambda^2+\frac{\alpha^2(\varepsilon\beta-\varepsilon^2)}{\gamma\beta^2}\lambda+\frac{\alpha^2(\varepsilon-\beta)^2}{\gamma\beta}.
+\end{equation}
+We infer that the eigenvalues of $J\big(\frac{\alpha(\varepsilon-\beta)}{\gamma\beta},\frac{\beta}{\alpha}\big)$ are given by
+\begin{equation}\label{eigen-4}
+\lambda_7=\frac{\alpha^2(\varepsilon\beta-\varepsilon^2)}{2\gamma\beta^2}-\frac{1}{2}\sqrt{\frac{\alpha^2(\varepsilon-\beta)^2}{\gamma\beta}\Big(\frac{\alpha^2\varepsilon^2}{\gamma\beta^3}-4\Big)},\; \lambda_8=\frac{\alpha^2(\varepsilon\beta-\varepsilon^2)}{2\gamma\beta^2}+\frac{1}{2}\sqrt{\frac{\alpha^2(\varepsilon-\beta)^2}{\gamma\beta}\Big(\frac{\alpha^2\varepsilon^2}{\gamma\beta^3}-4\Big)}
+\end{equation}
+If $\alpha^2\varepsilon^2 \geq 4\gamma\beta^3$, the eigenvalues $\lambda_7$ and $\lambda_8$ are real and
+\begin{equation}\label{4.1-1}
+\lambda_7+\lambda_8=\frac{\alpha^2\varepsilon(\beta-\varepsilon)}{\gamma\beta^2}\;\mbox{and}\;\lambda_7\lambda_8=\frac{\alpha^2(\varepsilon-\beta)^2}{\gamma\beta}>0.
+\end{equation}
+If $\alpha^2\varepsilon^2<4\gamma\beta^3$, the eigenvalues $\lambda_7$ and $\lambda_8$ are complex and
+\begin{equation}\label{4.1-2}
+Re(\lambda_7)=Re(\lambda_8)=\frac{\alpha^2 \varepsilon(\beta-\varepsilon)}{2\gamma\beta^2}.
+\end{equation}
+We conclude that the endemic equilibrium, which exists if $\varepsilon>\beta$, is a stable node if $\alpha^2\varepsilon^2 \geq 4\gamma\beta^3$ or a stable spiral if $\alpha^2\varepsilon^2 < 4\gamma\beta^3$. The non-physical equilibrium is an unstable node if $\alpha^2\varepsilon^2 \geq 4\gamma\beta^3$ or an unstable spiral if $\alpha^2\varepsilon^2 < 4\gamma\beta^3$.
+\end{proof}
+\begin{remark}\label{similar} In the case when $\delta=0$, the modified Kermack-McKendrick model \eqref{uv-delta-sys}
+has a line of equilibria like in the case of the classical model \eqref{xy-sys} and an endemic equilibrium like in the case of the general modified model \eqref{uv-sys}.
+Moreover, we point out that the characteristics of the endemic equilibrium and the non-physical equilibrium are the same as in the case of the general modified model.
+An interesting feature of the system is that on the line of equilibria, we have a change in stability at a threshold equal to the $v$-component of the endemic equilibrium.
+\end{remark}
+\begin{remark}\label{difference}
+We note that there are quite a lot of differences between the behavior of solutions of the two limiting cases of the modified Kermack-McKendrick model, when $\gamma=0$ and $\delta=0$, respectively.
+Setting $\gamma=0$ preserves the equilibrium at the origin, while setting $\delta=0$ we obtain a line of equilibria instead of an isolated equilibrium.
+Moreover, in the case when $\gamma=0$ we have an endemic equilibrium provided $\beta>\varepsilon$, while in the case when $\delta=0$ the endemic equilibrium occurs when $\beta<\varepsilon$.
+\end{remark}
+
+
+
+
+
+
+
+\subsection{Phase-Portrait of the modified Kermack-McKendrick, when $\delta=0$.} Like in all the cases discussed in this section we have that the origin is a saddle. In all the cases described below we have a line of equilibria, $\{(0,a):a\geq 0\}$ consisting of stable nodes if $a<\frac{\beta}{\alpha}$ and unstable nodes if $a>\frac{\beta}{\alpha}$. Interestingly, the stability of the node at $(0,\frac{\beta}{\alpha})$ depends on the sign of $\beta-\varepsilon$. Unlike the general case when $\delta\ne0$, even if we have an endemic equilibrium, not all solutions approach this endemic equilibrium. Similarly, if there exists a non-physical equilibrium, some solutions approach the stable nodes on the $v$-axis, while other solutions have an $u$-component that approaches $-\infty$ as $t\to\infty$. In this situation, the number of infected individuals becomes $0$ at some finite time $t_*$.
+
+
+\begin{figure}[ht!]
+\begin{multicols}{2}
+  \includegraphics[scale=.4]{PP_MM_d_0__b___e.JPG}
+  \caption{Phase-portrait of system \eqref{uv-delta-sys} when $\varepsilon=\beta$}
+  \label{fig:figure 7}
+  \includegraphics[width=6.8cm,height=6.6cm]{RK_MM_d_0__b___e.JPG}
+  \caption{A particular solution of \eqref{uv-delta-sys} when $\varepsilon=\beta$}
+  \label{fig:figure i}
+\end{multicols}
+\end{figure}
+\begin{figure}[ht!]
+\begin{multicols}{2}
+  \includegraphics[scale=.4]{PP_MM_d_0__b_less_then__e_REAL.JPG}
+  \caption{Phase-portrait of system \eqref{uv-delta-sys} when $\beta<\varepsilon$ and $\alpha^2\varepsilon^3\geq 4\gamma\beta^3$}
+  \label{fig:figure 8}
+  \includegraphics[width=6.8cm,height=6.6cm]{RK_MM_d_0_b_less_then_e_REAL.JPG}
+  \caption{A particular solution of \eqref{uv-delta-sys} when $\beta<\varepsilon$ and $\alpha^2\varepsilon^3\geq 4\gamma\beta^3$}
+  \label{fig:figure j}
+\end{multicols}
+\end{figure}
+\begin{figure}[ht!]
+\begin{multicols}{2}
+  \includegraphics[scale=.4]{PP_MM_d_0__b_great_then__e_REAL.JPG}
+  \caption{Phase-portrait of system \eqref{uv-delta-sys} when $\beta>\varepsilon$ and $\alpha^2\varepsilon^3\geq 4\gamma\beta^3$}
+  \label{fig:figure 9}
+  \includegraphics[width=6.8cm,height=6.6cm]{RK_MM_d_0_b_great_then_e_REAL.JPG}
+  \caption{A particular solution of \eqref{uv-delta-sys} when $\beta>\varepsilon$ and $\alpha^2\varepsilon^3\geq 4\gamma\beta^3$}
+  \label{fig:figure k}
+  \end{multicols}
+\end{figure}
+
+\begin{figure}[ht!]
+\begin{multicols}{2}
+  \includegraphics[scale=.4]{PP_MM_d_0__b_less_then__e_IMAG.JPG}
+  \caption{Phase-portrait of system \eqref{uv-delta-sys} when $\beta<\varepsilon$ and $\alpha^2\varepsilon^3<4\gamma\beta^3$}
+  \label{fig:figure 10}
+  \includegraphics[width=6.8cm,height=6.6cm]{RK_MM_d_0_b_less_then_e_IMAG.JPG}
+  \caption{A particular solution of \eqref{uv-delta-sys} when $\beta<\varepsilon$ and $\alpha^2\varepsilon^3<4\gamma\beta^3$}
+  \label{fig:figure l}
+\end{multicols}
+\end{figure}
+
+\begin{figure}[ht!]
+\begin{multicols}{2}
+  \includegraphics[scale=.4]{PP_MM_d_0__b_great_then__e_IMAG.JPG}
+  \caption{Phase-portrait of system \eqref{uv-delta-sys} when $\beta>\varepsilon$ and $\alpha^2\varepsilon^3<4\gamma\beta^3$}
+  \label{fig:figure 11}
+  \includegraphics[width=6.8cm,height=6.6cm]{RK_MM_d_0__b_great_then__e_IMAG.JPG}
+  \caption{A particular solution of \eqref{uv-delta-sys} when $\beta>\varepsilon$ and $\alpha^2\varepsilon^3\geq 4\gamma\beta^3$}
+  \label{fig:figure m}
+\end{multicols}
+\end{figure}
+
+
+\section{Appendix}\label{sec4}
+
+The limiting equilibrium $z_{root}$ of the $z$-equation \eqref{z-eq} is given implicitly as the solution of transcendent equation, hence it cannot be computed precisely. One can use Newton's method, also known as the tangent method, to find an approximation with an acceptably small error. We recall that the order of convergence of this method is $2$. However, it is well-known that Newton's method is not always convergent. Below we show that the in our case this method yields a convergent sequence of approximations.
+\begin{lemma}\label{A-1}
+The equilibrium  $z_{root}$ can be approximated by the recursive sequence defined by
+\begin{equation}\label{approx-z}
+z_{n+1}=z_n-l\frac{N-z-x_0e^{\frac{-k}{l}z}}{kx_0e^{\frac{-k}{l}z}-l},\;n\geq 0
+\end{equation}
+for any $z_0>N$.
+\end{lemma}
+\begin{proof}
+Let $(u_n)_{n\geq 0}$ be the sequence defined by $u_n=\frac{k}{l}z_n$, $n\geq0$. One can easily check that $(u_n)_{n\geq 0}$ satisfies the recurrence equation
+\begin{equation}\label{A1-1}
+u_{n+1}=u_n-\frac{f(u_n)}{f'(u_n)},\;\mbox{where}\;f(u)=a-bu-ce^{-u}, a=lN, b=\frac{l^2}{k}, c=lx_0.
+\end{equation}
+To prove the lemma, it is enough to show that $u_{n}\to u_{root}$ as $n\to\infty$. First, we use induction to show that
+\begin{equation}\label{A1-2}
+u_n> u_{root}\quad\mbox{for any}\quad n\geq 0.
+\end{equation}
+We recall that in Proposition~\ref{part4} we showed that $u_{root}\leq\frac{a}{b}$. Since $z_0>N$ and $u_{root}=\frac{k}{l}z_{root}$ from \eqref{A1-1}, it follows that $u_0>u_{root}$.
+Next, we introduce the $g:[u_{root},\infty)\to\mathbb{R}$ defined by
+\begin{equation}\label{A1-3}
+g(u)=u-\frac{f(u)}{f'(u)}.
+\end{equation}
+A direct computation shows that
+\begin{equation}\label{direct-computation}
+f(u)\leq 0, f'(u)<0, f"(u)=-ce^{-u}<0\quad\mbox{for any}\quad u\in[u_{root},\infty),
+\end{equation}
+which shows that the function $g$ is well-defined. From \eqref{direct-computation} we obtain that
+\begin{equation}\label{A1-4}
+g'(u)=\frac{f(u)f''(u)}{(f'(u))^{2}}> 0\quad\mbox{for any}\quad u\in (u_{root},\infty).
+\end{equation}
+Hence, $g$ is increasing on $[u_{root},\infty)$. It follows that whenever $u_n>u_{root}$, we have that $u_{n+1}=g(u_n)>g(u_{root})=u_{root}$, proving the claim \eqref{A1-2}. To finish the proof of lemma, we show that the sequence $(u_n)_{n\geq 0}$ is decreasing. Indeed, from \eqref{A1-1}, \eqref{A1-2} and \eqref{direct-computation}
+we conclude that $u_{n+1}-u_n=-\frac{f(u_n)}{f'(u_n)}<0$ for any $n\geq0$. Therefore, the sequence $(u_n)_{n\geq0}$ is bonded from below and decreasing, which implies that it is convergent. Passing to the limit in \eqref{A1-1}, we obtain that $f(\lim\limits_{n\to\infty}u_n)=0$, hence $\lim\limits_{n\to\infty}u_n=u_{root}$, proving the lemma.
+\end{proof}
+
+
+
+
+
+\section{Acknowledgements}
+
+Special acknowledgements must be given to Dr. Alin Pogan and Lillian Li, whose diligent instruction and compassionate guidance allowed the project to come to fruition. Additional thanks is to be given to Dr. Reza Akhtar and the entire faculty and staff at Miami University during SUMSRI 2018, who devoted so much of their time to teach us the field of Mathematics.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{20}
+
+\bibitem{AM}  R. M. Anderson,  R. M.  May, \textit{Population Biology of Infectious Diseases: Part I}, Nature \textbf{280}(1979), 361-367.
+
+\bibitem{A} K. A. Atkinson, \textit{An Introduction to Numerical Analysis (2nd ed.)}, (1989), New York: John Wiley \& Sons.
+
+\bibitem{"The Kermack-McKendrick Epidemic Model Revisited."}
+F. Brauer, \textit{The Kermack-McKendrick Epidemic Model Revisited}
+Mathematical Biosciences, vol. 198.
+
+
+\bibitem{B} John C. Butcher, \textit{Numerical Methods for Ordinary Differential Equations},  (2008), New York: John Wiley \& Sons.
+
+
+\bibitem{HV} X. C. Huang, M. Villasana, \textit{An extension of the Kermack–McKendrick
+model for AIDS epidemic}, Journal of the Franklin Institute \textbf{342} (2005) 341-351.
+
+
+
+\bibitem{Contributions to the Mathematical Theory  of Epidemics-III. Further Studies of the Problem of Endemicity.}
+W.O. Kermack, A.G. McKendrick, \textit{Contributions to the Mathematical Theory  of Epidemics-III. Further Studies of the Problem of Endemicity},
+Bulletin of Mathematical Biology, vol. 53.
+
+
+\bibitem{Murray}
+J. Murray, \textit{Mathematical biology}, Biomathematics, vol. 19, seconded, Springer, New York, 1989.
+
+\bibitem{ODE Software for MATLAB}
+John C. Polking.
+\textit{ODE Software for MATLAB}.
+ math.rice.edu/~dfield/, 23 Apr. 2002.
+
+\bibitem{Strogatz}
+S.H. Strogatz, \textit{Nonlinear Dynamics And Chaos: With Applications To Physics, Biology, Chemistry, And Engineering}, Perseus Books, Camb
+ridge, Massachusetts, 2014.
+
+\bibitem{YDK}
+T.Yoneyama, S. Das,  M. Krishnamoorthy, \textit{A Hybrid Model for Disease Spread and an Application to the SARS Pandemic}, Journal of Artificial Societies and Social Simulation 15 (2010).
+
+\bibitem{Kermack-McKendrick Model}
+Eric W. Weisstein
+\textit{From MathWorld--A Wolfram Web Resource.}
+http://mathworld. \indent wolfram.com/Kermack- McKendrickModel.html
+
+\end{thebibliography}
+
+\end{document}
